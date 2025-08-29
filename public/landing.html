@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>디지털 SAT 연습 — 세트 선택</title>
+
+<!-- 공통 스타일 -->
+<link rel="stylesheet" href="./assets/style.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="toprow">
+    <h1 style="margin:0; font-size:22px">디지털 SAT 연습 — 세트 선택</h1>
+    <div class="controls">
+      <button class="btn" id="toGrid">그리드</button>
+      <button class="btn" id="toList">목록</button>
+    </div>
+  </header>
+
+  <!-- 검색/필터 -->
+  <div class="search card" style="margin-bottom:14px">
+    <input id="q" type="text" placeholder="세트 이름, 태그 검색 (예: math, rw, official)" style="flex:1; border:none; outline:none; font-size:14px"/>
+    <button class="btn" id="clearQ">지우기</button>
+  </div>
+
+  <!-- 추천 세트(카탈로그) -->
+  <section style="margin-bottom:18px">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin:6px 2px 10px">
+      <div style="font-weight:800">추천 세트</div>
+      <div class="muted" style="font-size:12px">카드 목록은 아래 <code>CATALOG</code>에서 자유롭게 수정</div>
+    </div>
+    <div class="grid" id="grid" style="grid-template-columns:repeat(3,1fr); gap:14px"></div>
+  </section>
+
+  <!-- 최근 시작한 세트 -->
+  <section style="margin-bottom:18px">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin:6px 2px 10px">
+      <div style="font-weight:800">최근 사용</div>
+      <div class="muted" style="font-size:12px">클릭하면 바로 시작</div>
+    </div>
+    <div class="recents" id="recents"></div>
+  </section>
+
+  <!-- 직접 불러오기 -->
+  <section class="card" style="padding:14px">
+    <div style="font-weight:800; margin-bottom:10px">직접 불러오기</div>
+    <div class="grid" style="grid-template-columns:140px 1fr; gap:12px; align-items:center">
+      <label>JSON URL</label>
+      <input id="jsonUrl" type="text" placeholder="예: https://example.com/questions.json"/>
+      <label>로컬 파일</label>
+      <input id="jsonFile" class="uploader" type="file" accept=".json,application/json"/>
+      <div></div>
+      <div class="muted" style="font-size:12px">둘 중 하나만 사용하세요. URL이 있으면 파일은 무시됩니다.</div>
+    </div>
+    <div style="display:flex; justify-content:flex-end; gap:8px; margin-top:12px">
+      <button class="btn" id="resetBtn">초기화</button>
+      <button class="btn primary" id="startBtn">시험 시작</button>
+    </div>
+  </section>
+
+  <p class="muted" style="margin-top:14px; font-size:12px">
+    팁: 외부 URL은 CORS 정책에 따라 차단될 수 있어요. 되도록 같은 도메인에 JSON을 올리거나 Netlify/GitHub Pages에서 함께 배포하세요.
+  </p>
+</div>
+
+<!-- 분리 스크립트 -->
+<script src="./assets/landing.js"></script>
+</body>
+</html>

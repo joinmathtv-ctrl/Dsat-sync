@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>DSAT Dashboard — Extended</title>
+
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+
+<!-- 공통 스타일 & 프리셋 -->
+<link rel="stylesheet" href="./assets/style.css">
+<script src="./assets/curves.presets.js"></script>
+
+<style>
+  /* ▼ 페이지 전용 스타일만 유지 (공통 style.css와 중복 제거 완료) */
+  .r{ display:flex; gap:8px; flex-wrap:wrap; align-items:center }
+  textarea.code{ width:100%; min-height:180px; font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, monospace }
+  input[type="date"]{
+    border:1px solid var(--line);
+    background:#fff;
+    padding:8px 12px;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:14px;
+  }
+  /* ▼ 토스트 (대시보드 내 최소 스타일) */
+  .toast{
+    position:fixed; bottom:12px; left:50%; transform:translateX(-50%);
+    background:#222; color:#fff; padding:8px 12px; border-radius:8px;
+    opacity:.95; transition:opacity .2s; z-index:9999;
+  }
+  .toast.ok{ background:#16a34a }
+  .toast.err{ background:#dc2626 }
+</style>
+</head>
+<body>
+<div class="topbar">
+  <div class="toprow">
+    <div style="font-weight:800">📈 DSAT Dashboard — Extended</div>
+    <div style="display:flex; gap:8px; align-items:center; flex-wrap:wrap">
+      <a class="back" href="./index.html">← 연습으로 돌아가기</a>
+      <span class="muted">|</span>
+      <button class="btn" id="clearBtn">전체 로그 삭제</button>
+      <button class="btn" id="importBtn">Import</button>
+      <button class="btn" id="exportBtn">Export</button>
+      <button class="btn" id="printBtn">인쇄/저장(PDF)</button>
+    </div>
+  </div>
+</div>
+
+<!-- Sync Panel -->
+<div class="card" id="syncCard" data-sync-panel style="margin-top:12px">
+  <div class="head"><div class="title">Sync</div></div>
+  <div style="display:flex; gap:8px; flex-wrap:wrap; align-items:center">
+    <button class="btn" id="btnSyncNow">Sync Now</button>
+    <button class="btn" id="btnPush">Push Only</button>
+    <button class="btn" id="btnPull">Pull Only</button>
+    <!-- 더티 배지: DSAT_SYNC 동작 시 업데이트 -->
+    <span id="syncBadge" class="pill" style="display:none"></span>
+    <span class="muted" id="syncStatus">—</span>
+  </div>
+</div>
+
+<div class="wrap">
+  <!-- 필터 + 프리셋 스위처 + 기본 프리셋 저장 -->
+  <div class="card">
+    <div class="head">
+      <div class="title">필터 · 커브 · 기본값</div>
+      <div class="r">
+        <label class="muted">세트:</label>
+        <select id="baseSelect"></select>
+        <label class="muted">보기:</label>
+        <select id="kindSelect">
+          <option value="">전체</option>
+          <option value="base">Base</option>
+          <option value="review">Review</option>
+        </select>
+        <label class="muted">커브 프리셋(보기 재계산):</label>
+        <select id="presetSelect"></select>
+        <button class="btn" id="saveDefaultPresetBtn" title="해당 세트에 기본 프리셋 기억(로컬)">이 세트 기본 프리셋으로 저장</button>
+        <span id="countInfo" class="pill muted"></span>
+      </div>
+    </div>
+
+    <div class="r">
+      <button class="btn ghost" id="openCurveEditor">프리셋 편집/추가</button>
+      <span class="muted" style="font-size:13px">
+        * 보기 프리셋은 <b>표시만 재계산</b>합니다. 실제 기록 시 사용된 프리셋은 연습페이지의 <code>SET.metadata.curvePreset</code> 값입니다.
+      </span>
+    </div>
+
+    <!-- ▼ 리뷰 딥링크 버튼 -->
+    <div class="r" style="margin-top:8px">
+      <button class="btn" id="startWrongReviewBtn">오답만 리뷰 시작</button>
+      <button class="btn" id="startFlaggedReviewBtn">플래그만 리뷰 시작</button>
+      <span class="muted" style="font-size:12px">* index.html의 현재 세트에서 실행됩니다.</span>
+    </div>
+
+    <!-- ▼ 날짜 범위 + 집계 모드 (추가) -->
+    <div class="r" style="margin-top:8px">
+      <label class="muted">날짜:</label>
+      <input type="date" id="fromDate"/>
+      <span class="muted">~</span>
+      <input type="date" id="toDate"/>
+      <span class="muted" style="margin-left:10px">집계:</span>
+      <select id="aggMode" title="요약 집계 모드">
+        <option value="">집계 없음</option>
+        <option value="byPreset">프리셋별 집계</option>
+        <option value="bySet">세트별 집계</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- 상단 메트릭 -->
+  <div class="row" style="margin-top:14px">
+    <div class="card">
+      <div class="head"><div class="title">총점 추이 (SAT)</div></div>
+      <canvas id="satLine" height="160"></canvas>
+    </div>
+    <div class="card">
+      <div class="head"><div class="title">섹션별 환산 점수</div></div>
+      <canvas id="sectionBar" height="160"></canvas>
+    </div>
+  </div>
+
+  <!-- 스킬 추이 & 히트맵 -->
+  <div class="row" style="margin-top:14px">
+    <div class="card">
+      <div class="head">
+        <div class="title">스킬 추이 (정확도 %)</div>
+        <div class="r">
+          <select id="skillSelect"></select>
+          <button class="btn" id="skillAllBtn">Top-변동 스킬 추천</button>
+          <button class="btn" id="startSkillReviewBtn">이 스킬로 리뷰 시작</button>
+        </div>
+      </div>
+      <canvas id="skillLine" height="160"></canvas>
+    </div>
+    <div class="card">
+      <div class="head">
+        <div class="title">스킬 히트맵 (정확도 %)</div>
+        <div class="legend">
+          <span class="cell c-0">0</span>0–50
+          <span class="cell c-50">50</span>50–70
+          <span class="cell c-70">70</span>70–85
+          <span class="cell c-85">85</span>85–95
+          <span class="cell c-95">95</span>95–100
+        </div>
+      </div>
+      <div id="heatHdr" class="heatmap" style="grid-template-rows:auto"></div>
+      <div id="heatBody" class="heatmap"></div>
+    </div>
+  </div>
+
+  <!-- 시도 비교 + 상세 -->
+  <div class="card" style="margin-top:14px">
+    <div class="head">
+      <div class="title">시도 비교</div>
+      <div class="r">
+        <select id="cmpA"></select>
+        <span class="muted">vs</span>
+        <select id="cmpB"></select>
+        <button class="btn" id="cmpBtn">비교</button>
+        <button class="btn ghost" id="openDetailA">A 상세</button>
+        <button class="btn ghost" id="openDetailB">B 상세</button>
+      </div>
+    </div>
+   <div id="cmpOut" class="cmp-grid"></div>
+  </div>
+
+  <!-- 집계 결과 (추가) -->
+  <div class="card" id="aggCard" style="margin-top:14px; display:none">
+    <div class="head">
+      <div class="title">집계 요약</div>
+      <div class="muted" id="aggCaption" style="font-size:13px"></div>
+    </div>
+    <div id="aggOut"></div>
+  </div>
+
+  <!-- 시도 목록 -->
+  <div class="card" style="margin-top:14px">
+    <div class="head">
+      <div class="title">시도 목록</div>
+    </div>
+    <div class="muted" style="font-size:13px; margin-bottom:8px">최신순 · 행 클릭 시 상세</div>
+    <table id="attemptTable">
+      <thead>
+        <tr>
+          <th style="width:160px">일시</th>
+          <th>세트 제목</th>
+          <th>종류</th>
+          <th class="right">RW (원/환산)</th>
+          <th class="right">Math (원/환산)</th>
+          <th class="right">총점</th>
+          <th class="right">프리셋</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ===== 모달: 시도 상세 ===== -->
+<div class="backdrop" id="detailBack">
+  <div class="modal">
+    <button class="x" id="detailClose">닫기</button>
+    <div id="detailBody"></div>
+  </div>
+</div>
+
+<!-- ===== 모달: 커브 에디터 ===== -->
+<div class="backdrop" id="curveBack">
+  <div class="modal">
+    <button class="x" id="curveClose">닫기</button>
+    <div class="head"><div class="title">커브 프리셋 편집/추가</div></div>
+    <div class="r" style="margin-bottom:8px">
+      <label class="muted">프리셋 선택:</label>
+      <select id="editPreset"></select>
+      <input id="newPresetName" type="text" placeholder="새 프리셋 이름"/>
+      <button class="btn" id="dupBtn">복사→새이름</button>
+      <button class="btn bad" id="delBtn">삭제</button>
+    </div>
+    <div class="grid" style="grid-template-columns:1fr 1fr; gap:12px">
+      <div>
+        <div class="muted" style="margin-bottom:6px">RW 포인트 (JSON, 예: [[0,200],[20,300],...])</div>
+        <textarea id="rwPoints" class="code"></textarea>
+      </div>
+      <div>
+        <div class="muted" style="margin-bottom:6px">Math 포인트 (JSON)</div>
+        <textarea id="mathPoints" class="code"></textarea>
+      </div>
+    </div>
+    <div class="r" style="margin-top:10px">
+      <button class="btn" id="saveCurveBtn">저장</button>
+      <span class="muted">※ x≤100 → 정답률(%), x>100 → 맞힌개수 도메인</span>
+    </div>
+  </div>
+</div>
+
+<!-- 토스트 -->
+<div id="toast" class="toast" aria-live="polite" aria-atomic="true" role="status"></div>
+
+<!-- 동기화 모듈 (순서 중요: sync.js → dashboard.js) -->
+<script src="./sync.js"></script>
+<script src="./assets/dashboard.js"></script>
+
+<!-- Firebase SDKs (필요 시) -->
+<script src="https://www.gstatic.com/firebasejs/10.12.4/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.4/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.4/firebase-firestore-compat.js"></script>
+
+</body>
+</html>
