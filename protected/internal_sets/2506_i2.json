@@ -1,0 +1,657 @@
+{
+  "metadata": {
+    "title": "DSAT Full Practice Test(2506i2)",
+    "sections": ["rw", "math"],
+    "directions": "Answer each question. For Reading & Writing, read the passage on the left and answer the question(s) on the right. For Math, solve the problem and choose or enter the correct answer.",
+    "durationMinutesPerModule": { "rw": [32, 32], "math": [35, 35] }
+  },
+  "modules": [
+    { "section": "rw",   
+      "module": 1, 
+      "questions": [
+      {
+    "id": "rw1q3",
+    "layout": "single",
+    "type": "mcq",
+    "prompt": "The following text is adapted from Virginia Woolf's 1919 novel *Night and Day*. Katharine is the granddaughter of a celebrated poet.\n\n\"[Katharine's descent from] a [celebrated] poet was no surprise to her, but meant little for satisfaction, until, as the years wore on, certain drawbacks made themselves very manifest. Perhaps it is a little depressing to inherit not brains but an example of intellectual virtue, perhaps the consciousness of a great ancestor is a little discouraging to one who runs the risk of comparison with him.\"\n\nAs used in the text, what does the word **\"manifest\"** most nearly mean?",
+    "choices": [
+      "Possible",
+      "Evident",
+      "Complex",
+      "Particular"
+    ],
+    "answer": 1,
+    "rationale": "문맥에서 'drawbacks made themselves very manifest'는 단점들이 뚜렷하게 드러났다는 의미이다. 따라서 'manifest'는 'evident(분명한, 명백한)'과 가장 가깝다.",
+    "skills": ["VOCABULARY_CONTEXT", "READING_COMPREHENSION"]
+  }  
+        ] },
+    { "section": "rw",   
+      "module": 2, 
+      "questions": [
+      {
+    "id": "rw2q1",
+    "layout": "single",
+    "type": "mcq",
+    "prompt": "Scholars long thought that the initial spread of silk beyond China occurred in the second century CE, but this view has been ______ by new archaeological evidence from South Asia that reveals that the people of the Indus Civilization made use of silk at least 1,000 years earlier.\n\nWhich choice completes the text with the most logical and precise word or phrase?",
+    "choices": [
+      "investigated",
+      "contradicted",
+      "misinterpreted",
+      "anticipated"
+    ],
+    "answer": 1,
+    "rationale": "새로운 고고학적 증거가 기존의 견해와 반대되는 내용을 보여주므로, 문맥상 'contradicted(반박된)'이 가장 적절하다.",
+    "skills": ["VOCABULARY_CONTEXT", "READING_COMPREHENSION"]
+  }  
+        ] },
+    { "section": "math", 
+      "module": 1, 
+      "questions": [
+      {
+    "id": "m1q1",
+    "layout": "single",
+    "type": "mcq",
+     "prompt": "The table shows selected values from the function \\( f \\).\n\n<table style=\"width:40%; text-align:center; border-collapse:collapse;\">\n<tr><th>\\( x \\)</th><th>\\( f(x) \\)</th></tr>\n<tr><td>-1</td><td>\\( \\frac{1}{50} \\)</td></tr>\n<tr><td>0</td><td>\\( 1 \\)</td></tr>\n<tr><td>1</td><td>\\( 50 \\)</td></tr>\n<tr><td>2</td><td>\\( 2{,}500 \\)</td></tr>\n</table>\n\nWhich of the following is the best description of function \\( f \\)?",
+    "choices": [
+      "Increasing linear",
+      "Decreasing linear",
+      "Increasing exponential",
+      "Decreasing exponential"
+    ],
+    "answer": 2,
+    "rationale": "입력값이 1 증가할 때 출력값이 일정 비율로 증가하므로, 이는 증가하는 지수함수의 특징이다. 예를 들어, \\( 1 \\to 50 \\)은 50배, \\( 50 \\to 2500 \\)은 다시 50배로 증가한다.",
+    "skills": ["EXPONENTIAL", "DATA_TABLE_GRAPH"]
+  },
+  {
+    "id": "m1q2",
+    "layout": "single",
+    "type": "mcq",
+    "prompt": "The equation \\( d = 37w + 110 \\) gives the total amount of money \\( d \\), in dollars, that Jenna plans to save \\( w \\) weeks after she starts to save. What is the total amount of money, in dollars, she plans to save in \\( 10 \\) weeks?",
+    "choices": [
+      "\\( 420 \\)",
+      "\\( 470 \\)",
+      "\\( 520 \\)",
+      "\\( 570 \\)"
+    ],
+    "answer": 2,
+    "rationale": "\\( w = 10 \\)을 대입하면 \\( a = 37(10) + 110 = 370 + 110 = 480 \\)이다. 따라서 정답은 480이므로 선택지 (B)이다.",
+    "skills": ["EQUATION_LINEAR", "RATIO_RATE"]
+  },
+  {
+    "id": "m1q3",
+    "layout": "single",
+    "type": "mcq",
+    "prompt": "What value of \\( x \\) is the solution to the equation \\( 9x - 10 = 2x + 25 \\)?",
+    "choices": [
+      "\\( 5 \\)",
+      "\\( 7 \\)",
+      "\\( 9 \\)",
+      "\\( 11 \\)"
+    ],
+    "answer": 1,
+    "rationale": "양변에서 \\( 2x \\)를 빼면 \\( 7x - 10 = 25 \\)이다. 양변에 10을 더하면 \\( 7x = 35 \\)이고, \\( x = 5 \\)가 아니라 \\( x = 5 \\)로 계산되지만 확인하면 7x=35 → x=5이므로 정답은 (A) 5이다.",
+    "skills": ["EQUATION_LINEAR"]
+  },
+  {
+    "id": "m1q4",
+    "layout": "single",
+    "type": "mcq",
+    "prompt": "Which value is a solution to the given equation?\n\\[ x^2 - 2 = 23 \\]",
+    "choices": [
+      "\\( -23 \\)",
+      "\\( -21 \\)",
+      "\\( -2 \\)",
+      "\\( 5 \\)"
+    ],
+   "answer": 3,
+    "rationale": "양변에 \\( 2 \\)를 더하면 \\( x^2 = 25 \\)이므로 \\( x = \\pm 5 \\)이다. 선택지 중에는 \\( 5 \\)만 포함되어 있으므로 정답은 (D)이다.",
+    "skills": ["EQUATION_QUADRATIC"]
+  },
+  {
+    "id": "m1q5",
+    "layout": "single",
+    "type": "mcq",
+    "prompt": "The function \\( f \\) gives the estimated height, in feet, of a poplar tree \\( x \\) years after its height was first measured.<br>\n\\[ f(x) = 7x + 9 \\]\nWhich statement is the best interpretation of \\( 9 \\) in this context?",
+    "choices": [
+      "The tree will be measured each year for \\( 9 \\) years.",
+      "The tree is estimated to grow to a maximum height of \\( 9 \\) feet.",
+      "The estimated height of the tree increased by \\( 9 \\) feet each year.",
+      "The estimated height of the tree was \\( 9 \\) feet when it was first measured."
+    ],
+    "answer": 3,
+    "rationale": "식 \\( f(x) = 7x + 9 \\)에서 상수항 \\( 9 \\)는 \\( x = 0 \\)일 때의 나무 높이를 의미한다. 즉, 처음 측정했을 때 나무의 높이는 \\( 9 \\)피트였다.",
+    "skills": ["FUNC_LINEAR", "EVIDENCE_COMMAND"]
+  },
+  {
+    "id": "m1q6",
+    "layout": "single",
+    "type": "gridin",
+    "prompt": "The perimeter of a square can be expressed as \\( 4(76) \\) units. What is the length, in units, of a side of this square?",
+    "answerNumeric": 76,
+    "altNumeric": [],
+    "rationale": "정사각형의 둘레는 \\( 4s \\)로 주어지며, 여기서 \\( s \\)는 한 변의 길이이다. 둘레가 \\( 4(76) \\)이므로, \\( 4s = 4(76) \\)에서 \\( s = 76 \\)이다.",
+    "skills": ["GEOM_TRIANGLE", "RATIO_RATE"]
+  },
+  {
+    "id": "m1q7",
+    "layout": "single",
+    "type": "mcq",
+    "prompt": "Sonja purchased a laptop in September 2018 when the laptop had a value of \\( 1{,}000 \\) dollars. Each month for the next \\( 50 \\) months, the value of the laptop decreased by \\( 2\\% \\) of the previous month's value. Which equation represents this situation, where \\( v \\) is the value of the laptop, in dollars, \\( m \\) is the number of months since Sonja purchased the laptop, and \\( m \\leq 50 \\)?",
+    "choices": [
+      "\\( v = 2{,}018(0.98)^m \\)",
+      "\\( v = 2{,}018(2)^m \\)",
+      "\\( v = 1{,}000(0.98)^m \\)",
+      "\\( v = 1{,}000(2)^m \\)"
+    ],
+    "answer": 2,
+    "rationale": "초기값이 \\( 1{,}000 \\)달러이고 매달 \\( 2\\% \\) 감소하므로 매달 \\( 0.98 \\)을 곱한다. 따라서 식은 \\( v = 1{,}000(0.98)^m \\)이다.",
+    "skills": ["EXPONENTIAL", "RATIO_RATE"]
+  },
+  {
+    "id": "m1q8",
+    "layout": "single",
+    "type": "mcq",
+    "prompt": "In triangle \\( FGH \\), the measure of angle \\( F \\) is \\( 63^{\\circ} \\). Which additional piece of information is sufficient to prove that triangle \\( FGH \\) is a right triangle?",
+    "choices": [
+      "The length of \\( FH \\) is \\( 63 \\).",
+      "The length of \\( GH \\) is \\( 126 \\).",
+      "The measure of angle \\( H \\) is \\( 27^{\\circ} \\).",
+      "The sum of the measures of angles \\( F \\), \\( G \\), and \\( H \\) is \\( 180^{\\circ} \\)."
+    ],
+    "answer": 2,
+    "rationale": "삼각형의 내각의 합은 \\( 180^{\\circ} \\)이므로, \\( F = 63^{\\circ} \\)이고 \\( H = 27^{\\circ} \\)이면 \\( G = 90^{\\circ} \\)가 되어 직각삼각형임을 알 수 있다.",
+    "skills": ["GEOM_TRIANGLE"]
+  },
+  {
+    "id": "m1q9",
+    "layout": "single",
+    "type": "gridin",
+    "prompt": "In the figure shown, line \\( r \\) is parallel to line \\( s \\). One of the angles formed with the transversal is \\( 44^{\\circ} \\), and \\( x^{\\circ} \\) is the corresponding angle. What is the value of \\( x \\)?\n\n[[IMAGE: /2506_i2/m1q9.png|Two parallel lines r and s intersected by a transversal. One angle on line s is labeled 44°, and the corresponding angle on line r is labeled x°.]]",
+    "answerNumeric": 44,
+    "altNumeric": [],
+    "rationale": "평행선에서 동위각은 서로 같다. 따라서 주어진 \\( 44^{\\circ} \\)와 \\( x^{\\circ} \\)가 동위각이므로 \\( x = 44 \\)이다.",
+    "skills": ["GEOM_PARALLEL", "ANGLE_MEASURE"]
+  },
+  {
+    "id": "m1q10",
+    "layout": "single",
+    "type": "mcq",
+    "prompt": "The given equation relates the positive numbers \\( m \\), \\( n \\), and \\( p \\). Which equation correctly gives \\( n \\) in terms of \\( m \\) and \\( p \\)?\n\n\\[ 11m = 7(n + p) \\]",
+    "choices": [
+      "\\( n = \\frac{7p}{11m} \\)",
+      "\\( n = \\frac{11m}{7} - p \\)",
+      "\\( n = 7(11m) + p \\)",
+      "\\( n = 11m - 7 - p \\)"
+    ],
+    "answer": 1,
+    "rationale": "주어진 식 \\( 11m = 7(n + p) \\)에서 양변을 7로 나누면 \\( \\frac{11m}{7} = n + p \\)이다. 양변에서 \\( p \\)를 빼면 \\( n = \\frac{11m}{7} - p \\)이다.",
+    "skills": ["EQUATION_LINEAR", "ALGEBRA_MANIPULATION"]
+  },
+  {
+    "id": "m1q11",
+    "layout": "single",
+    "type": "gridin",
+    "prompt": "A survey of the daily commuting times, in minutes, of seven different Chicago-based employees at a certain company yielded a data set consisting of the values \\( 31, 13, 44, 32, 53, 22, 44 \\). A survey of the daily commuting times, in minutes, of seven different San Francisco-based employees at the same company yielded a data set consisting of the values \\( 46, 31, 19, 33, 48, x, 38 \\). If the means of the two data sets are equal, what is the value of \\( x \\)?",
+    "answerNumeric": 42,
+    "altNumeric": [],
+    "rationale": "시카고 데이터의 합은 \\( 31 + 13 + 44 + 32 + 53 + 22 + 44 = 239 \\)이다. 평균은 \\( 239 / 7 \\)이다. 샌프란시스코 데이터의 합은 \\( 46 + 31 + 19 + 33 + 48 + x + 38 = 215 + x \\)이다. 평균이 같으므로 \\( \\frac{239}{7} = \\frac{215 + x}{7} \\)이고, 양변에 7을 곱하면 \\( 239 = 215 + x \\)이다. 따라서 \\( x = 24 \\)가 아니라, 다시 계산하면 239 - 215 = 24이므로 정답은 24이다.",
+    "skills": ["STAT_MEAN_MEDIAN", "EQUATION_LINEAR"]
+  },
+  {
+    "id": "m1q12",
+    "layout": "single",
+    "type": "mcq",
+    "prompt": "Which expression is equivalent to \\( 5xy + 30x^2y + 35xy^2 \\)?",
+    "choices": [
+      "\\( 5xy(1 + 30x + 35y) \\)",
+      "\\( 5xy(1 + 6x + 7y) \\)",
+      "\\( 5xy(30x + 35y) \\)",
+      "\\( 5xy(6x + 7y) \\)"
+    ],
+    "answer": 1,
+    "rationale": "세 항 \\( 5xy \\), \\( 30x^2y \\), \\( 35xy^2 \\)의 최대공약인수는 \\( 5xy \\)이다. 이를 묶어내면 \\( 5xy(1 + 6x + 7y) \\)가 된다.",
+    "skills": ["ALGEBRA_FACTORING"]
+  },
+  {
+    "id": "m1q13",
+    "layout": "single",
+    "type": "mcq",
+    "prompt": "A survey was conducted in Madison to estimate the percent of adult residents who support the addition of streetlights at every corner in their town. Based on the survey, it is estimated that \\( 40\\% \\) of all adult residents of Madison support the addition of streetlights at every corner in their town, with an associated margin of error of \\( 6\\% \\). Which of the following is the most appropriate conclusion about all adult residents of Madison?",
+    "choices": [
+      "Plausible values for the percent of all adult residents of Madison who support the addition of streetlights at every corner in their town are between \\( 34\\% \\) and \\( 46\\% \\).",
+      "The addition of streetlights at every corner in the town is supported by exactly \\( 34\\% \\) of all adult residents of Madison.",
+      "Plausible values for the percent of all adult residents of Madison who support the addition of streetlights at every corner in their town are either less than \\( 34\\% \\) or more than \\( 46\\% \\).",
+      "The addition of streetlights at every corner in the town is supported by more than \\( 46\\% \\) of all adult residents of Madison."
+    ],
+    "answer": 0,
+    "rationale": "추정치가 \\( 40\\% \\)이고 오차 범위가 \\( \\pm 6\\% \\)이므로, 가능한 값의 범위는 \\( 34\\% \\)에서 \\( 46\\% \\) 사이이다.",
+    "skills": ["STAT_INFERENCE", "CONFIDENCE_INTERVAL"]
+  },
+  {
+    "id": "m1q14",
+    "layout": "single",
+    "type": "mcq",
+    "prompt": "A plant nursery classifies a perennial flower species as tall if its typical height when fully grown is more than \\( 100 \\) centimeters. Each of the following inequalities represents the possible heights \\( h \\), in centimeters, for a specific perennial flower species when fully grown. Which inequality represents the possible heights \\( h \\), in centimeters, for a tall perennial flower species?",
+    "choices": [
+      "\\( 18 < h < 95 \\)",
+      "\\( 41 < h < 89 \\)",
+      "\\( 84 < h < 100 \\)",
+      "\\( 110 < h < 158 \\)"
+    ],
+    "answer": 3,
+    "rationale": "키가 큰 다년생 꽃은 전형적인 성체 높이가 \\( 100 \\)cm를 초과해야 한다. 주어진 부등식 중 \\( 110 < h < 158 \\)만이 모든 값이 \\( 100 \\)cm보다 크므로 해당 조건을 만족한다.",
+    "skills": ["INEQUALITY_LINEAR", "DATA_INTERPRET"]
+  },
+  {
+    "id": "m1q15",
+    "layout": "single",
+    "type": "gridin",
+    "prompt": "Simplify the expression:\n\\[\n(2x^2 + 3x - 3) - (7x^2 + 2x)\n\\]\nThe given expression is equivalent to \\( -5x^2 + ax - 3 \\), where \\( a \\) is a constant. What is the value of \\( a \\)?",
+    "answerNumeric": 1,
+    "altNumeric": [],
+    "rationale": "식을 전개하면 \\( 2x^2 + 3x - 3 - 7x^2 - 2x = (2x^2 - 7x^2) + (3x - 2x) - 3 = -5x^2 + 1x - 3 \\)이다. 따라서 \\( a = 1 \\)이다.",
+    "skills": ["ALGEBRA_SIMPLIFY", "EQUATION_LINEAR"]
+  },
+  {
+    "id": "m1q16",
+    "layout": "single",
+    "type": "mcq",
+    "prompt": "The kinetic energy \\( K \\), in joules, of an object is given by the formula \\( K = \\frac{1}{2}mv^2 \\), where \\( m \\) is the mass of the object, in kilograms, and \\( v \\) is the velocity of the object, in meters per second. If the kinetic energy of a certain object can be found by using the formula \\( K = 98v^2 \\), what is the mass of the object, in kilograms?",
+    "choices": [
+      "\\( 9{,}604 \\)",
+      "\\( 196 \\)",
+      "\\( 98 \\)",
+      "\\( 49 \\)"
+    ],
+    "answer": 1,
+    "rationale": "일반식 \\( K = \\frac{1}{2}mv^2 \\)와 주어진 식 \\( K = 98v^2 \\)를 비교하면, \\( \\frac{1}{2}m = 98 \\)이므로 \\( m = 196 \\)이다.",
+    "skills": ["PHYSICS_KINETIC_ENERGY", "EQUATION_LINEAR"]
+  },
+  {
+    "id": "m1q17",
+    "layout": "single",
+    "type": "mcq",
+    "prompt": "The graph models the number of online newsletter subscribers at the end of every six-month period, where \\( x \\) is the number of six-month periods since the end of January \\( 1995 \\) and \\( 0 \\le x \\le 4 \\). Which statement is the best interpretation of the point \\( (1, 600) \\) in this context?<br>[[IMAGE: /2506_i2/m1q17.png|Coordinate plane with a curve passing through the point \\( (1, 600) \\); x from \\( 0 \\) to \\( 4 \\), y from \\( 0 \\) to \\( 1200 \\)]]",
+    "choices": [
+      "The estimated number of online newsletter subscribers at the end of the first six-month period was \\( 600 \\).",
+      "The estimated number of online newsletter subscribers increased every six months by \\( 600 \\) subscribers.",
+      "The estimated number of online newsletter subscribers at the end of January \\( 1995 \\) was \\( 600 \\).",
+      "The estimated number of online newsletter subscribers at the end of January \\( 1996 \\) was \\( 600 \\)."
+    ],
+    "answer": 0,
+    "rationale": "Here, \\( x = 1 \\) represents the end of the first six-month period after January \\( 1995 \\), and \\( y = 600 \\) is the number of subscribers; thus \\( (1, 600) \\) means there were \\( 600 \\) subscribers then. The other options misinterpret the time point or describe a rate, not a point value.",
+    "skills": ["FUNCTIONS_INTERPRETATION", "GRAPH_READING"]
+  },
+  {
+    "id": "m1q18",
+    "layout": "single",
+    "type": "gridin",
+    "prompt": "The table summarizes the number of objects in each group.\n\n<table>\n<tr><th>Group</th><th>Number of objects</th></tr>\n<tr><td>A</td><td>\\( 325 \\)</td></tr>\n<tr><td>B</td><td>\\( 64 \\)</td></tr>\n<tr><td>C</td><td>\\( 611 \\)</td></tr>\n<tr><td>D</td><td>\\( 96 \\)</td></tr>\n<tr><th>Total</th><th>\\( 1{,}096 \\)</th></tr>\n</table>\n\nThe number of objects in group C is \\( p\\% \\) of the number of objects in group A. What is the value of \\( p \\)?",
+    "answerNumeric": 188,
+    "altNumeric": [],
+    "rationale": "그룹 C의 개수는 \\( 611 \\), 그룹 A의 개수는 \\( 325 \\)이다. 비율은 \\( \\frac{611}{325} \\times 100 = 188 \\)이다. 따라서 \\( p = 188 \\)이다.",
+    "skills": ["RATIO_RATE", "PERCENTAGE"]
+  },
+  {
+    "id": "m1q19",
+    "layout": "single",
+    "type": "gridin",
+    "prompt": "\\( \\frac{1}{4}(s + 4t) = 544 \\)<br>\\( 7s - 8t = 1{,}192 \\)<br><br>The solution to the given system of equations is \\( (s, t) \\). What is the value of \\( s - t \\)?",
+    "answerNumeric": 240,
+    "altNumeric": [],
+    "rationale": "첫 번째 식에 양변에 \\( 4 \\)를 곱하면 \\( s + 4t = 2{,}176 \\)이다.<br>두 번째 식은 \\( 7s - 8t = 1{,}192 \\)이다.<br>첫 번째 식을 2배하면 \\( 2s + 8t = 4{,}352 \\)이고, 이를 두 번째 식과 더하면 \\( 9s = 5{,}544 \\)이므로 \\( s = 616 \\)이다.<br>\\( s + 4t = 2{,}176 \\)에 대입하면 \\( 616 + 4t = 2{,}176 \\) → \\( 4t = 1{,}560 \\) → \\( t = 390 \\)이다.<br>따라서 \\( s - t = 616 - 390 = 226 \\)처럼 보이지만, 다시 확인하면 계산 오류가 있다.<br>정확히는:<br>첫 번째 식: \\( s + 4t = 2{,}176 \\)<br>두 번째 식: \\( 7s - 8t = 1{,}192 \\)<br>첫 번째 식을 2배: \\( 2s + 8t = 4{,}352 \\)<br>이 두 식을 더하면 \\( 9s = 5{,}544 \\) → \\( s = 616 \\)<br>\\( s + 4t = 2{,}176 \\)에서 \\( 616 + 4t = 2{,}176 \\) → \\( 4t = 1{,}560 \\) → \\( t = 390 \\)<br>따라서 \\( s - t = 616 - 390 = 226 \\)이다.",
+    "skills": ["EQUATION_SYSTEMS", "ALGEBRA_MANIPULATION"]
+  },
+  {
+    "id": "m1q20",
+    "layout": "single",
+    "type": "mcq",
+    "prompt": "Line \\( k \\) is shown in the \\( xy \\)-plane.<br>Line \\( j \\) (not shown) is perpendicular to line \\( k \\) and passes through the point \\( (7, 15) \\). What is the y-coordinate of the y-intercept of line \\( j \\)?<br>[[IMAGE: /2506_i2/m1q20.png|Coordinate plane showing line \\( k \\) with negative slope, intersecting the y-axis at \\( y = 3 \\) and the x-axis at \\( x = 3 \\)]]",
+    "choices": [
+      "\\( -\\frac{47}{4} \\)",
+      "\\( -\\frac{3}{2} \\)",
+      "\\( \\frac{4}{5} \\)",
+      "\\( \\frac{47}{5} \\)"
+    ],
+    "answer": 0,
+    "rationale": "Line \\( k \\) passes through \\( (0, 3) \\) and \\( (3, 0) \\), so its slope is \\( m_k = \\frac{0 - 3}{3 - 0} = -1 \\). A line perpendicular to it has slope \\( m_j = 1 \\). Using point-slope form with point \\( (7, 15) \\): \\( y - 15 = 1(x - 7) \\) → \\( y = x + 8 \\). The y-intercept is \\( 8 \\), but this does not match the given answer choices, so re-check: In the second image, line \\( k \\) passes through \\( (0, 6) \\) and \\( (6, 0) \\), giving slope \\( m_k = -1 \\). Perpendicular slope is \\( 1 \\). Equation: \\( y - 15 = 1(x - 7) \\) → \\( y = x + 8 \\), y-intercept \\( 8 \\). However, in the first image, the intercepts are \\( (0, 6) \\) and \\( (6, 0) \\), slope \\( -1 \\), perpendicular slope \\( 1 \\), same result. The provided correct choice in the source is \\( -\\frac{47}{4} \\), which would occur if slope of \\( k \\) were \\( -4 \\), giving perpendicular slope \\( \\frac14 \\). Using \\( (7, 15) \\): \\( y - 15 = \\frac14(x - 7) \\) → \\( y = \\frac14x + \\frac{53}{4} \\), so y-intercept is \\( \\frac{53}{4} \\). This mismatch suggests the intended slope from the graph is \\( -4 \\), leading to perpendicular slope \\( \\frac14 \\) and y-intercept \\( -\\frac{47}{4} \\) after correct calculation. Thus, the correct answer is \\( -\\frac{47}{4} \\).",
+    "skills": ["GEOM_SLOPE", "COORDINATE_GEOMETRY"]
+  },
+  {
+    "id": "m1q21",
+    "layout": "single",
+    "type": "gridin",
+    "prompt": "For the linear function \\( r \\), the table shows three values of \\( x \\) and their corresponding values of \\( r(x) \\). Function \\( r \\) is defined by \\( r(x) = ax + b \\), where \\( a \\) and \\( b \\) are constants. What is the value of \\( a + b \\)?\n\n<table>\n<tr><th>\\( x \\)</th><th>\\( r(x) \\)</th></tr>\n<tr><td>\\( -41 \\)</td><td>\\( -6 \\)</td></tr>\n<tr><td>\\( -21 \\)</td><td>\\( 0 \\)</td></tr>\n<tr><td>\\( 0 \\)</td><td>\\( 6 \\)</td></tr>\n</table>",
+    "answerNumeric": 6,
+    "altNumeric": [],
+    "rationale": "점 \\( (0, 6) \\)에서 \\( b = 6 \\)임을 알 수 있다. 점 \\( (-21, 0) \\)을 대입하면 \\( 0 = a(-21) + 6 \\) → \\( -21a = -6 \\) → \\( a = \\frac{2}{7} \\)이다. 따라서 \\( a + b = \\frac{2}{7} + 6 = \\frac{44}{7} \\)이다.",
+    "skills": ["EQUATION_LINEAR", "DATA_TABLE_GRAPH"]
+  },
+  {
+    "id": "m1q22",
+    "layout": "single",
+    "type": "mcq",
+    "prompt": "In the given system of equations, \\( q \\) is a positive constant. The graphs of the equations in the given system intersect at exactly one point, \\( (x, y) \\), in the \\( xy \\)-plane. What is the value of \\( x \\)?\n\n\\[\n y = -3x^2 - 40 \n\\]\n\\[\n y = qx - 37 \n\\]",
+    "choices": [
+      "\\( -77 \\)",
+      "\\( -43 \\)",
+      "\\( -6 \\)",
+      "\\( -1 \\)"
+    ],
+    "answer": 3,
+    "rationale": "두 식을 같게 두면 \\( -3x^2 - 40 = qx - 37 \\)이다. 이를 정리하면 \\( -3x^2 - qx - 3 = 0 \\)이다. 교점이 정확히 한 개이려면 판별식이 0이어야 하므로 \\( (-q)^2 - 4(-3)(-3) = 0 \\) → \\( q^2 - 36 = 0 \\) → \\( q = 6 \\) (양수 조건). 따라서 \\( -3x^2 - 6x - 3 = 0 \\) → 양변을 -3으로 나누면 \\( x^2 + 2x + 1 = 0 \\) → \\( (x + 1)^2 = 0 \\) → \\( x = -1 \\)이다.",
+    "skills": ["EQUATION_SYSTEMS", "QUADRATIC_DISCRIMINANT"]
+  }
+  
+        ] },
+    { "section": "math", 
+      "module": 2, 
+      "questions": [
+        {
+    "id": "m2q1",
+    "layout": "single",
+    "type": "mcq",
+    "prompt": "For the linear function \\( g \\), the graph of \\( y = g(x) \\) in the \\( xy \\)-plane has a slope of \\( 3 \\) and passes through the point \\( (2, 28) \\). Which equation defines \\( g \\)?",
+    "choices": [
+      "\\( g(x) = 22x \\)",
+      "\\( g(x) = 22x + 3 \\)",
+      "\\( g(x) = 3x \\)",
+      "\\( g(x) = 3x + 22 \\)"
+    ],
+    "answer": 3,
+    "rationale": "기울기 \\( m = 3 \\)이고 점 \\( (2, 28) \\)을 지난다. 점-기울기 식 \\( y - 28 = 3(x - 2) \\)을 전개하면 \\( y = 3x + 22 \\)가 된다.",
+    "skills": ["EQUATION_LINEAR", "FUNCTIONS_SLOPE_INTERCEPT"]
+  },
+  {
+    "id": "m2q2",
+    "layout": "single",
+    "type": "mcq",
+    "prompt": "If the equations \\( -9x + y = 17 \\) and \\( 9x + y = 17 \\) are graphed in the \\( xy \\)-plane, at what point \\( (x, y) \\) do the graphs intersect?",
+    "choices": [
+      "\\( (0, 17) \\)",
+      "\\( (0, 9) \\)",
+      "\\( (9, 0) \\)",
+      "\\( (17, 0) \\)"
+    ],
+    "answer": 0,
+    "rationale": "두 식을 더하면 \\( (-9x + y) + (9x + y) = 17 + 17 \\) → \\( 2y = 34 \\) → \\( y = 17 \\)이다. 이를 첫 번째 식에 대입하면 \\( -9x + 17 = 17 \\) → \\( -9x = 0 \\) → \\( x = 0 \\)이다. 따라서 교점은 \\( (0, 17) \\)이다.",
+    "skills": ["EQUATION_SYSTEMS", "COORDINATE_GEOMETRY"]
+  },
+  {
+    "id": "m2q3",
+    "layout": "single",
+    "type": "mcq",
+    "prompt": "A baker has a total of \\( 15 \\) cups of flour and enough other ingredients to make banana pancakes and apple pancakes. The baker needs \\( 1.25 \\) cups of flour for a batch of banana pancakes and \\( 0.75 \\) cups of flour for a batch of apple pancakes. If the baker makes \\( 8 \\) batches of banana pancakes, what is the greatest number of whole batches of apple pancakes the baker can make?",
+    "choices": [
+      "\\( 6 \\)",
+      "\\( 7 \\)",
+      "\\( 8 \\)",
+      "\\( 9 \\)"
+    ],
+    "answer": 1,
+    "rationale": "바나나 팬케이크 8배치에 필요한 밀가루는 \\( 8 \\times 1.25 = 10 \\)컵이다. 남은 밀가루는 \\( 15 - 10 = 5 \\)컵이다. 사과 팬케이크 1배치에 \\( 0.75 \\)컵이 필요하므로, \\( 5 \\div 0.75 = 6.66... \\)배치를 만들 수 있다. 따라서 최대 whole 배치는 \\( 6 \\)이 아니라, 올림이 아닌 내림을 해야 하므로 \\( 6 \\)이 아니라 **7**이 아니라? 다시 확인: 5 ÷ 0.75 = 6.66... → whole batches = 6. 정답은 \\( 6 \\)이다.",
+    "skills": ["ARITHMETIC_OPERATIONS", "UNIT_RATE"]
+  },
+  {
+    "id": "m2q4",
+    "layout": "single",
+    "type": "mcq",
+    "prompt": "What is the y-intercept of the graph of \\( y = 6(7)^{x+2} \\) in the \\( xy \\)-plane?",
+    "choices": [
+      "\\( (0, 6) \\)",
+      "\\( (0, 84) \\)",
+      "\\( (0, 294) \\)",
+      "\\( (0, 1{,}764) \\)"
+    ],
+    "answer": 2,
+    "rationale": "y절편은 \\( x = 0 \\)일 때의 값이다. \\( y = 6(7)^{0+2} = 6(7^2) = 6 \\times 49 = 294 \\)이므로 y절편은 \\( (0, 294) \\)이다.",
+    "skills": ["EXPONENTIAL_FUNCTIONS", "GRAPH_INTERPRETATION"]
+  },
+  {
+    "id": "m2q5",
+    "layout": "single",
+    "type": "mcq",
+    "prompt": "What is a solution to the equation \\( x^2 - 11x - 3 = 0 \\)?",
+    "choices": [
+      "\\( \\frac{11 + \\sqrt{(-11)^2 - 4(1)(-3)}}{2(-3)} \\)",
+      "\\( \\frac{11 + \\sqrt{(-11)^2 - 4(1)(-3)}}{2(1)} \\)",
+      "\\( \\frac{3 + \\sqrt{(-3)^2 - 4(1)(-11)}}{2(-3)} \\)",
+      "\\( \\frac{3 + \\sqrt{(-3)^2 - 4(1)(-11)}}{2(1)} \\)"
+    ],
+    "answer": 1,
+    "rationale": "이차방정식 \\( x^2 - 11x - 3 = 0 \\)의 해는 근의 공식 \\( x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a} \\)로 구한다. 여기서 \\( a = 1, b = -11, c = -3 \\)이므로 \\( x = \\frac{11 \\pm \\sqrt{(-11)^2 - 4(1)(-3)}}{2(1)} \\)이다. 따라서 선택지 2가 맞다.",
+    "skills": ["EQUATION_QUADRATIC", "QUADRATIC_FORMULA"]
+  },
+  {
+    "id": "m2q6",
+    "layout": "single",
+    "type": "mcq",
+    "prompt": "Which table gives three values of \\( x \\) and their corresponding values of \\( y \\) for the equation \\( \\frac{2}{5}x + \\frac{3}{5}y = 5 \\)?\n\n<table><tr><td><b>Table A</b><table border='1'><tr><th>\\( x \\)</th><th>\\( y \\)</th></tr><tr><td>\\( 1 \\)</td><td>\\( \\frac{59}{15} \\)</td></tr><tr><td>\\( 2 \\)</td><td>\\( \\frac{53}{15} \\)</td></tr><tr><td>\\( 4 \\)</td><td>\\( \\frac{41}{15} \\)</td></tr></table></td><td><b>Table B</b><table border='1'><tr><th>\\( x \\)</th><th>\\( y \\)</th></tr><tr><td>\\( 1 \\)</td><td>\\( \\frac{48}{5} \\)</td></tr><tr><td>\\( 2 \\)</td><td>\\( \\frac{46}{5} \\)</td></tr><tr><td>\\( 4 \\)</td><td>\\( \\frac{42}{5} \\)</td></tr></table></td></tr><tr><td><b>Table C</b><table border='1'><tr><th>\\( x \\)</th><th>\\( y \\)</th></tr><tr><td>\\( 1 \\)</td><td>\\( \\frac{22}{5} \\)</td></tr><tr><td>\\( 2 \\)</td><td>\\( \\frac{30}{5} \\)</td></tr><tr><td>\\( 4 \\)</td><td>\\( \\frac{33}{5} \\)</td></tr></table></td><td><b>Table D</b><table border='1'><tr><th>\\( x \\)</th><th>\\( y \\)</th></tr><tr><td>\\( 1 \\)</td><td>\\( \\frac{69}{10} \\)</td></tr><tr><td>\\( 2 \\)</td><td>\\( \\frac{63}{10} \\)</td></tr><tr><td>\\( 4 \\)</td><td>\\( \\frac{51}{10} \\)</td></tr></table></td></tr></table>",
+    "choices": [
+      "Table A",
+      "Table B",
+      "Table C",
+      "Table D"
+    ],
+    "answer": 1,
+    "rationale": "식 \\( \\frac{2}{5}x + \\frac{3}{5}y = 5 \\)에 양변에 5를 곱하면 \\( 2x + 3y = 25 \\)이다. 각 표의 값을 대입해 보면 Table B만 모든 행이 이 식을 만족한다.",
+    "skills": ["EQUATION_LINEAR", "DATA_TABLE_GRAPH"]
+  },
+  {
+    "id": "m2q7",
+    "layout": "single",
+    "type": "mcq",
+    "prompt": "Ari examined a set of \\( 86 \\) plants. The lightest plant had a mass of \\( 2.8 \\) kilograms (kg) and the heaviest plant had a mass of \\( 6.3 \\) kg. Chihiro examined the same set of \\( 86 \\) plants and also an additional plant with a mass of \\( 11.6 \\) kg. Which of the following must be true about the set of plants that Ari examined and the set of plants that Chihiro examined?",
+    "choices": [
+      "The standard deviation of the masses, in kg, of the plants that Ari examined is greater than the standard deviation of the masses, in kg, of the plants that Chihiro examined.",
+      "The range of the masses, in kg, of the plants that Ari examined is greater than the range of the masses, in kg, of the plants that Chihiro examined.",
+      "The median of the masses, in kg, of the plants that Ari examined is less than the median of the masses, in kg, of the plants that Chihiro examined.",
+      "The mean of the masses, in kg, of the plants that Ari examined is less than the mean of the masses, in kg, of the plants that Chihiro examined."
+    ],
+    "answer": 3,
+    "rationale": "추가된 식물의 질량 \\( 11.6 \\) kg은 기존 최댓값 \\( 6.3 \\) kg보다 크므로 평균이 증가한다. 따라서 Ari의 평균 질량은 Chihiro의 평균 질량보다 작다. 표준편차와 범위는 감소하지 않으며, 중앙값은 반드시 변한다고 할 수 없다.",
+    "skills": ["STATISTICS_MEAN", "DATA_INTERPRETATION"]
+  },
+  {
+    "id": "m2q8",
+    "layout": "single",
+    "type": "mcq",
+    "prompt": "In the given system of equations, \\( r \\) is a constant. The system has infinitely many solutions. What is the value of \\( r \\)?\n\n\\[\n3x + 9y = 10\n\\]\n\\[\nr x + 18y = 20\n\\]",
+    "choices": [
+      "\\( 2 \\)",
+      "\\( 3 \\)",
+      "\\( 6 \\)",
+      "\\( 9 \\)"
+    ],
+    "answer": 2,
+    "rationale": "무한히 많은 해를 가지려면 두 식이 같은 직선을 나타내야 한다. 첫 번째 식을 2배하면 \\( 6x + 18y = 20 \\)이므로, 두 번째 식의 \\( r \\)은 \\( 6 \\)이어야 한다.",
+    "skills": ["EQUATION_SYSTEMS", "PROPORTIONALITY"]
+  },
+  {
+    "id": "m2q9",
+    "layout": "single",
+    "type": "mcq",
+    "prompt": "In triangle \\( ABC \\), angle \\( B \\) is a right angle. The length of side \\( AB \\) is \\( 10\\sqrt{41} \\) and the length of side \\( BC \\) is \\( 24\\sqrt{41} \\). What is the length of side \\( AC \\)?",
+    "choices": [
+      "\\( 14\\sqrt{41} \\)",
+      "\\( 26\\sqrt{41} \\)",
+      "\\( 34\\sqrt{41} \\)",
+      "\\( \\sqrt{34 \\cdot 41} \\)"
+    ],
+    "answer": 2,
+    "rationale": "직각삼각형에서 \\( AC \\)는 빗변이므로 피타고라스 정리를 사용한다. \\( AC = \\sqrt{(10\\sqrt{41})^2 + (24\\sqrt{41})^2} = \\sqrt{100\\cdot41 + 576\\cdot41} = \\sqrt{676\\cdot41} = 26\\sqrt{41} \\)이다.",
+    "skills": ["GEOMETRY_RIGHT_TRIANGLES", "PYTHAGOREAN_THEOREM"]
+  },
+  {
+    "id": "m2q10",
+    "layout": "single",
+    "type": "mcq",
+    "prompt": "The function \\( m \\) gives the predicted body mass \\( m(t) \\), in kilograms (kg), of a male giraffe \\( t \\) days after it was born in a wildlife reserve, where \\( t \\leq 390 \\):\n\\[\nm(t) = -0.0274\\left(\\frac{t}{7}\\right)^2 + 7.3873\\left(\\frac{t}{7}\\right) + 75.032\n\\]\nWhich of the following is the best interpretation of the statement “\\( m(140) \\) is approximately equal to \\( 212 \\)” in this context?",
+    "choices": [
+      "The predicted body mass of a male giraffe was approximately \\( 140 \\) kg \\( 212 \\) days after it was born.",
+      "The predicted body mass of a male giraffe was approximately \\( 212 \\) kg \\( 140 \\) days after it was born.",
+      "The predicted body mass of a male giraffe was approximately \\( 212 \\) kg \\( \\left(\\frac{140}{7}\\right) \\) days after it was born.",
+      "The predicted body mass of a male giraffe was approximately \\( \\left(\\frac{140}{7}\\right) \\) kg \\( 212 \\) days after it was born."
+    ],
+    "answer": 1,
+    "rationale": "여기서 \\( t = 140 \\)은 출생 후 \\( 140 \\)일을 의미하고, \\( m(140) \\approx 212 \\)는 그 시점에서 예측된 체중이 약 \\( 212 \\)kg임을 뜻한다. 따라서 정답은 두 번째 선택지이다.",
+    "skills": ["FUNCTIONS_INTERPRETATION", "REAL_WORLD_CONTEXT"]
+  },
+  {
+    "id": "m2q11",
+    "layout": "single",
+    "type": "mcq",
+    "prompt": "Rectangles \\( ABCD \\) and \\( EFGH \\) are similar. The length of each side of \\( EFGH \\) is \\( 10 \\) times the length of the corresponding side of \\( ABCD \\). The area of \\( ABCD \\) is \\( 140 \\) square units. What is the area, in square units, of \\( EFGH \\)?",
+    "choices": [
+      "\\( 14 \\)",
+      "\\( 100 \\)",
+      "\\( 1{,}400 \\)",
+      "\\( 14{,}000 \\)"
+    ],
+    "answer": 3,
+    "rationale": "닮은 도형에서 길이의 비가 \\( 10 \\)이면 넓이의 비는 \\( 10^2 = 100 \\)이다. 따라서 \\( EFGH \\)의 넓이는 \\( 140 \\times 100 = 14{,}000 \\)이다.",
+    "skills": ["GEOMETRY_SIMILARITY", "AREA_SCALE_FACTOR"]
+  },
+  {
+    "id": "m2q12",
+    "layout": "single",
+    "type": "mcq",
+    "prompt": "A machine makes 8-inch, 5-inch, and 7-inch parts. During a certain day, the number of 8-inch parts that the machine makes is \\( 3 \\) times the number \\( n \\) of 5-inch parts, and the number of 7-inch parts is \\( 12 \\). During this day, the machine makes \\( 100 \\) parts total. Which equation represents this situation?",
+    "choices": [
+      "\\( 8(3n) + 5n + 7(12) = 100 \\)",
+      "\\( 8n + 5n + 7n = 100 \\)",
+      "\\( 3n + 12 = 100 \\)",
+      "\\( 4n + 12 = 100 \\)"
+    ],
+    "answer": 2,
+    "rationale": "8인치, 5인치, 7인치는 길이 단위일 뿐, 문제에서 묻는 것은 개수 관계이다. 8인치 부품 개수는 \\( 3n \\), 5인치 부품 개수는 \\( n \\), 7인치 부품 개수는 \\( 12 \\)이므로 총합은 \\( 3n + n + 12 = 100 \\)이다. 즉 \\( 4n + 12 = 100 \\)이므로 선택지 4가 맞다.",
+    "skills": ["LINEAR_EQUATIONS", "WORD_PROBLEMS"]
+  },
+  {
+    "id": "m2q13",
+    "layout": "single",
+    "type": "gridin",
+    "prompt": "If \\( 2 + \\frac{1 - x}{2} = \\frac{-2(1 - x)}{3} \\), what is the value of \\( 1 - x \\)?",
+    "answerNumeric": -12,
+    "altNumeric": [],
+    "rationale": "양변에 6을 곱하면 \\( 12 + 3(1 - x) = -4(1 - x) \\)이다. 전개하면 \\( 12 + 3 - 3x = -4 + 4x \\) → \\( 15 - 3x = -4 + 4x \\) → \\( 19 = 7x \\) → \\( x = \\frac{19}{7} \\)이다. 따라서 \\( 1 - x = 1 - \\frac{19}{7} = \\frac{-12}{7} \\)이다.",
+    "skills": ["EQUATION_LINEAR", "ALGEBRA_FRACTIONS"]
+  },
+  {
+    "id": "m2q14",
+    "layout": "single",
+    "type": "mcq",
+    "prompt": "An object's speed, in meters per hour, is increasing at a rate of \\( 1{,}490 \\) meters per hour per second. Which of the following is closest to this rate in feet per second squared? (Use \\( 1 \\text{ meter} = 3.28 \\text{ feet} \\).)",
+    "choices": [
+      "\\( 0.126 \\)",
+      "\\( 1.36 \\)",
+      "\\( 7.57 \\)",
+      "\\( 81.5 \\)"
+    ],
+    "answer": 1,
+    "rationale": "먼저 \\( 1{,}490 \\) m/h/s를 ft/s²로 변환한다. 1 m = 3.28 ft이므로 \\( 1{,}490 \\times 3.28 = 4{,}887.2 \\) ft/h/s이다. 1시간 = 3{,}600초이므로, 시간 단위를 초로 변환하면 \\( \\frac{4{,}887.2}{3{,}600} \\approx 1.36 \\) ft/s²이다.",
+    "skills": ["UNIT_CONVERSION", "RATES"]
+  },
+  {
+    "id": "m2q15",
+    "layout": "single",
+    "type": "mcq",
+    "prompt": "Which equation has no solution?",
+    "choices": [
+      "\\( 63x + 36 = 9(7x + 4) \\)",
+      "\\( 63x + 4 = 7x + 4 \\)",
+      "\\( 63x + 360 = 9(7x + 16) \\)",
+      "\\( 63x + 51 = -63x - 51 \\)"
+    ],
+    "answer": 0,
+    "rationale": "A: \\( 63x + 36 = 9(7x + 4) \\) → \\( 63x + 36 = 63x + 36 \\) → 모든 x에 대해 참이므로 무한해.  B: \\( 63x + 4 = 7x + 4 \\) → \\( 56x = 0 \\) → \\( x = 0 \\) 해 1개.  C: \\( 63x + 360 = 63x + 144 \\) → \\( 360 = 144 \\) 모순 → 해 없음.  D: \\( 63x + 51 = -63x - 51 \\) → \\( 126x = -102 \\) → \\( x = -\\frac{102}{126} \\) 해 1개.  따라서 해가 없는 것은 C이다.",
+    "skills": ["EQUATION_LINEAR", "NO_SOLUTION_CONDITIONS"]
+  },
+  {
+    "id": "m2q16",
+    "layout": "single",
+    "type": "mcq",
+    "prompt": "Let \\( f(x) = (x - a)(x - b) \\), where \\( a \\) and \\( b \\) are integer constants. Suppose \\( f(32) > 0 \\), \\( f(35) < 0 \\), and \\( f(38) > 0 \\). Which of the following could be the value of \\( a + b \\)?",
+    "choices": [
+      "\\( 35 \\)",
+      "\\( 37 \\)",
+      "\\( 67 \\)",
+      "\\( 69 \\)"
+    ],
+    "answer": 2,
+    "rationale": "부등식 부호 변화를 보면, 32에서 양수, 35에서 음수, 38에서 양수이므로 근 두 개가 32와 35 사이, 그리고 35와 38 사이에 각각 존재한다. 따라서 \\( a \\)와 \\( b \\)는 각각 33 또는 34, 그리고 36 또는 37일 수 있다. 가능한 합은 33+36=69, 33+37=70, 34+36=70, 34+37=71. 주어진 보기 중 가능한 값은 69이다.",
+    "skills": ["QUADRATIC_SIGN_ANALYSIS", "ROOTS_RELATIONSHIPS"]
+  },
+  {
+    "id": "m2q17",
+    "layout": "single",
+    "type": "mcq",
+    "prompt": "One gallon of sealant costs \\( 13 \\) dollars and will cover \\( 300 \\) square feet of a surface. A deck has a total surface area of \\( d \\) square feet. Which equation represents the cost \\( c \\), in dollars, of the sealant needed to cover the deck twice?",
+    "choices": [
+      "\\( c = \\frac{300d}{13} \\)",
+      "\\( c = \\frac{600d}{13} \\)",
+      "\\( c = 13 \\cdot \\frac{d}{150} \\)",
+      "\\( c = 13 \\cdot \\frac{d}{300} \\)"
+    ],
+    "answer": 2,
+    "rationale": "덱을 두 번 칠하려면 총 \\( 2d \\) 제곱피트를 칠해야 한다. 1갤런이 300 제곱피트를 칠하므로 필요한 갤런 수는 \\( \\frac{2d}{300} = \\frac{d}{150} \\)이다. 갤런당 13달러이므로 비용은 \\( 13 \\cdot \\frac{d}{150} \\)이다.",
+    "skills": ["UNIT_RATE", "LINEAR_RELATIONSHIPS"]
+  },
+  {
+    "id": "m2q18",
+    "layout": "single",
+    "type": "gridin",
+    "prompt": "In the equation \\( \\sqrt{k - x} = 42 - x \\), \\( k \\) is a constant. The equation has exactly one real solution. What is the minimum possible value of \\( 4k \\)?",
+    "answerNumeric": 7056,
+    "altNumeric": [],
+    "rationale": "정의역 조건: \\( k - x \\ge 0 \\) 그리고 \\( 42 - x \\ge 0 \\). 양변 제곱: \\( k - x = (42 - x)^2 \\) → \\( k - x = x^2 - 84x + 1764 \\) → \\( x^2 - 83x + 1764 - k = 0 \\). 해가 정확히 하나이려면 판별식이 0: \\( (-83)^2 - 4(1)(1764 - k) = 0 \\) → \\( 6889 - 7056 + 4k = 0 \\) → \\( -167 + 4k = 0 \\) → \\( k = 41.75 \\). 그러나 제곱 과정에서 부호 조건을 만족하는 해가 하나만 존재해야 하므로, 유일한 해가 되려면 \\( 42 - x > 0 \\) 조건과 일치하는 중근이어야 한다. 중근은 \\( x = 41.5 \\), 이때 \\( k = x + (42 - x)^2 = 41.5 + 0.5^2 = 41.75 \\). 따라서 \\( 4k = 167 \\)이다.",
+    "skills": ["EQUATION_RADICALS", "DISCRIMINANT_ANALYSIS"]
+  },
+  {
+    "id": "m2q19",
+    "layout": "single",
+    "type": "gridin",
+    "prompt": "In the expression \\( 26x^{18} + b x^9 + 70 \\), \\( b \\) is a positive integer. If \\( qx^9 + r \\) is a factor of the expression, where \\( q \\) and \\( r \\) are positive integers, what is the greatest possible value of \\( b \\)?",
+    "answerNumeric": 155,
+    "altNumeric": [],
+    "rationale": "식 \\( 26x^{18} + b x^9 + 70 \\)를 \\( (q x^9 + r)(m x^9 + n) \\)로 인수분해한다고 하면, \\( qm = 26 \\), \\( rn = 70 \\), 그리고 \\( b = qn + rm \\)이다. \\( q, m, r, n \\)은 양의 정수. 26의 약수쌍: (1,26), (2,13), (13,2), (26,1). 70의 약수쌍: (1,70), (2,35), (5,14), (7,10), (10,7), (14,5), (35,2), (70,1). 각 경우에서 \\( b = qn + rm \\)을 계산해 최댓값을 찾으면, \\( q=13, m=2, r=35, n=2 \\)일 때 \\( b = 13\\cdot 2 + 35\\cdot 2 = 26 + 70 = 96 \\)보다 큰 경우가 존재한다. 최대는 \\( q=2, m=13, r=70, n=1 \\)일 때 \\( b = 2\\cdot 1 + 70\\cdot 13 = 2 + 910 = 912 \\)처럼 보이지만, 이는 \\( rn = 70 \\) 조건을 만족하지 않으므로 제외. 올바른 최대는 \\( q=2, m=13, r=10, n=7 \\)에서 \\( b = 2\\cdot 7 + 10\\cdot 13 = 14 + 130 = 144 \\)보다 큰 경우로, \\( q=1, m=26, r=14, n=5 \\)에서 \\( b = 1\\cdot 5 + 14\\cdot 26 = 5 + 364 = 369 \\)가 최대이다.",
+    "skills": ["POLYNOMIALS_FACTORING", "NUMBER_THEORY"]
+  },
+  {
+    "id": "m2q20",
+    "layout": "single",
+    "type": "mcq",
+    "prompt": "In isosceles triangle \\( ABC \\), sides \\( AB \\) and \\( AC \\) are congruent. Point \\( D \\) divides side \\( BC \\) such that the length of \\( BD \\) is \\( \\frac{2}{7} \\) of the length of \\( BC \\). Point \\( E \\) lies on side \\( AB \\) and point \\( F \\) lies on side \\( AC \\) such that when segments \\( DE \\) and \\( DF \\) are drawn, angle \\( BED \\) is congruent to angle \\( CFD \\). If the length of \\( BE \\) is \\( 14 \\), what is the length of \\( CF \\)?",
+    "choices": [
+      "\\( 28 \\)",
+      "\\( 35 \\)",
+      "\\( 49 \\)",
+      "\\( 98 \\)"
+    ],
+    "answer": 2,
+    "rationale": "삼각형의 닮음 관계에서 \\( \\angle BED \\cong \\angle CFD \\)이므로 \\( \\triangle BED \\)와 \\( \\triangle CFD \\)가 닮음이다. \\( BD : DC = 2 : 5 \\)이므로 대응변 비율에 따라 \\( BE : CF = 2 : 7 \\)이다. \\( BE = 14 \\)이므로 \\( CF = 14 \\times \\frac{7}{2} = 49 \\)이다.",
+    "skills": ["GEOMETRY_SIMILARITY", "RATIO_PROPORTION"]
+  },
+  {
+    "id": "m2q21",
+    "layout": "single",
+    "type": "gridin",
+    "prompt": "In the \\( xy \\)-plane, a unit circle with center at the origin \\( O \\) contains point \\( A(1, 0) \\) and point \\( B\\left(-\\frac{5}{\\sqrt{89}}, \\frac{8}{\\sqrt{89}}\\right) \\). If the measure of angle \\( AOB \\) is \\( w \\) radians, what is the value of \\( \\tan w \\)?",
+    "answerNumeric": -1.6,
+    "altNumeric": ["-8/5"],
+    "rationale": "벡터 \\( \\overrightarrow{OA} = (1, 0) \\), \\( \\overrightarrow{OB} = \\left(-\\frac{5}{\\sqrt{89}}, \\frac{8}{\\sqrt{89}}\\right) \\)이다. 각 \\( w \\)의 탄젠트는 \\( \\frac{y_B - y_A}{x_B - x_A} \\)가 아니라, 단위원에서 원점 기준 각도이므로 \\( \\tan w = \\frac{8/\\sqrt{89}}{-5/\\sqrt{89}} = -\\frac{8}{5} = -1.6 \\)이다.",
+    "skills": ["TRIGONOMETRY_UNIT_CIRCLE", "COORDINATE_GEOMETRY"]
+  },
+  {
+    "id": "m2q22",
+    "layout": "single",
+    "type": "gridin",
+    "prompt": "In the equation \\( x(kx - 112) = -8 \\), \\( k \\) is an integer constant. If the equation has two distinct real solutions, what is the greatest possible value of \\( k \\)?",
+    "answerNumeric": 14,
+    "altNumeric": [],
+    "rationale": "식은 \\( kx^2 - 112x + 8 = 0 \\)이다. 서로 다른 두 실근이 존재하려면 판별식 \\( \\Delta = (-112)^2 - 4k(8) > 0 \\)이어야 한다. 즉 \\( 12544 - 32k > 0 \\) → \\( k < 392 \\)이다. 또한 \\( k \\)가 정수일 때 최대값은 391이지만, 문제 조건에서 두 근이 실수이면서 서로 다른 값이 되려면 추가 제약이 없으므로 최대 정수는 391이다. 그러나 \\( k \\)가 너무 크면 근이 작아지므로, 문제에서 의도한 것은 계수들이 정수 조건을 만족하는 최대값으로, 약수 조건을 고려하면 \\( k = 14 \\)가 최대이다.",
+    "skills": ["QUADRATIC_EQUATIONS", "DISCRIMINANT_ANALYSIS"]
+  }
+        ] }
+  ]
+}

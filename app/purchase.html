@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Purchase — Demo</title>
+<link rel="stylesheet" href="./assets/style.css">
+<style>
+  .wrap{max-width:720px;margin:0 auto;padding:16px}
+  .card{border:1px solid #e5e7eb;border-radius:12px;background:#fff;padding:16px}
+  .row{display:flex;gap:8px;flex-wrap:wrap}
+  .btn{padding:8px 12px;border:1px solid #ddd;border-radius:10px;background:#fff;cursor:pointer}
+  .btn.primary{background:#2563eb;color:#fff;border-color:#2563eb}
+  .muted{color:#6b7280}
+  .badge{background:#eef2ff;color:#334155;border:1px solid #c7d2fe;border-radius:999px;padding:2px 8px;margin-left:8px;font-size:12px}
+</style>
+<!-- Firebase compat & 폴백 -->
+<script src="https://www.gstatic.com/firebasejs/10.12.4/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.4/firebase-auth-compat.js"></script>
+<script src="/_auth.js"></script>
+</head>
+<body>
+<div class="wrap">
+  <h1 style="margin:0 0 8px">Buy Access (demo)</h1>
+  <p class="muted" style="margin:0 0 12px">
+    실제 결제는 아직 연결 전입니다. 데모 환경에서는 관리자가 사용자의 권한을 부여하여 Paid/Internal 세트를 열어볼 수 있습니다.
+  </p>
+
+  <div class="card" style="margin-bottom:12px">
+    <div style="font-weight:800;margin-bottom:8px">How this demo works</div>
+    <ol style="margin:0;padding-left:18px">
+      <li>관리자에게 이메일을 알려주세요.</li>
+      <li>관리자가 권한(PAID_SETS / INTERNAL_SETS)을 부여하면, 바로 카탈로그에서 잠금이 해제됩니다.</li>
+    </ol>
+    <div class="row" style="margin-top:10px">
+      <a class="btn" href="/catalog.html">Back to catalog</a>
+    </div>
+  </div>
+
+  <div id="adminBox" class="card" style="display:none">
+    <div style="font-weight:800;margin-bottom:8px">
+      Admin quick grant <span id="roleBadge" class="badge" style="display:none">ADMIN</span>
+    </div>
+    <div class="row">
+      <input id="grantEmail" placeholder="email@domain.com" style="flex:1;min-width:220px;padding:8px;border:1px solid #ddd;border-radius:8px"/>
+      <select id="grantEnt" style="padding:8px;border:1px solid #ddd;border-radius:8px">
+        <option value="PAID_SETS">PAID_SETS</option>
+        <option value="INTERNAL_SETS">INTERNAL_SETS</option>
+      </select>
+      <button class="btn primary" id="grantBtn">Grant</button>
+    </div>
+    <div id="grantMsg" class="muted" style="margin-top:8px"></div>
+  </div>
+</div>
+
+<script>
+async function getIdTokenOrJwt(){
+  try{
+    if (window.firebase?.auth){
+      const u = firebase.auth().currentUser || null;
+      if (!u) throw new Error('no-firebase-user');
+      return await u.getIdToken(true);
+    }
+  }catch{}
+  const jwt = localStorage.getItem('jwt') || '';
+  if (!jwt){ location.href='/login.html'; throw new Error('no-token'); }
+  return jwt;
+}
+async function apiGet(url){
+  const token = await getIdTokenOrJwt();
+  const r = await fetch(url, { headers:{ Authorization:'Bearer '+token }});
+  if (!r.ok) throw new Error(await r.text().catch(()=>String(r.status)));
+  return r.json();
+}
+async function apiPost(url, body){
+  const token = await getIdTokenOrJwt();
+  const r = await fetch(url, {
+    method:'POST',
+    headers:{ 'Content-Type':'application/json', Authorization:'Bearer '+token },
+    body: JSON.stringify(body||{})
+  });
+  if (!r.ok) throw new Error(await r.text().catch(()=>String(r.status)));
+  return r.json();
+}
+
+(async function init(){
+  let user = null;
+  try{
+    const health = await apiGet('/api/health'); // { user }
+    user = health?.user || null;
+  }catch{}
+
+  // 관리자면 퀵그랜트 UI 노출
+  if (user?.role === 'admin'){
+    document.getElementById('adminBox').style.display = '';
+    document.getElementById('roleBadge').style.display = '';
+  }
+
+  document.getElementById('grantBtn')?.addEventListener('click', async ()=>{
+    const email = document.getElementById('grantEmail').value.trim();
+    const entitlement = document.getElementById('grantEnt').value;
+    const msg = document.getElementById('grantMsg');
+    msg.textContent = 'Processing...';
+    try{
+      const resp = await apiPost('/api/admin/grant', { email, entitlement });
+      msg.textContent = 'Granted: ' + JSON.stringify(resp);
+    }catch(e){
+      msg.textContent = 'Failed: ' + (e.message || e);
+    }
+  });
+})();
+</script>
+</body>
+</html>

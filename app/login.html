@@ -1,0 +1,23 @@
+<!doctype html><html><head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Log in</title>
+</head><body class="container">
+<h1>Log in</h1>
+<form id="f">
+  <input name="email" placeholder="Email" required>
+  <input name="password" type="password" placeholder="Password" required>
+  <button>Log in</button>
+</form>
+<script src="/_auth.js"></script>
+<script>
+document.getElementById('f').onsubmit = async (e)=>{
+  e.preventDefault();
+  const data = Object.fromEntries(new FormData(e.target).entries());
+  const r = await fetch('/api/login',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});
+  if(!r.ok){ alert('Login failed'); return; }
+  const payload = await r.json();
+  window.auth.setLogin(payload);
+  location.href='/dashboard.html';
+};
+</script>
+</body></html>

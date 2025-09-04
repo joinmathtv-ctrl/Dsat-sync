@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>DSAT Practice — Classic UI</title>
+
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <script defer id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <!-- 공통 스타일 -->
+  <link rel="stylesheet" href="./assets/style.css">
+
+  <!-- 커브 프리셋: 메인 스크립트보다 먼저 로드 -->
+  <script src="./assets/curves.presets.js"></script>
+  <!-- App modules (split from app.js) -->
+  <script src="./assets/modules/mysets.js"></script>
+  <script src="./assets/modules/utils.js"></script>
+  <script src="./assets/modules/globals.js"></script>
+  <script src="./assets/modules/curves.js"></script>
+  <script src="./assets/modules/attempts.js"></script>
+  <script src="./assets/modules/indexing.js"></script>
+  <script src="./assets/modules/render.js"></script>
+  <script src="./assets/modules/review.js"></script>
+  <script src="./assets/review.enhance.js"></script>
+  <script src="./assets/modules/csv.js"></script>
+  <script src="./assets/modules/loader.js"></script>
+</head>
+<body>
+
+  <!-- ===== TOP BAR ===== -->
+  <div class="topbar">
+    <div class="topbar-row">
+      <div class="dir-zone" style="position:relative">
+        <div class="crumb" id="crumb" aria-live="polite">Section — Module</div>
+        <!-- ▶ Directions 버튼 (팝오버 트리거) -->
+        <button class="hide-btn" id="dirToggle" type="button" aria-haspopup="dialog" aria-expanded="false">Directions ▾</button>
+        <span id="modeBadge" class="badge">Mode: Full</span>
+        <!-- ▶ 레거시: 패널로 주입되면 자동 가로채 팝오버로 전환 -->
+        <div class="dir-panel" id="dirPanel" style="display:none"></div>
+      </div>
+      <div class="timer-wrap">
+        <span class="timer" id="timer" aria-live="polite">35:00</span>
+        <button class="hide-btn" id="hideBtn" type="button">Hide</button>
+      </div>
+      <div class="controls">
+        <button class="icon-btn" type="button">🔢 Calculator</button>
+        <button class="icon-btn" type="button">📄 Reference</button>
+        <button class="icon-btn" type="button">⋯ More</button>
+        <button class="icon-btn" type="button" onclick="location.href='./dashboard.html'">📈 Dashboard</button>
+      </div>
+    </div>
+    <div class="dash"></div>
+  </div>
+
+  <div class="wrap" id="appWrap">
+    <!-- 로더 (레거시 유지: URL 파라미터 없을 때만 사용) -->
+    <div class="loader" id="loaderRow">
+      <input id="path" type="text" value="./questions.json" aria-label="Set URL"/>
+      <button class="btn" id="loadBtn" type="button">Load set</button>
+      <input id="file" type="file" accept=".json,application/json" style="margin-left:10px" aria-label="Load set from file"/>
+    </div>
+    <div id="loadError" class="alert" style="display:none" role="alert"></div>
+
+    <!-- 문제 카드 -->
+    <div class="qcard" id="card" style="display:none">
+      <div class="qhead">
+        <div class="qnum" id="qnum">1</div>
+        <button id="flagBtn" class="flag-btn" type="button">Mark for Review</button>
+      </div>
+      <div class="qtitle" id="qtitle"></div>
+      <div id="qcontainer"></div>
+    </div>
+
+    <div id="scoreBox"></div>
+  </div>
+
+  <!-- ===== 하단 고정 리본 ===== -->
+  <div class="ribbon" id="ribbon" style="display:none">
+    <div class="r-left">
+      <button type="button" class="btn" id="prevBtn" aria-label="Previous question">← Prev</button>
+    </div>
+    <div class="r-center">
+      <button class="btn ghost" id="navOpen" type="button" aria-haspopup="true" aria-expanded="false">1 / 22 ▾</button>
+    </div>
+    <div class="r-right">
+      <button type="button" class="btn" id="nextBtn" aria-label="Next question">Next →</button>
+    </div>
+  </div>
+
+  <!-- 네비 팝업 -->
+  <div class="nav-popup" id="navPopup" role="dialog" aria-modal="false" aria-labelledby="navSection" style="display:none">
+    <div style="font-weight:700; margin-bottom:8px">
+      <span id="navSection">Section</span> · Module <span id="navMod">1</span>
+    </div>
+    <div class="nav-grid" id="navGrid"></div>
+  </div>
+
+  <!-- ===== 제출 확인 모달 ===== -->
+  <div class="modal-back" id="confirmBack" style="display:none">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="confirmModLabel">
+      <div class="head">Submit now?</div>
+      <div class="body">
+        <div style="margin-bottom:8px">You are submitting <b id="confirmModLabel">Section · Module</b>.</div>
+        <ul style="margin:0; padding-left:18px; color:var(--muted); font-size:14px">
+          <li>After submission, answers for this module can no longer be changed.</li>
+          <li>If this is Module 1 in a section, Module 2 in the same section will start automatically.</li>
+          <li>After the final module (Math Module 2), a combined report and explanations will be shown.</li>
+        </ul>
+      </div>
+      <div class="foot">
+        <button class="btn" id="confirmCancel" type="button">Cancel</button>
+        <button class="btn primary" id="confirmOk" type="button">OK</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== 해설 팝업 ===== -->
+  <div class="explain-back" id="explainBack" style="display:none">
+    <div class="explain" role="dialog" aria-modal="true" aria-labelledby="explainClose">
+      <button class="x" id="explainClose" type="button">Close</button>
+      <div id="explainBody"></div>
+    </div>
+  </div>
+
+  <!-- 동기화 모듈(레거시) -->
+  <script>window.SYNC_API_BASE="http://localhost:4311";</script>
+  <script src="./sync.js"></script>
+  <!-- 앱 스크립트 (레거시 유지) -->
+  <script src="./assets/app.js"></script>
+
+  <!-- Firebase SDKs (compat) -->
+  <script src="https://www.gstatic.com/firebasejs/10.12.4/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.4/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.4/firebase-firestore-compat.js"></script>
+
+  <!-- 로컬 JWT 폴백 -->
+  <script src="/_auth.js"></script>
+
+  <!-- ===== Directions Popover (2-A, 원문 유지) ===== -->
+  <script>
+  (function(){
+    let __dirPopover = null;
+
+    function closeDirectionsPopover(){
+      if (__dirPopover) {
+        __dirPopover.remove();
+        __dirPopover = null;
+        document.removeEventListener('mousedown', onOutside);
+        window.removeEventListener('resize', onResize);
+        window.removeEventListener('scroll', onScroll, true);
+        document.removeEventListener('keydown', onEsc);
+      }
+      const btn = document.getElementById('dirToggle');
+      if (btn) btn.setAttribute('aria-expanded', 'false');
+    }
+
+    function positionPopoverBelow(anchorEl, popEl, gap = 8){
+      if (!anchorEl || !popEl) return;
+      const rect = anchorEl.getBoundingClientRect();
+      const top = rect.bottom + gap + window.scrollY;
+      let left = rect.left + window.scrollX;
+      const maxLeft = window.scrollX + document.documentElement.clientWidth - popEl.offsetWidth - 12;
+      if (left > maxLeft) left = Math.max(12 + window.scrollX, maxLeft);
+      popEl.style.top = top + 'px';
+      popEl.style.left = left + 'px';
+
+      const arrow = popEl.querySelector('.arrow');
+      if (arrow) {
+        const arrowLeft = Math.min(Math.max(24, rect.width/2), popEl.offsetWidth - 24);
+        arrow.style.left = arrowLeft + 'px';
+      }
+    }
+
+    function getDefaultDirectionsHTML(){
+      return `
+        <p>이 섹션은 시간 제한이 있습니다. 문제를 차례대로 풀되, 모르는 문제는 표시(Flag)하고 넘어가세요.</p>
+        <ul>
+          <li>답안을 선택하면 자동 저장됩니다.</li>
+          <li>네비게이터(· · ·)에서 문제 이동이 가능합니다.</li>
+          <li>시간 종료 전이라도 언제든 제출할 수 있습니다.</li>
+        </ul>
+      `;
+    }
+
+    function openDirectionsPopover(anchorEl, htmlContent){
+      closeDirectionsPopover();
+      const bodyHTML = htmlContent || getDefaultDirectionsHTML();
+      const html = `
+        <div class="popover" id="directionsPopover" role="dialog" aria-modal="false" aria-labelledby="dirTitle" tabindex="-1">
+          <div class="arrow"></div>
+          <div class="head">
+            <div class="title" id="dirTitle">Directions</div>
+            <button class="x" type="button" id="dirCloseX" aria-label="Close directions">닫기</button>
+          </div>
+          <div class="body" id="dirBody" tabindex="0">${bodyHTML}</div>
+          <div class="foot">
+            <button class="btn primary" id="dirOkBtn" type="button">확인</button>
+          </div>
+        </div>
+      `;
+      document.body.insertAdjacentHTML('beforeend', html);
+      __dirPopover = document.getElementById('directionsPopover');
+
+      // 위치
+      positionPopoverBelow(anchorEl, __dirPopover, 8);
+
+      // 스크롤 그림자 토글
+      const bodyEl = __dirPopover.querySelector('.body');
+      const updateShadows = ()=>{
+        if (!bodyEl) return;
+        const top = bodyEl.scrollTop;
+        const max = bodyEl.scrollHeight - bodyEl.clientHeight;
+        __dirPopover.classList.toggle('show-top-shadow', top > 0);
+        __dirPopover.classList.toggle('show-bottom-shadow', top < max - 1);
+      };
+      bodyEl.addEventListener('scroll', updateShadows, { passive:true });
+      requestAnimationFrame(updateShadows);
+
+      // 접근성: 포커스 트랩
+      const okBtn = document.getElementById('dirOkBtn');
+      const closeBtn = document.getElementById('dirCloseX');
+      const focusables = ()=> Array.from(__dirPopover.querySelectorAll(
+        'button,[href],input,select,textarea,[tabindex]:not([tabindex="-1"])'
+      )).filter(el=> !el.hasAttribute('disabled') && el.offsetParent !== null);
+      const trap = (e)=>{
+        if (e.key !== 'Tab') return;
+        const els = focusables();
+        if (!els.length) return;
+        const first = els[0], last = els[els.length - 1];
+        if (e.shiftKey && document.activeElement === first){ last.focus(); e.preventDefault(); }
+        else if (!e.shiftKey && document.activeElement === last){ first.focus(); e.preventDefault(); }
+      };
+      __dirPopover.addEventListener('keydown', trap);
+
+      // 버튼 동작
+      closeBtn.onclick = closeDirectionsPopover;
+      okBtn.onclick = closeDirectionsPopover;
+
+      // 바깥/ESC/리사이즈/스크롤 핸들러
+      document.addEventListener('mousedown', onOutside);
+      window.addEventListener('resize', onResize);
+      window.addEventListener('scroll', onScroll, true);
+      document.addEventListener('keydown', onEsc);
+
+      // 토글 상태
+      if (anchorEl) anchorEl.setAttribute('aria-expanded', 'true');
+
+      // 초기 포커스
+      (okBtn || __dirPopover).focus();
+    }
+
+    // 외부/ESC 핸들러
+    function onOutside(e){
+      const btn = document.getElementById('dirToggle');
+      if (__dirPopover && !__dirPopover.contains(e.target) && e.target !== btn) {
+        closeDirectionsPopover();
+      }
+    }
+    function onResize(){
+      const btn = document.getElementById('dirToggle');
+      if (__dirPopover && btn) positionPopoverBelow(btn, __dirPopover, 8);
+    }
+    function onScroll(){ onResize(); }
+    function onEsc(e){ if (e.key === 'Escape') closeDirectionsPopover(); }
+
+    // 버튼 토글
+    const btn = document.getElementById('dirToggle');
+    if (btn) {
+      btn.addEventListener('click', ()=>{
+        if (__dirPopover) closeDirectionsPopover();
+        else openDirectionsPopover(btn, document.getElementById('dirPanel')?.innerHTML || '');
+      });
+    }
+
+    // 레거시 호환: 기존 코드가 #dirPanel에 내용을 주입/노출하면 자동으로 팝오버로 전환
+    const panel = document.getElementById('dirPanel');
+    if (panel) {
+      const obs = new MutationObserver(()=>{
+        const hasContent = panel.innerHTML && panel.innerHTML.trim().length > 0;
+        const isShown = panel.style.display !== 'none' && panel.offsetParent !== null;
+        if (hasContent || isShown) {
+          panel.style.display = 'none'; // 패널 표시는 막고
+          if (btn) openDirectionsPopover(btn, panel.innerHTML); // 팝오버로 대체
+        }
+      });
+      obs.observe(panel, { attributes:true, childList:true, subtree:true, attributeFilter:['style','class'] });
+    }
+
+    // 전역에서 시작 시점에 호출할 수 있도록 노출
+    window.__openDirectionsFromStart = function(){
+      const content = panel?.innerHTML || '';
+      if (btn) openDirectionsPopover(btn, content);
+    };
+  })();
+  </script>
+
+  <!-- ====== 어댑터 & API 연결(신규) ====== -->
+  <!-- (있으면 사용) 외부 어댑터 파일 -->
+  <script type="module">
+  // 외부 파일이 없는 환경도 고려하여 동적으로 import, 실패 시 인라인 폴백 사용
+  let Adapter = null;
+  try {
+    Adapter = await import('./assets/dsat/renderer.adapter.js');
+  } catch {
+    // 폴백 어댑터(최소 구현): window.startPractice/json 을 그대로 호출
+    Adapter = {
+      attachAndRun: async (setJson, ctx) => {
+        const entry = (typeof window.startPractice === 'function')
+          ? window.startPractice
+          : (typeof window.startPracticeEngine === 'function' ? window.startPracticeEngine : null);
+        if (!entry) {
+          const e = document.getElementById('loadError');
+          e.style.display='block';
+          e.classList.add('alert');
+          e.textContent='Renderer entry not found (window.startPractice).';
+          return;
+        }
+        // MathJax re-typeset 훅
+        const typeset = async ()=> {
+          try { if (window.MathJax?.typesetPromise) await window.MathJax.typesetPromise(); } catch {}
+        };
+        await entry(setJson, {
+          assetURL: (rel) => {
+            const prefix = ctx.tier==='paid' ? '/api/paid-asset/' :
+                           ctx.tier==='internal' ? '/api/internal-asset/' : '/api/trial-asset/';
+            return prefix + encodeURIComponent(rel);
+          },
+          onRendered: typeset,
+          saveAttempt: async (a)=>{ try { await ctx.attempts.saveBulk([a]); } catch(e){} },
+          saveAttemptsBulk: async (aa)=>{ try { await ctx.attempts.saveBulk(aa); } catch(e){} },
+          listAttempts: async (since)=>{ try { return await ctx.attempts.list(since); } catch(e){ return []; } },
+          user: ctx.user||null
+        });
+        await typeset();
+      }
+    };
+  }
+
+  // ===== 공통 유틸 =====
+  function qsParam(name){ return new URL(location.href).searchParams.get(name); }
+  function setModeBadgeFromSet(){
+    const span = document.getElementById('modeBadge');
+    if (!span) return;
+    const only = qsParam('only'); // rw | math | (empty)
+    span.textContent = 'Mode: ' + (only ? only.toUpperCase() : 'Full');
+  }
+  function show(el, on){ el.style.display = on ? '' : 'none'; }
+
+  // ===== 인증 & API =====
+  async function getIdTokenOrJwt() {
+    try {
+      if (window.firebase?.auth) {
+        const u = firebase.auth().currentUser || null;
+        if (!u) throw new Error('no-firebase-user');
+        return await u.getIdToken(true);
+      }
+    } catch {}
+    const jwt = localStorage.getItem('jwt') || '';
+    if (!jwt) {
+      location.href = '/login.html';
+      throw new Error('no-token');
+    }
+    return jwt;
+  }
+  async function apiGet(url){
+    const token = await getIdTokenOrJwt();
+    const r = await fetch(url, { headers:{ Authorization:'Bearer '+token }});
+    if (r.status===401) { location.href='/login.html'; return null; }
+    if (!r.ok) throw new Error(await r.text().catch(()=>String(r.status)));
+    return r.json();
+  }
+  async function apiPost(url, body){
+    const token = await getIdTokenOrJwt();
+    const r = await fetch(url, {
+      method:'POST',
+      headers:{ 'Content-Type':'application/json', Authorization:'Bearer '+token },
+      body: JSON.stringify(body||{})
+    });
+    if (!r.ok) throw new Error(await r.text().catch(()=>String(r.status)));
+    return r.json();
+  }
+
+  // Attempts 클라이언트 (서버 동기화)
+  function AttemptsClient(user){
+    const getUserId = ()=> user?.sub || user?.email || 'local-user';
+    return {
+      async list(sinceMs=null){
+        const qs = sinceMs ? `?userId=${encodeURIComponent(getUserId())}&since=${Number(sinceMs)}`
+                           : `?userId=${encodeURIComponent(getUserId())}`;
+        const data = await apiGet('/api/attempts' + qs);
+        return data?.attempts || [];
+      },
+      async saveBulk(attempts){
+        if (!Array.isArray(attempts) || !attempts.length) return { savedIds:[] };
+        const ok = attempts.every(a => a && a.id && a.baseId && a.kind && a.sections && a.ts);
+        if (!ok) { console.warn('Invalid attempt schema:', attempts); return { savedIds:[] }; }
+        return await apiPost('/api/attempts/bulk', { userId: getUserId(), attempts });
+      }
+    };
+  }
+
+  // ====== 초기화 ======
+  (async function init(){
+    // URL 파라미터 파싱
+    const tier = (qsParam('type') || '').toLowerCase(); // trial|paid|internal
+    const key  = qsParam('key');                        // <set>.json
+    const hasUrlSet = !!(tier && key);
+
+    // 사용자 정보(권한/역할)
+    let user = { role:'student', entitlements:[] };
+    try {
+      const health = await apiGet('/api/health'); // { user:{ role, entitlements, sub, email } }
+      if (health?.user) user = health.user;
+    } catch {}
+
+    // 레거시 로더 보이기/숨기기
+    const loaderRow = document.getElementById('loaderRow');
+    show(loaderRow, !hasUrlSet);
+
+    // URL로 들어온 경우: 서버에서 세트 로드 → 엔진 실행
+    if (hasUrlSet) {
+      setModeBadgeFromSet();
+      const errBox = document.getElementById('loadError');
+      try {
+        errBox.style.display='block';
+        errBox.classList.remove('alert');
+        errBox.textContent = `Loading set: ${tier} · ${key}`;
+      } catch {}
+
+      // === [중요 패치] 403/404 구분 로드 ===
+      let setJson = null;
+      try {
+        const token = await getIdTokenOrJwt();
+        const r = await fetch(`/api/${tier}-set/${encodeURIComponent(key)}`, {
+          headers:{ Authorization: 'Bearer ' + token }
+        });
+
+        if (r.status === 403) {
+          // 권한 없음 → 구매/권한 안내 카드
+          const app = document.getElementById('appWrap');
+          const card = document.createElement('div');
+          card.className = 'card';
+          card.style.marginTop = '12px';
+          card.innerHTML = `
+            <div style="font-weight:800;margin-bottom:6px">This set is locked</div>
+            <div class="muted" style="margin-bottom:10px">
+              ${tier==='internal'
+                ? 'Internal sets require instructor approval.'
+                : 'Paid sets require a valid purchase on your account.'}
+            </div>
+            <div style="display:flex;gap:8px;flex-wrap:wrap">
+              <a class="btn" href="/purchase.html">Buy access (demo)</a>
+              <a class="btn" href="/catalog.html">Back to catalog</a>
+            </div>
+          `;
+          errBox.style.display='none';
+          app.appendChild(card);
+          return;
+        }
+        if (r.status === 404) {
+          // 세트 없음 → 안내
+          errBox.style.display='block';
+          errBox.classList.add('alert');
+          errBox.innerHTML = `
+            <div style="font-weight:700;margin-bottom:6px">Set not found</div>
+            <div class="muted" style="margin-bottom:8px">The requested set does not exist or has been removed.</div>
+            <div><a class="btn" href="/catalog.html">Back to catalog</a></div>
+          `;
+          return;
+        }
+        if (!r.ok) {
+          throw new Error('HTTP_' + r.status);
+        }
+        setJson = await r.json();
+      } catch (e) {
+        // 기타 오류
+        errBox.style.display='block';
+        errBox.classList.add('alert');
+        errBox.textContent = 'Failed to load set. Please try again from the catalog.';
+        return;
+      }
+
+      // Attempts 준비
+      const attempts = AttemptsClient(user);
+
+      // 엔진 연결
+      await Adapter.attachAndRun(setJson, {
+        tier, key,
+        http: { get: apiGet, post: apiPost },
+        user,
+        attempts
+      });
+
+      // Directions 팝오버 자동 오픈(필요 시)
+      if (typeof window.__openDirectionsFromStart === 'function') {
+        setTimeout(()=> window.__openDirectionsFromStart(), 50);
+      }
+
+      // 로딩 메시지 제거
+      try { errBox.style.display='none'; } catch {}
+      return;
+    }
+
+    // ===== URL 파라미터가 없으면 레거시 로더 그대로 사용 =====
+    // 기존 #loadBtn, #file 동작은 app/modules/loader.js가 처리.
+
+  })();
+  </script>
+</body>
+</html>

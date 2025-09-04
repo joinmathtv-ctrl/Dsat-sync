@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>DSAT Dashboard — Extended</title>
+
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+
+<!-- 공통 스타일 & 프리셋 -->
+<link rel="stylesheet" href="./assets/style.css">
+<script src="./assets/curves.presets.js"></script>
+
+<style>
+  /* ▼ 페이지 전용 스타일만 유지 (공통 style.css와 중복 제거 완료) */
+  .r{ display:flex; gap:8px; flex-wrap:wrap; align-items:center }
+  textarea.code{ width:100%; min-height:180px; font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, monospace }
+  input[type="date"]{
+    border:1px solid var(--line);
+    background:#fff;
+    padding:8px 12px;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:14px;
+  }
+  /* ▼ 토스트 (대시보드 내 최소 스타일) */
+  .toast{
+    position:fixed; bottom:12px; left:50%; transform:translateX(-50%);
+    background:#222; color:#fff; padding:8px 12px; border-radius:8px;
+    opacity:.95; transition:opacity .2s; z-index:9999;
+  }
+  .toast.ok{ background:#16a34a }
+  .toast.err{ background:#dc2626 }
+
+  /* ▼ 허브 카드용 작은 스타일 */
+  .pill{display:inline-flex;gap:6px;align-items:center;padding:2px 8px;border:1px solid #ddd;border-radius:999px;font-size:12px}
+  .pill.ok{border-color:#16a34a;color:#16a34a}
+  .pill.muted{opacity:.6}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <div class="toprow">
+    <div style="font-weight:800">📈 DSAT Dashboard — Extended</div>
+    <div style="display:flex; gap:8px; align-items:center; flex-wrap:wrap">
+      <a class="back" href="./index.html">← Back to Practice</a>
+      <span class="muted">|</span>
+      <a class="btn" href="./catalog.html">Catalog</a>
+      <button class="btn" id="clearBtn">Clear All Logs</button>
+      <button class="btn" id="importBtn">Import</button>
+      <button class="btn" id="exportBtn">Export</button>
+      <button class="btn" id="printBtn">Print / Save (PDF)</button>
+    </div>
+  </div>
+</div>
+
+<!-- ▼ Practice Hub (추가) -->
+<div class="card" style="margin-top:12px">
+  <div class="head">
+    <div class="title">Practice Hub</div>
+    <div class="r">
+      <span id="entBadges" class="pill muted">Checking…</span>
+    </div>
+  </div>
+  <div class="r" style="margin-top:8px">
+    <button class="btn" id="goTrial">Browse Trial</button>
+    <button class="btn" id="goPaid" style="display:none">Browse Paid</button>
+    <button class="btn" id="goInternal" style="display:none">Browse Internal</button>
+  </div>
+  <div class="muted" style="font-size:12px;margin-top:6px">
+    * Trial은 로그인 필요. Paid/Internal은 권한이 있을 때만 표시됩니다.
+  </div>
+</div>
+
+<!-- Continue card -->
+<div class="card" id="continueCard" style="margin-top:12px">
+  <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">
+    <div>
+      <div class="muted" style="font-size:12px">Continue</div>
+      <div id="contTitle" style="font-weight:700">최근 진행한 세트가 없습니다</div>
+      <div id="contSub" class="muted"></div>
+      <div class="progress" style="height:6px;background:#f1f5f9;border-radius:999px;overflow:hidden;max-width:420px;margin-top:6px">
+        <div id="contBar" style="height:100%;background:#2563eb;width:0%"></div>
+      </div>
+    </div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap">
+      <button id="continueBtn" class="btn primary" style="display:none">Continue last set →</button>
+      <a class="btn" href="./catalog.html">Start new</a>
+    </div>
+  </div>
+</div>
+
+<!-- Recent 3 -->
+<div class="card" id="recentCard" style="margin-top:12px">
+  <div class="head">
+    <div class="title">Recent Activity</div>
+  </div>
+  <div id="recentGrid" class="row"></div>
+  <div id="recentEmpty" class="muted" style="display:none;margin-top:8px">최근 기록이 없습니다.</div>
+</div>
+
+<!-- Mode buttons -->
+<div id="modeLegend" style="display: flex; justify-content: center; gap: 15px; margin-top: 10px;">
+  <button id="modeAll" class="mode-btn" data-mode="all">All</button>
+  <button id="modeFull" class="mode-btn" data-mode="full">Full</button>
+  <button id="modeRW" class="mode-btn" data-mode="rw">RW</button>
+  <button id="modeMath" class="mode-btn" data-mode="math">Math</button>
+</div>
+
+<!-- Sync Panel (UI 영어 / 설명 한글 허용) -->
+<div class="card" id="syncCard" data-sync-panel style="margin-top:12px">
+  <div class="head"><div class="title">Sync</div></div>
+  <div style="display:flex; gap:8px; flex-wrap:wrap; align-items:center">
+    <button class="btn" id="btnSyncNow">Sync Now</button>
+    <button class="btn" id="btnPush">Push Only</button>
+    <button class="btn" id="btnPull">Pull Only</button>
+    <!-- 더티 배지: DSAT_SYNC 동작 시 업데이트 -->
+    <span id="syncBadge" class="pill" style="display:none"></span>
+    <span class="muted" id="syncStatus">—</span>
+  </div>
+</div>
+
+<div class="wrap">
+  <!-- Filters · Curves · Defaults -->
+  <div class="card">
+    <div class="head">
+      <div class="title">Filters · Curves · Defaults</div>
+      <div class="r">
+        <label class="muted">Set:</label>
+        <select id="baseSelect"></select>
+        <label class="muted">View:</label>
+        <select id="kindSelect">
+          <option value="">All</option>
+          <option value="base">Base</option>
+          <option value="review">Review</option>
+        </select>
+        <label class="muted">Curve Preset (recalc display):</label>
+        <select id="presetSelect"></select>
+        <button class="btn" id="saveDefaultPresetBtn" title="해당 세트에 기본 프리셋 기억(로컬)">Save as Default for This Set</button>
+        <span id="countInfo" class="pill muted"></span>
+      </div>
+    </div>
+
+    <div class="r">
+      <button class="btn ghost" id="openCurveEditor">Edit/Add Presets</button>
+      <span class="muted" style="font-size:13px">
+        * 보기 프리셋은 <b>표시만 재계산</b>합니다. 실제 기록 시 사용된 프리셋은 연습페이지의 <code>SET.metadata.curvePreset</code> 값입니다.
+      </span>
+    </div>
+
+    <!-- Review deeplink -->
+    <div class="r" style="margin-top:8px">
+      <button class="btn" id="startWrongReviewBtn">Start Review: Wrong Only</button>
+      <button class="btn" id="startFlaggedReviewBtn">Start Review: Flagged Only</button>
+      <span class="muted" style="font-size:12px">* Runs in the current set on index.html.</span>
+    </div>
+
+    <!-- Date range + aggregation -->
+    <div class="r" style="margin-top:8px">
+      <label class="muted">Date:</label>
+      <input type="date" id="fromDate"/>
+      <span class="muted">~</span>
+      <input type="date" id="toDate"/>
+      <span class="muted" style="margin-left:10px">Aggregate:</span>
+      <select id="aggMode" title="요약 집계 모드">
+        <option value="">None</option>
+        <option value="byPreset">By Preset</option>
+        <option value="bySet">By Set</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Top metrics -->
+  <div class="row" style="margin-top:14px">
+    <div class="card">
+      <div class="head"><div class="title">Total Score Trend (SAT)</div></div>
+      <canvas id="satLine" height="160"></canvas>
+    </div>
+    <div class="card">
+      <div class="head"><div class="title">Section Scaled Scores</div></div>
+      <canvas id="sectionBar" height="160"></canvas>
+    </div>
+  </div>
+
+  <!-- Skill trend & heatmap -->
+  <div class="row" style="margin-top:14px">
+    <div class="card">
+      <div class="head">
+        <div class="title">Skill Trend (Accuracy %)</div>
+        <div class="r">
+          <select id="skillSelect"></select>
+          <button class="btn" id="skillAllBtn">Recommend Top-Change Skills</button>
+          <button class="btn" id="startSkillReviewBtn">Start Review for Skill</button>
+        </div>
+      </div>
+      <canvas id="skillLine" height="160"></canvas>
+    </div>
+    <div class="card">
+      <div class="head">
+        <div class="title">Skill Heatmap (Accuracy %)</div>
+        <div class="legend">
+          <span class="cell c-0">0</span>0–50
+          <span class="cell c-50">50</span>50–70
+          <span class="cell c-70">70</span>70–85
+          <span class="cell c-85">85</span>85–95
+          <span class="cell c-95">95</span>95–100
+        </div>
+      </div>
+      <div id="heatHdr" class="heatmap" style="grid-template-rows:auto"></div>
+      <div id="heatBody" class="heatmap"></div>
+    </div>
+  </div>
+
+  <!-- Attempt comparison -->
+  <div class="card" style="margin-top:14px">
+    <div class="head">
+      <div class="title">Attempt Comparison</div>
+      <div class="r">
+        <select id="cmpA"></select>
+        <span class="muted">vs</span>
+        <select id="cmpB"></select>
+        <button class="btn" id="cmpBtn">Compare</button>
+        <button class="btn ghost" id="openDetailA">Detail A</button>
+        <button class="btn ghost" id="openDetailB">Detail B</button>
+      </div>
+    </div>
+    <div id="cmpOut" class="cmp-grid"></div>
+  </div>
+
+  <!-- Aggregation result -->
+  <div class="card" id="aggCard" style="margin-top:14px; display:none">
+    <div class="head">
+      <div class="title">Aggregate Summary</div>
+      <div class="muted" id="aggCaption" style="font-size:13px"></div>
+    </div>
+    <div id="aggOut"></div>
+  </div>
+
+  <!-- Attempt list -->
+  <div class="card" style="margin-top:14px">
+    <div class="head">
+      <div class="title">Attempt Log</div>
+    </div>
+    <div class="muted" style="font-size:13px; margin-bottom:8px">Newest first · Click a row for details</div>
+    <table id="attemptTable">
+      <thead>
+        <tr>
+          <th style="width:160px">Date/Time</th>
+          <th>Set Title</th>
+          <th>Type</th>
+          <th class="right">RW (Raw/Scaled)</th>
+          <th class="right">Math (Raw/Scaled)</th>
+          <th class="right">Total</th>
+          <th class="right">Preset</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ===== Modal: Attempt Detail ===== -->
+<div class="backdrop" id="detailBack">
+  <div class="modal">
+    <button class="x" id="detailClose">Close</button>
+    <div id="detailBody"></div>
+  </div>
+</div>
+
+<!-- ===== Modal: Curve Editor (설명 한글 허용) ===== -->
+<div class="backdrop" id="curveBack">
+  <div class="modal">
+    <button class="x" id="curveClose">Close</button>
+    <div class="head"><div class="title">Curve Presets — Edit/Add</div></div>
+    <div class="r" style="margin-bottom:8px">
+      <label class="muted">Select Preset:</label>
+      <select id="editPreset"></select>
+      <input id="newPresetName" type="text" placeholder="New preset name"/>
+      <button class="btn" id="dupBtn">Duplicate → New Name</button>
+      <button class="btn bad" id="delBtn">Delete</button>
+    </div>
+    <div class="grid" style="grid-template-columns:1fr 1fr; gap:12px">
+      <div>
+        <div class="muted" style="margin-bottom:6px">RW Points (JSON, e.g., [[0,200],[20,300],...])</div>
+        <textarea id="rwPoints" class="code"></textarea>
+      </div>
+      <div>
+        <div class="muted" style="margin-bottom:6px">Math Points (JSON)</div>
+        <textarea id="mathPoints" class="code"></textarea>
+      </div>
+    </div>
+    <div class="r" style="margin-top:10px">
+      <button class="btn" id="saveCurveBtn">Save</button>
+      <span class="muted">※ x≤100 → 정답률(%), x>100 → 맞힌개수 도메인</span>
+    </div>
+  </div>
+</div>
+
+<!-- Toast -->
+<div id="toast" class="toast" aria-live="polite" aria-atomic="true" role="status"></div>
+
+<script src="/_auth.js"></script>
+<script>
+  // 로그인 가드
+  if (!localStorage.getItem('jwt')) {
+    location.href = '/login.html';
+  }
+
+  // 권한 뱃지 & 허브 버튼
+  (function(){
+    const badges = [];
+    if (auth.has('PAID_SETS')) badges.push('<span class="pill ok">PAID_SETS</span>');
+    if (auth.has('INTERNAL_SETS')) badges.push('<span class="pill">INTERNAL_SETS</span>');
+    document.getElementById('entBadges').innerHTML = badges.join(' ') || '<span class="pill muted">TRIAL_ONLY</span>';
+
+    document.getElementById('goTrial').onclick    = ()=> location.href = '/catalog.html?type=trial';
+    if (auth.has('PAID_SETS')){
+      document.getElementById('goPaid').style.display = 'inline-flex';
+      document.getElementById('goPaid').onclick = ()=> location.href = '/catalog.html?type=paid';
+    }
+    if (auth.has('INTERNAL_SETS')){
+      document.getElementById('goInternal').style.display = 'inline-flex';
+      document.getElementById('goInternal').onclick = ()=> location.href = '/catalog.html?type=internal';
+    }
+  })();
+</script>
+
+<script>window.SYNC_API_BASE = "http://localhost:4311";</script>
+
+<!-- Sync module (order matters: sync.js → dashboard.js) -->
+<script src="./sync.js"></script>
+<script src="./assets/dashboard.js"></script>
+
+<!-- Firebase SDKs (optional) -->
+<script src="https://www.gstatic.com/firebasejs/10.12.4/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.4/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.4/firebase-firestore-compat.js"></script>
+
+<script>
+/* ---- Auth + API (Firebase 우선, 로컬 JWT 폴백) ---- */
+async function getIdTokenOrJwt(){
+  try{
+    if (window.firebase?.auth){
+      const u = firebase.auth().currentUser || null;
+      if (!u) throw new Error('no-firebase-user');
+      return await u.getIdToken(true);
+    }
+  }catch{}
+  const jwt = localStorage.getItem('jwt') || '';
+  if (!jwt){ location.href='/login.html'; throw new Error('no-token'); }
+  return jwt;
+}
+async function apiGet(url){
+  const token = await getIdTokenOrJwt();
+  const r = await fetch(url, { headers:{ Authorization:'Bearer '+token }});
+  if (r.status===401){ location.href='/login.html'; return null; }
+  if (!r.ok) throw new Error(await r.text().catch(()=>String(r.status)));
+  return r.json();
+}
+
+/* ---- Small utils ---- */
+const fmtDate = (ms)=>{ try{ return new Date(ms).toLocaleString(); }catch{ return '' } };
+function pct(n,d){ d = Number(d||0); n = Number(n||0); return d>0 ? Math.round(n*100/d) : 0; }
+function inferTierFromAttempt(a){
+  if (a.tier) return a.tier;
+  if (a.meta?.tier) return a.meta.tier;
+  const tagStr = (a.tags||[]).join(' ').toLowerCase();
+  if (tagStr.includes('internal')) return 'internal';
+  if (tagStr.includes('paid')) return 'paid';
+  return 'trial';
+}
+function progressFromAttempt(a){
+  if (typeof a.answered==='number' && typeof a.total==='number') return {answered:a.answered,total:a.total};
+  let ans=0, tot=0;
+  try{
+    (a.sections||[]).forEach(s=>{
+      (s.modules||[]).forEach(m=>{
+        const qs = m.questions || [];
+        tot += Array.isArray(qs) ? qs.length : (m.total||0);
+        if (Array.isArray(qs)) ans += qs.filter(q=> q.userAnswer!=null && q.userAnswer!=='').length;
+        else if (m.answered) ans += Number(m.answered||0);
+      });
+    });
+  }catch{}
+  return {answered:ans,total:tot};
+}
+function keyFromAttempt(a){ return a.baseId || a.key || a.title || ''; }
+
+/* ---- Render continue + recent ---- */
+function renderContinue(latest){
+  const contTitle = document.getElementById('contTitle');
+  const contSub   = document.getElementById('contSub');
+  const contBar   = document.getElementById('contBar');
+  const contBtn   = document.getElementById('continueBtn');
+
+  if (!latest){
+    contTitle.textContent = '최근 진행한 세트가 없습니다';
+    contSub.textContent = '';
+    contBar.style.width = '0%';
+    contBtn.style.display = 'none';
+    return;
+  }
+
+  const key  = keyFromAttempt(latest);
+  const tier = inferTierFromAttempt(latest);
+  const {answered,total} = progressFromAttempt(latest);
+
+  contTitle.textContent = latest.title || key || 'Untitled set';
+  contSub.textContent = `${tier.toUpperCase()} · ${answered}/${total} answered · ${fmtDate(latest.updatedAt||latest.ts)}`;
+  contBar.style.width = pct(answered,total) + '%';
+  contBtn.style.display = '';
+  contBtn.onclick = ()=>{
+    location.href = `/practice.html?type=${encodeURIComponent(tier)}&key=${encodeURIComponent(key)}`;
+  };
+}
+
+function renderRecent(list){
+  const grid = document.getElementById('recentGrid');
+  const empty = document.getElementById('recentEmpty');
+  grid.innerHTML = '';
+  if (!list.length){ empty.style.display='block'; return; }
+  empty.style.display='none';
+
+  list.slice(0,3).forEach(a=>{
+    const key  = keyFromAttempt(a);
+    const tier = inferTierFromAttempt(a);
+    const {answered,total} = progressFromAttempt(a);
+
+    const card = document.createElement('div');
+    card.className = 'card';
+    card.style.minWidth = '260px';
+    card.innerHTML = `
+      <div class="muted" style="font-size:12px">${tier.toUpperCase()} · ${fmtDate(a.updatedAt||a.ts)}</div>
+      <div style="font-weight:700;margin-top:2px">${a.title || key || 'Untitled'}</div>
+      <div class="muted">${answered}/${total} answered</div>
+      <div class="progress" style="height:6px;background:#f1f5f9;border-radius:999px;overflow:hidden;margin-top:6px">
+        <div class="bar" style="height:100%;background:#2563eb;width:${pct(answered,total)}%"></div>
+      </div>
+      <div style="margin-top:8px;display:flex;gap:8px;flex-wrap:wrap">
+        <button class="btn primary">Resume</button>
+        <button class="btn" data-review>Review</button>
+      </div>
+    `;
+    card.querySelector('.btn.primary').onclick = ()=>{
+      location.href = `/practice.html?type=${encodeURIComponent(tier)}&key=${encodeURIComponent(key)}`;
+    };
+    card.querySelector('[data-review]').onclick = ()=>{
+      location.href = `/practice.html?type=${encodeURIComponent(tier)}&key=${encodeURIComponent(key)}&mode=review`;
+    };
+    grid.appendChild(card);
+  });
+}
+
+/* ---- Load data and render ---- */
+function fromLocalFallback(){
+  try{
+    const raw = localStorage.getItem('dsat_attempts_v1') || '[]';
+    const arr = JSON.parse(raw);
+    arr.forEach(a=>{ if (!a.updatedAt && a.ts) a.updatedAt = a.ts; });
+    return arr.sort((a,b)=>(b.updatedAt||0)-(a.updatedAt||0));
+  }catch{ return []; }
+}
+
+(async function initDashboardLite(){
+  // 서버에서 사용자 정보 → 배지는 기존 auth.has() UI 그대로 두어도 무방
+  let user = { role:'student', entitlements:[] };
+  try{
+    const health = await apiGet('/api/health'); // { user }
+    if (health?.user) user = health.user;
+  }catch{}
+
+  // 시도 목록
+  let attempts = [];
+  try{
+    const uid = user.sub || user.email || 'local-user';
+    const data = await apiGet('/api/attempts?userId=' + encodeURIComponent(uid));
+    attempts = (data?.attempts||[]).sort((a,b)=>(b.updatedAt||b.ts||0)-(a.updatedAt||a.ts||0));
+  }catch{
+    attempts = fromLocalFallback();
+  }
+
+  renderContinue(attempts[0] || null);
+  renderRecent(attempts);
+})();
+</script>
+
+</body>
+</html>

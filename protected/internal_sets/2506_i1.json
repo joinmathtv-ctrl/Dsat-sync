@@ -1,0 +1,1142 @@
+{
+  "metadata": {
+    "title": "DSAT Full Practice Test(2506i1)",
+    "sections": ["rw", "math"],
+    "directions": "Answer each question. For Reading & Writing, read the passage on the left and answer the question(s) on the right. For Math, solve the problem and choose or enter the correct answer.",
+    "durationMinutesPerModule": { "rw": [32, 32], "math": [35, 35] }
+  },
+  "modules": [
+    {
+      "section": "rw",
+      "module": 1,
+      "questions": [
+        {
+          "id": "rwm1q1",
+          "layout": "split",
+          "type": "mcq",
+          "passage": "The following text is adapted from William Wordsworth’s 1798 poem “Lines Written a Few Miles above Tintern Abbey.”<br><br>Once again<br>Do I <u>behold</u> these steep and lofty cliffs,<br>Which on a wild secluded scene impress<br>Thoughts of more deep seclusion; and connect<br>The landscape with the quiet of the sky.",
+          "prompt": "As used in the text, what does the word “behold” most nearly mean?",
+          "choices": ["Possess","Regard","Omit","Escape"],
+          "answer": 1,
+          "rationale": "문맥에서 화자는 절벽을 ‘다시 본다’는 의미로 \\(\\text{behold}\\)를 사용한다. 즉 ‘바라보다/보다’에 해당하므로 \\(\\text{Regard}\\)가 가장 가깝다.",
+          "skills": ["WIC_VOCAB","EVIDENCE_COMMAND"]
+        },
+        {
+          "id": "rwm1q2",
+          "layout": "split",
+          "type": "mcq",
+          "passage": "Although oil shocks—such as the \\(10\\%\\) rise in oil prices in November \\(1970\\)—can strongly affect individual consumers, Gbadebo Oladosu and colleagues have shown that at the level of national economies, their effects are often quite _____ blank. The effect of recent oil shocks on the gross domestic product of Germany, for example, was only slightly greater than zero.",
+          "prompt": "Which choice completes the text with the most logical and precise word or phrase?",
+          "choices": ["variable","persistent","subdued","beneficial"],
+          "answer": 2,
+          "rationale": "국가 단위의 영향이 “0보다 약간 큼”으로 미미함을 보이므로 ‘subdued’가 적절하다.",
+          "skills": ["WIC_VOCAB","INFERENCE"]
+        },
+        {
+          "id": "rwm1q3",
+          "layout": "split",
+          "type": "mcq",
+          "passage": "Writer Lydia Davis observed that while ______ blank literary forms, such as the poem, are recognizable as such even as they evolve, there are pathbreaking “intergeneric” forms that might, for example, use elements of both fables and realist narratives to create something unclassifiable. Davis’s own very short literary pieces arguably fit in this category, since they straddle the line between prose and poetry.",
+          "prompt": "Which choice completes the text with the most logical and precise word or phrase?",
+          "choices": ["innovative","elusive","established","ambiguous"],
+          "answer": 2,
+          "rationale": "시와 같은 ‘기성의’ 형식에 대비해 새로운 혼종형식을 논하므로 ‘established’가 문맥에 맞다.",
+          "skills": ["TEXT_STRUCTURE","WIC_VOCAB"]
+        },
+        {
+          "id": "rwm1q4",
+          "layout": "split",
+          "type": "mcq",
+          "passage": "Mauricio Drelichman and Hans-Joachim Voth’s analysis of the debt repayments and expenditure of the government of Philip II (who ruled an empire including Spain and Milan from \\(1556\\) to \\(1598\\)) found a seeming contradiction: although the government had several short-term cash shortages, it ran an even larger surplus than did the government of eighteenth-century Britain, a nation considered ______ blank of fiscal virtue.",
+          "prompt": "Which choice completes the text with the most logical and precise word or phrase?",
+          "choices": ["a sanction","a paradox","an exemplar","an omen"],
+          "answer": 2,
+          "rationale": "영국은 재정 미덕의 ‘본보기’로 여겨졌다는 뜻이 자연스럽다.",
+          "skills": ["INFERENCE","WIC_VOCAB"]
+        },
+        {
+          "id": "rwm1q5",
+          "layout": "split",
+          "type": "mcq",
+          "passage": "The following text is from Anthony Trollope’s \\(1855\\) novel <i>The Warden</i>.<br>… his fault, <u>if he had one</u>, was an over-attention to words instead of things …",
+          "prompt": "Which choice best states the function of the phrase “if he had one” in the text as a whole?",
+          "choices": [
+            "It acknowledges that the qualities in Charles James the narrator goes on to describe may not actually be undesirable characteristics.",
+            "It concedes that Charles James’s attempts to be held in respect are sometimes fruitless.",
+            "It signals a shift in focus from describing Charles James’s good qualities to criticizing his tendency to place too much value on artfulness.",
+            "It anticipates readers’ objections to the narrator’s criticism of Charles James’s faults."
+          ],
+          "answer": 0,
+          "rationale": "‘fault, if he had one’은 뒤 비판을 완화하며 결함이 아닐 수도 있음을 인정한다.",
+          "skills": ["RHETORIC_PURPOSE","EVIDENCE_COMMAND"]
+        },
+        {
+          "id": "rwm1q6",
+          "layout": "split",
+          "type": "mcq",
+          "passage": "The establishment of urban green spaces … one study found that while trees are negatively associated with air pollutants at city scale, at the street level this association is minimal or positive …",
+          "prompt": "Which choice best describes the overall structure of the text?",
+          "choices": [
+            "It outlines a problem … and suggests researching alternatives.",
+            "It addresses an appealing approach … shows it is not uniformly successful … and emphasizes recognizing nuances.",
+            "It details an initiative … identifies an inconsistency … and explains the account for it.",
+            "It establishes the growing intensity … and refers to broad ineffectiveness."
+          ],
+          "answer": 1,
+          "rationale": "‘녹지’ 접근 제시 → 규모에 따른 효과 불균일 → 연구의 미묘함 인식 강조의 흐름이다.",
+          "skills": ["TEXT_STRUCTURE","EVIDENCE_COMMAND"]
+        },
+        {
+          "id": "rwm1q7",
+          "layout": "split",
+          "type": "mcq",
+          "passage": "<i>The Skin I’m In</i> … Debut novels are especially interesting to literary critics (people whose job it is to evaluate books) …",
+          "prompt": "According to the text, what is someone who professionally evaluates books called?",
+          "choices": ["A bookseller","An author","A literary critic","A book publisher"],
+          "answer": 2,
+          "rationale": "괄호 속 정의가 곧 ‘literary critic’를 가리킨다.",
+          "skills": ["EVIDENCE_COMMAND","WIC_VOCAB"]
+        },
+        {
+          "id": "rwm1q8",
+          "layout": "split",
+          "type": "mcq",
+          "passage": "Adapted from L. M. Montgomery’s \\(1923\\) novel <i>Emily of New Moon</i> … Aunt Elizabeth discovered that Emily was writing stories …",
+          "prompt": "Which choice best states the main idea of the text?",
+          "choices": [
+            "Emily forgot to buy eggs when she was supposed to.",
+            "Aunt Elizabeth thinks Emily should spend more time at school.",
+            "Aunt Elizabeth is surprised to find out that Emily has been writing stories.",
+            "Emily is relieved to learn that Aunt Elizabeth enjoys reading Emily’s stories."
+          ],
+          "answer": 2,
+          "rationale": "핵심은 ‘이모가 에밀리가 이야기 쓰고 있음을 알게 됨’이다.",
+          "skills": ["INFERENCE","TEXT_STRUCTURE"]
+        },
+        {
+          "id": "rwm1q9",
+          "layout": "split",
+          "type": "mcq",
+          "passage": "<b>Average Hours Worked per Person per Year in \\(1950\\) and \\(2017\\)</b><br><table border='1'><tr><th>Country</th><th>\\(1950\\)</th><th>\\(2017\\)</th><th>Change</th><th>Percent change</th></tr><tr><td>Peru</td><td>2,157</td><td>1,932</td><td>−225</td><td>−\\(10\\%\\)</td></tr><tr><td>Canada</td><td>2,109</td><td>1,596</td><td>−513</td><td>−\\(23\\%\\)</td></tr><tr><td>Denmark</td><td>2,049</td><td>1,400</td><td>−649</td><td>−\\(32\\%\\)</td></tr><tr><td>Finland</td><td>2,053</td><td>1,659</td><td>−394</td><td>−\\(19\\%\\)</td></tr></table>",
+          "prompt": "Which choice most effectively uses data from the table to complete the student’s conclusion about Finland?",
+          "choices": [
+            "the percent decrease in hours worked was greater in Finland than it was in Denmark, Canada, or Peru.",
+            "though the decline in number of hours worked in Finland was less than that in Denmark and Canada, it was greater than that in Peru.",
+            "while the number of hours worked rose in Finland between \\(1950\\) and \\(2017\\), it declined in Denmark, Canada, and Peru.",
+            "though the decline in number of hours worked in Finland was greater than that in Denmark and Peru, it was less than that in Canada."
+          ],
+          "answer": 1,
+          "rationale": "핀란드 \\(-19\\%\\)는 덴마크 \\(-32\\%\\), 캐나다 \\(-23\\%\\)보다 작고, 페루 \\(-10\\%\\)보다 크다.",
+          "skills": ["DATA_TABLE_GRAPH","EVIDENCE_COMMAND"]
+        },
+        {
+          "id": "rwm1q10",
+          "layout": "split",
+          "type": "mcq",
+          "passage": "<b>Percent Change in Average Global Market Prices …</b><br><table border='1'><tr><th>Commodity</th><th>TFA</th><th>Tariff-removal</th></tr><tr><td>Fruits & vegetables</td><td>−\\(1.50\\)</td><td>+\\(0.04\\)</td></tr><tr><td>Processed foods</td><td>−\\(1.76\\)</td><td>−\\(1.00\\)</td></tr><tr><td>Rice</td><td>−\\(0.37\\)</td><td>+\\(1.36\\)</td></tr><tr><td>Wheat</td><td>−\\(1.35\\)</td><td>+\\(0.45\\)</td></tr></table>",
+          "prompt": "Which choice most effectively uses data from the table to support the student’s claim?",
+          "choices": [
+            "Under the tariff-removal scenario, the average prices of processed foods, wheat, and fruits and vegetables would decrease by more than \\(1\\%\\), while the average price of rice would decrease by less than \\(1\\%\\).",
+            "Under the tariff-removal scenario, the average price of processed foods would increase, but the average prices of wheat and rice would decrease.",
+            "Under the TFA scenario, the average prices of all four commodities would decrease, whereas under the tariff-removal scenario, only the average price of processed foods would decrease.",
+            "Under the TFA scenario, the average price of rice would decrease by a smaller amount than any of the other three commodities’ prices would, whereas its average price would increase under the tariff-removal scenario."
+          ],
+          "answer": 2,
+          "rationale": "TFA: 모두 하락. 관세철폐: 가공식품만 하락, 나머지 상승 → TFA가 소비자에게 더 유리함을 직접 지지.",
+          "skills": ["DATA_TABLE_GRAPH","EVIDENCE_COMMAND"]
+        },
+        {
+          "id": "rwm1q11",
+          "layout": "split",
+          "type": "mcq",
+          "passage": "<b>Value, Cost, and Seigniorage of US Coins by Denomination, \\(2023\\)</b> … One student argues the one-cent coin was least sensible; another argues the five-cent coin was.",
+          "prompt": "Based on the information, the two students most likely disagree about the answer to which question?",
+          "choices": [
+            "When evaluating the financial implications of issuing a coin, which is more important, the total seigniorage from issuing that coin or the seigniorage per dollar when issuing that coin?",
+            "If issuing a given coin results in negative seigniorage per dollar issued, can that be changed to positive by reducing cost?",
+            "If issuing a given coin results in positive seigniorage per dollar but less than another’s, should it continue?",
+            "When determining financial sense to issue a coin, which matters more, total value of units produced or gross cost?"
+          ],
+          "answer": 0,
+          "rationale": "1센트는 단위당 손실이, 5센트는 총액 손실이 더 커 기준 선택에 따라 결론이 갈린다.",
+          "skills": ["EVIDENCE_COMMAND","SYNTHESIS"]
+        },
+        {
+          "id": "rwm1q12",
+          "layout": "split",
+          "type": "mcq",
+          "passage": "… Ben Blatt … concluded a negative correlation between \\(-ly\\) adverb proliferation and perceived literary merit in Faulkner’s works.",
+          "prompt": "Which finding, if true, would most directly illustrate the pattern Blatt identified?",
+          "choices": [
+            "Whereas Faulkner’s acclaimed <i>The Sound and the Fury</i> has one of the lowest \\(-ly\\) adverb rates among his works, Fitzgerald’s <i>The Great Gatsby</i> has the lowest rate among Fitzgerald’s novels.",
+            "In <i>The Sound and the Fury</i> (a masterpiece), Faulkner used \\(42\\) \\(-ly\\) adverbs per \\(10{,}000\\) words, whereas in the less-acclaimed <i>Soldiers’ Pay</i> he used \\(148\\).",
+            "In <i>Light in August</i> Faulkner used \\(67\\) per \\(10{,}000\\); \\(67\\%\\) of celebrated authors’ novels with fewer than \\(50\\) per \\(10{,}000\\) are classified as great.",
+            "Faulkner averaged \\(92\\) per \\(10{,}000\\); Toni Morrison averaged \\(76\\) per \\(10{,}000\\)."
+          ],
+          "answer": 1,
+          "rationale": "같은 작가 내에서 명작일수록 부사율이 낮음을 직접 비교(\\(42\\) 대 \\(148\\))로 보여준다.",
+          "skills": ["EVIDENCE_COMMAND","SYNTHESIS"]
+        },
+        {
+          "id": "rwm1q13",
+          "layout": "split",
+          "type": "mcq",
+          "passage": "Biology students compared wild-type and <i>Asb5</i> knockout mice … concluded that sodium-level differences are solely due to variation in <i>Asb5</i> expression.",
+          "prompt": "Which finding, if true, would most directly weaken the students’ conclusion?",
+          "choices": [
+            "Some wild-type mice had sodium levels similar to knockout mice but showed a wide variety of <i>Asb5</i> expression.",
+            "A sampling of house mice shows individuals differ in <i>Asb5</i> expression.",
+            "The level of <i>Asb5</i> expression does not appear to affect other genes’ functioning.",
+            "The <i>Asb5</i>-deactivated mice were identical to wild-type mice except in circulating sodium level."
+          ],
+          "answer": 0,
+          "rationale": "<i>Asb5</i> 발현이 달라도 나트륨 수치가 유사함을 보이면 ‘오로지 <i>Asb5</i> 때문’ 주장을 약화한다.",
+          "skills": ["INFERENCE","EVIDENCE_COMMAND"]
+        },
+        {
+          "id": "rwm1q14",
+          "layout": "split",
+          "type": "mcq",
+          "passage": "Odor-preference study across \\(10\\) groups … vanillin rated more pleasant than isovaleric acid across cultures …",
+          "prompt": "Which choice most logically completes the text?",
+          "choices": [
+            "a person who lives in an urban area is more likely to encounter vanillin than one in a small community.",
+            "a person’s mode of living likely doesn’t have a large influence on that person’s perception of odor pleasantness.",
+            "a person who perceives certain odors as pleasant will likely perceive the odors as roughly equal in pleasantness.",
+            "culture likely plays more of a role than human anatomy."
+          ],
+          "answer": 1,
+          "rationale": "서로 다른 생활양식에서도 평가가 유사 → 생활양식의 영향이 크지 않음을 시사.",
+          "skills": ["INFERENCE","TEXT_STRUCTURE"]
+        },
+        {
+          "id": "rwm1q15",
+          "layout": "split",
+          "type": "mcq",
+          "passage": "The towns Entebbe and Jamame are both located almost directly on the ______ blank they are in different countries. Entebbe is in Uganda, while Jamame is in Somalia.",
+          "prompt": "Which choice completes the text so that it conforms to the conventions of Standard English?",
+          "choices": ["equator","equator, but","equator,","equator that"],
+          "answer": 1,
+          "rationale": "등위접속사 ‘but’로 두 완전절 연결: “equator, but they are …”.",
+          "skills": ["PUNCTUATION","SENTENCE_BOUNDARIES"]
+        },
+        {
+          "id": "rwm1q16",
+          "layout": "split",
+          "type": "mcq",
+          "passage": "Having trained as astronauts for years, ______ blank",
+          "prompt": "Which choice completes the text so that it conforms to the conventions of Standard English?",
+          "choices": [
+            "August \\(2\\), \\(1991\\), was when space shuttle <i>Atlantis</i> took flight wit five crew members aboard.",
+            "it was August \\(2\\), \\(1991\\), when five crew members took flight aboard space shuttle <i>Atlantis</i>.",
+            "five crew members took flight aboard space shuttle <i>Atlantis</i> on August \\(2\\), \\(1991\\).",
+            "space shuttle <i>Atlantis</i> took flight on August \\(2\\), \\(1991\\), with five crew members aboard."
+          ],
+          "answer": 2,
+          "rationale": "분사구문의 논리적 주어가 바로 이어지는 절의 주어(‘five crew members’)와 일치해야 한다.",
+          "skills": ["GRAMMAR_AGREEMENT","SENTENCE_BOUNDARIES"]
+        },
+        {
+          "id": "rwm1q17",
+          "layout": "split",
+          "type": "mcq",
+          "passage": "In \\(1991\\), New Jersey ______ blank official fossil: the <i>Hadrosaurus foulkii</i>, which is a Cretaceous period dinosaur.",
+          "prompt": "Which choice completes the text so that it conforms to the conventions of Standard English?",
+          "choices": [
+            "lawmakers designated the state’s",
+            "lawmakers designated the states",
+            "lawmaker’s designated the states",
+            "lawmaker’s designated the state’s"
+          ],
+          "answer": 0,
+          "rationale": "주어는 복수 ‘lawmakers’; ‘the state’s official fossil’에서 소유격 필요.",
+          "skills": ["GRAMMAR_AGREEMENT","PUNCTUATION"]
+        },
+        {
+          "id": "rwm1q18",
+          "layout": "split",
+          "type": "mcq",
+          "passage": "Nicosia is home to roughly \\(27\\%\\) of Cyprus’s total population. This means that about \\(1\\) in \\(4\\) ______ blank live in Cyprus live in Nicosia!",
+          "prompt": "Which choice completes the text so that it conforms to the conventions of Standard English?",
+          "choices": ["people","people who","people,","people, who"],
+          "answer": 1,
+          "rationale": "제한적 관계절이 필요하므로 쉼표 없이 ‘people who’가 맞다.",
+          "skills": ["GRAMMAR_AGREEMENT","SENTENCE_BOUNDARIES"]
+        },
+        {
+          "id": "rwm1q19",
+          "layout": "split",
+          "type": "mcq",
+          "passage": "… how a folktale begins depends largely on the language in which ______ blank being told.",
+          "prompt": "Which choice completes the text so that it conforms to the conventions of Standard English?",
+          "choices": ["they were","these are","they are","it is"],
+          "answer": 3,
+          "rationale": "선행사 ‘a folktale’ 단수와 수일치 → ‘in which it is being told’.",
+          "skills": ["GRAMMAR_AGREEMENT","SENTENCE_BOUNDARIES"]
+        },
+        {
+          "id": "rwm1q20",
+          "layout": "split",
+          "type": "mcq",
+          "passage": "<i>Thraxas</i> … and <i>Strange Tales</i> … have won the prestigious World Fantasy ______ blank the works received the honor in the categories of novel, collection, and anthology, respectively.",
+          "prompt": "Which choice completes the text so that it conforms to the conventions of Standard English?",
+          "choices": ["Award","Award;","Award and","Award,"],
+          "answer": 1,
+          "rationale": "두 완전절 연결에는 세미콜론이 적절하다.",
+          "skills": ["PUNCTUATION","SENTENCE_BOUNDARIES"]
+        },
+        {
+          "id": "rwm1q21",
+          "layout": "split",
+          "type": "mcq",
+          "passage": "Enacted in \\(1868\\), Luxembourg’s \\(5{,}601\\)-word constitution, in contrast to Canada’s, which was enacted in \\(1867\\) and contains a far greater number (\\(19{,}565\\)) of words, ______ blank as the \\(9\\)th shortest in the world. Such data are studied by constitutional scholars like Giovanni Sartori, who can use them to draw broader conclusions.",
+          "prompt": "Which choice completes the text so that it conforms to the conventions of Standard English?",
+          "choices": ["rank","are ranking","ranks","have ranked"],
+          "answer": 2,
+          "rationale": "주어는 단수 ‘constitution’이므로 동사는 단수형 ‘ranks’가 맞다.",
+          "skills": ["GRAMMAR_AGREEMENT","SENTENCE_BOUNDARIES"]
+        },
+        {
+          "id": "rwm1q22",
+          "layout": "split",
+          "type": "mcq",
+          "passage": "If you were to view the Namarunu volcano in Kenya from above, you might notice that its low profile and gently sloping sides make it look a bit like a shield lying flat on the ground. ______ blank it makes sense that Lydia Jennings and other volcanologists classify Namarunu as a shield volcano.",
+          "prompt": "Which choice completes the text with the most logical transition?",
+          "choices": ["For instance,","Therefore,","However,","By contrast,"],
+          "answer": 1,
+          "rationale": "앞의 관찰을 근거로 한 결론이므로 인과 전환 ‘Therefore,’가 적절하다.",
+          "skills": ["TEXT_STRUCTURE","RHETORIC_PURPOSE"]
+        },
+        {
+          "id": "rwm1q23",
+          "layout": "split",
+          "type": "mcq",
+          "passage": "Notes:<br>• Jane is the nickname of a dinosaur fossil specimen housed at the Burpee Museum of Natural History (Rockford, Illinois).<br>• Jane is a member of the genus <i>Tyrannosaurus</i>.<br>• Big Mike is the nickname of a dinosaur fossil specimen housed at the Museum of the Rockies (Bozeman, Montana).<br>• Big Mike is a member of the genus <i>Tyrannosaurus</i>.",
+          "prompt": "The student wants to emphasize a similarity between the two specimens. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+          "choices": [
+            "While Jane is housed at the Burpee Museum of Natural History, Big Mike is housed at the Museum of the Rockies.",
+            "The dinosaur fossil specimens Jane and Big Mike are both members of the genus <i>Tyrannosaurus</i>.",
+            "Big Mike is the nickname of a <i>Tyrannosaurus</i> fossil specimen housed at the Museum of the Rockies in Bozeman, Montana.",
+            "The Burpee Museum of Natural History, where Jane is housed, is located in Rockford, Illinois."
+          ],
+          "answer": 1,
+          "rationale": "두 표본의 공통점(둘 다 <i>Tyrannosaurus</i> 속)을 직접 진술한다.",
+          "skills": ["EVIDENCE_COMMAND","CONCISION_REDUNDANCY"]
+        },
+        {
+          "id": "rwm1q24",
+          "layout": "split",
+          "type": "mcq",
+          "passage": "Notes:<br>• <i>The Incarnations</i> (\\(2015\\)) is an epistolary novel by Susan Barker.<br>• Epistolary novels are written primarily as a series of fictional documents (letters, journal entries, newspaper clippings, etc.).<br>• The letters are sent between a taxi driver named Wang Jun and a mysterious woman.",
+          "prompt": "The student wants to define the term “epistolary novel.” Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+          "choices": [
+            "Consisting primarily of letters sent between a taxi driver named Wang Jun and a mysterious woman, Susan Barker’s <i>The Incarnations</i> is an epistolary novel.",
+            "Susan Barker’s novel <i>The Incarnations</i> was published in \\(2015\\) and consists primarily of letters sent between Wang Jun and a mysterious woman.",
+            "An epistolary novel is a novel written primarily as a series of fictional documents, such as letters, journal entries, or newspaper clippings.",
+            "Published in \\(2015\\), <i>The Incarnations</i> is an epistolary novel by English author Susan Barker."
+          ],
+          "answer": 2,
+          "rationale": "용어 정의가 목표이므로 일반적 정의 문장이 가장 적절하다.",
+          "skills": ["RHETORIC_PURPOSE","CONCISION_REDUNDANCY"]
+        },
+        {
+          "id": "rwm1q25",
+          "layout": "split",
+          "type": "mcq",
+          "passage": "Notes on Svetlana Boym’s <i>The Future of Nostalgia</i>: scholarly book; multifaceted exploration of nostalgia; chapter \\(8\\) explores nostalgia and Europe’s largest shopping mall; chapter \\(17\\) discusses various skeptics’ takes. In chapter \\(17\\), Boym writes, “the poetics of nostalgia combines estrangement and human solidarity, affect and reflection.”",
+          "prompt": "The student wants to provide a quotation from chapter \\(17\\). Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+          "choices": [
+            "After exploring nostalgia and Europe’s largest shopping mall, Svetlana Boym goes on to discuss various skeptics’ takes on the concept of nostalgia.",
+            "Svetlana Boym’s <i>The Future of Nostalgia</i> provides a multifaceted exploration of nostalgia.",
+            "Svetlana Boym explores nostalgia and Europe’s largest shopping mall in chapter \\(8\\) of her book.",
+            "In an exploration of various skeptics’ takes on the concept of nostalgia, Svetlana Boym writes, “the poetics of nostalgia combines estrangement and human solidarity, affect and reflection.”"
+          ],
+          "answer": 3,
+          "rationale": "요구는 ‘인용 제공’이며, 실제 문구를 따옴표로 제시한 선택지가 이를 충족한다.",
+          "skills": ["EVIDENCE_COMMAND","RHETORIC_PURPOSE"]
+        },
+        {
+          "id": "rwm1q26",
+          "layout": "split",
+          "type": "mcq",
+          "passage": "Notes: Urban natural areas feature elements of nature. Facade-bound green walls are exterior walls with plants growing on them; they can benefit cities by enhancing air quality. Urban grasslands are areas of pastures or meadows in cities; they can benefit cities by increasing diversity among bird species.",
+          "prompt": "The student wants to emphasize a similarity between facade-bound green walls and urban grasslands. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+          "choices": [
+            "Urban grasslands, which are areas of pastures or meadows in cities, benefit cities by increasing diversity among bird species.",
+            "Facade-bound green walls enhance air quality, whereas urban grasslands increase diversity among bird species.",
+            "Facade-bound green walls and urban grasslands can both be considered urban natural areas.",
+            "By enhancing air quality, facade-bound green walls benefit cities."
+          ],
+          "answer": 2,
+          "rationale": "공통 범주 ‘urban natural areas’에 속함을 명시하여 유사점을 강조한다.",
+          "skills": ["EVIDENCE_COMMAND","CONCISION_REDUNDANCY"]
+        },
+        {
+          "id": "rwm1q27",
+          "layout": "split",
+          "type": "mcq",
+          "passage": "Notes: When electrons change energy states, certain wavelengths are released (emission spectrum). Magnesium’s spectrum includes the \\(517.2\\) nm wavelength. Helium’s spectrum includes the \\(587.5\\) nm wavelength. The green portion of the visible spectrum is \\(500\\!\\text{–}\\!570\\) nm.",
+          "prompt": "The student wants to identify an emission spectrum that includes a wavelength in the green portion of the visible spectrum. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+          "choices": [
+            "Containing the \\(517.2\\) nm and \\(587.5\\) nm wavelengths, respectively, both magnesium’s and helium’s spectra include wavelengths in the green portion of the visible spectrum.",
+            "Magnesium’s emission spectrum includes the \\(517.2\\) nm wavelength, which is in the green portion of the visible spectrum.",
+            "The \\(587.5\\) nm wavelength, which is in the green portion of the visible spectrum, is one wavelength in the emission spectrum of helium.",
+            "Since the \\(517.2\\) nm wavelength of light is within the \\(500\\!\\text{–}\\!570\\) nm range, it is part of the green portion of the visible spectrum."
+          ],
+          "answer": 3,
+          "rationale": "\\(517.2\\,\\text{nm}\\)은 \\(500\\!\\text{–}\\!570\\) nm 범위에 포함되어 녹색 대역에 해당한다. \\(587.5\\) nm는 범위를 벗어난다.",
+          "skills": ["EVIDENCE_COMMAND","SYNTHESIS"]
+        }
+      ]
+    },
+    {
+      "section": "rw",
+      "module": 2,
+      "questions": [
+        {
+          "id": "rwm2q1",
+          "layout": "split",
+          "type": "mcq",
+          "passage": "In New Zealand, France, and other countries with strong democratic institutions, the state tends to exert relatively little direct control over economic performance. Though this may seem to ______ blank the state’s ability to curb inflation, Raj Desai et al. have shown that strongly democratic states can and do deploy effective counterinflationary policies.",
+          "prompt": "Which choice completes the text with the most logical and precise word or phrase?",
+          "choices": ["hamper","extort","underscore","impugn"],
+          "answer": 0,
+          "rationale": "‘직접 통제가 적다’는 사실이 억제 능력을 ‘저해한다(hamper)’고 보일 수 있다는 맥락이다.",
+          "skills": ["WIC_VOCAB","INFERENCE"]
+        },
+        {
+          "id": "rwm2q2",
+          "layout": "split",
+          "type": "mcq",
+          "passage": "Although the clustering of cutlery manufacturing firms in Sheffield, UK, is often cited as typical of industrial agglomeration, Giulia Faggio et al. use UK data to show that the mix of factors driving the phenomenon is ______ blank across industries.",
+          "prompt": "Which choice completes the text with the most logical and precise word or phrase?",
+          "choices": ["imperative","credible","heterogeneous","decisive"],
+          "answer": 2,
+          "rationale": "산업별로 요인 ‘혼합이 다종다양함’을 뜻하므로 ‘heterogeneous’가 정확하다.",
+          "skills": ["WIC_VOCAB","INFERENCE"]
+        },
+        {
+          "id": "rwm2q3",
+          "layout": "split",
+          "type": "mcq",
+          "passage": "Studying wrappers from discontinued candies … ephemeral objects like these are useful as ______ blank cultural change, revealing shifts in norms, values, and concerns that traditional objects of historical inquiry may not.",
+          "prompt": "Which choice completes the text with the most logical and precise word or phrase?",
+          "choices": ["pretexts for","conjectures about","manifestations of","inducements to"],
+          "answer": 2,
+          "rationale": "이들 사물이 문화 변화의 ‘표현/구체화’로서 유용하다는 의미이므로 ‘manifestations of’가 알맞다.",
+          "skills": ["WIC_VOCAB","RHETORIC_PURPOSE"]
+        },
+        {
+          "id": "rwm2q4",
+          "layout": "split",
+          "type": "mcq",
+          "passage": "The \\(2023\\) anthology <i>The Big Book of Cyberpunk</i> contains \\(108\\) stories … it is more comprehensive than the much shorter \\(1986\\) anthology <i>Mirrorshades</i>, but <i>Mirrorshades</i>’s careful selection of stories makes that anthology more ______ blank.",
+          "prompt": "Which choice completes the text with the most logical and precise word or phrase?",
+          "choices": ["capacious","outmoded","cursory","discerning"],
+          "answer": 3,
+          "rationale": "분량은 적지만 ‘신중한 선별’ 덕분에 더 ‘안목 있는(선별적인)’이라는 뜻이 자연스럽다.",
+          "skills": ["WIC_VOCAB","INFERENCE"]
+        },
+        {
+          "id": "rwm2q5",
+          "layout": "split",
+          "type": "mcq",
+          "passage": "From William Carlos Williams’s \\(1925\\) creative nonfiction <i>In the American Grain</i> … “Invent that which is new, even if it be made of <u>pine from your own yard</u> …”",
+          "prompt": "As used in the text, what does the underlined figurative phrase most nearly mean?",
+          "choices": [
+            "Personal experiences that are hard for others to comprehend",
+            "Ideas you have never previously expressed",
+            "Elements of the culture in which you live",
+            "Inspiration you received while reading independently"
+          ],
+          "answer": 2,
+          "rationale": "‘네 뜰의 소나무’는 자기 주변/자신의 문화적 토양의 요소를 은유한다.",
+          "skills": ["WIC_VOCAB","RHETORIC_PURPOSE"]
+        },
+        {
+          "id": "rwm2q6",
+          "layout": "split",
+          "type": "mcq",
+          "passage": "To prevent excessive microbial growth in the closed habitat of the International Space Station, relative humidity is carefully maintained. Nonetheless, <i>Veillonella parvula</i> and other bacteria … can ______ blank when localized humidity conditions exceed the specified maximum.",
+          "prompt": "Which choice completes the text with the most logical and precise word or phrase?",
+          "choices": ["abate","recalibrate","proliferate","rehabilitate"],
+          "answer": 2,
+          "rationale": "습도가 높아지면 미생물이 ‘증식하다(proliferate)’가 자연스럽다.",
+          "skills": ["WIC_VOCAB","INFERENCE"]
+        },
+        {
+          "id": "rwm2q7",
+          "layout": "split",
+          "type": "mcq",
+          "passage": "In Tunica … the entire word <i>mili</i> gets repeated in <i>milimitta</i>. There are many examples of this type of reduplication in Tunica.",
+          "prompt": "Which choice best describes the overall structure of the text?",
+          "choices": [
+            "It presents some specific words in Tunica, describes the general linguistic phenomenon exemplified by those words, and then states that this phenomenon occurs frequently in Tunica.",
+            "It identifies the most frequently occurring words in Tunica …",
+            "It explains the phenomenon of reduplication, discusses controversy, and argues analysis could resolve it.",
+            "It describes the relationship between Tunica and several other languages …"
+          ],
+          "answer": 0,
+          "rationale": "예시 제시 → 현상 정의 → 해당 언어에서의 빈번함 언급의 구조이다.",
+          "skills": ["TEXT_STRUCTURE","EVIDENCE_COMMAND"]
+        },
+        {
+          "id": "rwm2q8",
+          "layout": "split",
+          "type": "mcq",
+          "passage": "<i>The Truelove</i> … Some critics have found fault with the abrupt endings … but other critics argue …",
+          "prompt": "Which choice best describes the function of the underlined portion in the text as a whole?",
+          "choices": [
+            "It explains why many critics find the novels entertaining despite flaws.",
+            "It argues that the unusual structure makes it one of the least entertaining books.",
+            "It presents a reason most critics think the series should not have literary renown.",
+            "It describes a characteristic of the Aubrey/Maturin novels and summarizes a negative assessment of it."
+          ],
+          "answer": 3,
+          "rationale": "밑줄 부분은 ‘갑작스런 결말’이라는 특징을 제시하고 그에 대한 부정적 평가를 요약한다.",
+          "skills": ["RHETORIC_PURPOSE","TEXT_STRUCTURE"]
+        },
+        {
+          "id": "rwm2q9",
+          "layout": "split",
+          "type": "mcq",
+          "passage": "Text \\(1\\) and Text \\(2\\) each discuss experimental designs about plant nutrient transfer via common mycorrhizal networks (CMN), noting limitations such as barrier permeability and alternative pathways.",
+          "prompt": "Based on the texts, which choice best describes a similarity in the points of view presented in Text \\(1\\) and Text \\(2\\)?",
+          "choices": [
+            "Each text attempts to dispel a common misunderstanding about the likelihood of plant-to-plant nutrient transfer.",
+            "Each text assumes that most nutrient transfer between plants is via a CMN.",
+            "Each text analyzes methods for studying CMN nutrient transfer in order to propose an alternative method of study.",
+            "Each text critiques the methodology of a study about nutrient transfer via a CMN."
+          ],
+          "answer": 3,
+          "rationale": "두 글 모두 실험 설계의 한계를 지적하며 해당 연구 방법론을 비판한다.",
+          "skills": ["SYNTHESIS","EVIDENCE_COMMAND"]
+        },
+        {
+          "id": "rwm2q10",
+          "layout": "split",
+          "type": "mcq",
+          "passage": "Founded in \\(1996\\), the Museum of Latin American Art in Long Beach, California, showcases modern and contemporary art by Latin American artists and Latino artists in the United States … Other institutions devoted to Latino cultures have opened in the United States …",
+          "prompt": "Which choice best states the main topic of the text?",
+          "choices": [
+            "The history of Los Angeles",
+            "The decline in the number of people attending museums",
+            "Latino cultural institutions in the United States",
+            "The geography of Latin America"
+          ],
+          "answer": 2,
+          "rationale": "미술관 소개와 유사 기관의 등장을 다루므로 주제는 ‘미국 내 라티노 문화 기관’이다.",
+          "skills": ["INFERENCE","TEXT_STRUCTURE"]
+        },
+        {
+          "id": "rwm2q11",
+          "layout": "split",
+          "type": "mcq",
+          "passage": "<i>Argyroxiphium caliginis</i> … twenty-eight silversword species found only on the Hawaiian archipelago … all descended from a common ancestor but diversified across habitats over time.",
+          "prompt": "Which choice best states the main idea of the text?",
+          "choices": [
+            "Most plants that grow on the Hawaiian archipelago are descendants of a single founder species.",
+            "All silverswords that grow on the Hawaiian archipelago have similar physical characteristics.",
+            "The Hawaiian archipelago exhibits many distinct habitats and species.",
+            "Silverswords are good examples of adaptive radiation on the Hawaiian archipelago."
+          ],
+          "answer": 3,
+          "rationale": "공통 조상에서 다양한 종으로 분화했다는 설명은 ‘적응 방산(adaptive radiation)의 좋은 예’라는 결론으로 요약된다.",
+          "skills": ["INFERENCE","TEXT_STRUCTURE"]
+        },
+        {
+          "id": "rwm2q12",
+          "layout": "split",
+          "type": "mcq",
+          "passage": "The bird species <i>Piculus flavigula</i> forages in relatively dense vegetation, and <i>Willisornis poecilinotus</i> forages in open or low-density vegetation; they share territory with <i>Thamnomanes caesius</i>, which emits a loud alarm call. Martínez et al. hypothesized an inverse relationship between birds’ field of vision while foraging and their sensitivity to alarm calls from neighboring species.",
+          "prompt": "Which finding, if true, would most directly support Martínez and colleagues’ hypothesis?",
+          "choices": [
+            "<i>W. poecilinotus</i> displayed no reaction when Martínez and colleagues played <i>T. caesius</i> alarm calls, whereas <i>P. flavigula</i> displayed predator-avoidance behavior in response to the calls.",
+            "Many local bird species with similar foraging habits to those of <i>P. flavigula</i> displayed no reaction when Martínez and colleagues played <i>T. caesius</i> alarm calls, whereas <i>P. flavigula</i> displayed predator-avoidance behavior.",
+            "Some individuals of <i>W. poecilinotus</i> displayed predator-avoidance behavior when Martínez and colleagues played <i>T. caesius</i> alarm calls, whereas nearly all did when <i>P. flavigula</i> alarm calls were played.",
+            "When Martínez and colleagues played <i>T. caesius</i> alarm calls, <i>P. flavigula</i> and <i>W. poecilinotus</i> displayed no reaction, whereas <i>T. caesius</i> displayed predator-avoidance behavior."
+          ],
+          "answer": 0,
+          "rationale": "개방지(시야 넓음)인 <i>W. poecilinotus</i>는 반응이 없고, 밀집지(시야 좁음)인 <i>P. flavigula</i>는 회피 행동 → 시야와 민감도의 역상관을 뒷받침한다.",
+          "skills": ["INFERENCE","EVIDENCE_COMMAND"]
+        }
+      ]
+    },
+    { "section": "math", 
+    "module": 1, 
+      "questions": [
+        {
+          "id": "m1q1",
+          "layout": "single",
+          "type": "mcq",
+          "prompt": "The function \\( f \\) is defined by the equation \\( f(x)=10x+4 \\). What is the value of \\( f(x) \\) when \\( x=7 \\)?",
+          "choices": ["\\( 21 \\)","\\( 38 \\)","\\( 47 \\)","\\( 74 \\)"],
+          "answer": 3,
+          "rationale": "대입: \\( f(7)=10\\cdot 7+4=74 \\).",
+          "skills": ["FUNC_LINEAR","EQUATION_LINEAR"]
+        },
+        {
+          "id": "m1q2",
+          "layout": "single",
+          "type": "gridin",
+          "prompt": "A remotely operated vehicle (ROV) is used for underwater ocean research. When the ROV is at a depth of \\( 26 \\) fathoms, what is the ROV’s depth in <i>feet</i>? \\( (1\\ \\text{fathom}=6\\ \\text{feet}) \\)",
+          "answerNumeric": 156,
+          "altNumeric": ["156.0","1.56e2"],
+          "rationale": "\\( 26\\times 6=156 \\).",
+          "skills": ["RATIO_RATE","PROPORTION_PERCENT"]
+        },
+        {
+          "id": "m1q3",
+          "layout": "single",
+          "type": "mcq",
+          "prompt": "\\(\\begin{aligned}6x&=30\\\\ 6x-10y&=80\\end{aligned}\\)<br>What is the solution \\( (x,y) \\) to the given system of equations?",
+          "choices": ["\\( (5,-5) \\)","\\( (5,-11) \\)","\\( (30,80) \\)","\\( (30,50) \\)"],
+          "answer": 0,
+          "rationale": "첫째 식에서 \\( x=5 \\). 둘째 식에 대입해 \\( 30-10y=80\\Rightarrow y=-5 \\).",
+          "skills": ["SYSTEM_LINEAR","EQUATION_LINEAR"]
+        },
+        {
+          "id": "m1q4",
+          "layout": "single",
+          "type": "mcq",
+          "prompt": "Which expression is equivalent to \\( 41x^{2}+41 \\)?",
+          "choices": ["\\( 41(x^{2}+1) \\)","\\( 41x(x+1) \\)","\\( 41(x+1)^{2} \\)","\\( x^{2}+41 \\)"],
+          "answer": 0,
+          "rationale": "공통인수 \\( 41 \\)을 묶으면 \\( 41(x^{2}+1) \\).",
+          "skills": ["ALG_POLYNOMIAL"]
+        },
+        {
+          "id": "m1q5",
+          "layout": "single",
+          "type": "mcq",
+          "prompt": "Note: Figure not drawn to scale.<br><ul><li>One angle is a right angle.</li><li>The length of the side opposite the right angle is \\( r \\).</li><li>The lengths of the other \\( 2 \\) sides are as follows:<br>\\( 9 \\), \\( 12 \\)</li></ul>[[IMAGE: 25june_int1/m1q5.png|right triangle figure]]<br>Which equation gives the relationship between the side lengths of the triangle shown?",
+          "choices": ["\\( 9+12=r \\)","\\( 12-9=r \\)","\\( 9^{2}+12^{2}=r^{2} \\)","\\( 12^{2}-9^{2}=r^{2} \\)"],
+          "answer": 2,
+          "rationale": "직각삼각형이므로 피타고라스 정리 \\( r^{2}=9^{2}+12^{2} \\).",
+          "skills": ["PYTHAGOREAN","GEOM_TRIANGLE","AREA_VOLUME"]
+        },
+         {
+         "id": "m1q6",
+          "layout": "single",
+          "type": "gridin",
+          "prompt": "An event planner is planning an ice-skating event. It costs the event planner a onetime fee of \\( \\$45 \\) to rent the skating rink and \\( \\$10.75 \\) per attendee. The event planner has a budget of \\( \\$275 \\). What is the greatest number of attendees possible without exceeding the budget?",
+          "answerNumeric": 21,
+          "altNumeric": ["21.0"],
+          "rationale": "예산 부등식: \\( 45 + 10.75n \\leq 275 \\).<br>\\( 10.75n \\leq 230 \\).<br>\\( n \\leq \\tfrac{230}{10.75} = 21.39\\ldots \\). 따라서 최대 참석 인원은 \\( 21 \\)명.",
+          "skills": ["EQUATION_LINEAR","INEQUALITY_LINEAR","RATIO_RATE"]
+        },
+        {
+          "id": "m1q7",
+         "layout": "single",
+          "type": "gridin",
+          "prompt": "The ratio of cups of flour to cups of butter in a pie dough recipe is 2.75 to 1. The ratio of cups of flour to cups of butter in a biscuit recipe is 7 to 1. Each recipe has 1 cup of butter. How many more cups of flour are in the biscuit recipe than in the pie dough recipe?",
+          "answerNumeric": 4.25,
+          "altNumeric": ["4.25","4.250","4.3","4.2500"],
+          "rationale": "파이 도우 레시피: 버터 1컵일 때 밀가루는 \\( 2.75 \\)컵.<br>비스킷 레시피: 버터 1컵일 때 밀가루는 \\( 7 \\)컵.<br>차이: \\( 7 - 2.75 = 4.25 \\).",
+          "skills": ["RATIO_RATE","PROPORTION_PERCENT","FRACTION_DECIMAL"]
+        },
+        {
+          "id": "m1q8",
+          "layout": "single",
+          "type": "mcq",
+          "prompt": "A cube has edge length \\(13\\) inches. What is its volume, in cubic inches, of the cube?",
+          "choices": ["\\(39\\)","\\(78\\)","\\(169\\)","\\(2{,}197\\)"],
+          "answer": 3,
+          "rationale": "정육면체 부피 \\(s^{3}=13^{3}=2{,}197\\).",
+          "skills": ["AREA_VOLUME","EXPONENTIAL"]
+        },
+        {
+          "id": "m1q9",
+          "layout": "single",
+          "type": "mcq",
+          "prompt": "[[IMAGE: q9.png|Diagram with lines ℓ, k parallel, and line t intersecting both, forming angles x° and y°]]<br><br>In the figure shown, lines \\( \\ell \\) and \\( k \\) are parallel and line \\( t \\) intersects both lines. If \\( x > 145 \\), which of the following must be true?",
+          "choices": [
+             "\\( y < 35 \\)",
+              "\\( y > 35 \\)",
+            "\\( x + y < 180 \\)",
+            "\\( x + y > 180 \\)"
+             ],
+          "answer": 0,
+          "rationale": "If \\( x > 145 \\), then \\( x \\) is an obtuse angle. Because \\( x \\) and \\( y \\) are consecutive interior angles formed by a transversal cutting parallel lines, \\( x + y = 180 \\). Thus, \\( y = 180 - x < 180 - 145 = 35 \\). Therefore, \\( y < 35 \\).",
+          "skills": ["GEOM_TRIANGLE","INEQUALITY_LINEAR"]
+        },
+        {
+          "id": "m1q10",
+          "layout": "single",
+          "type": "mcq",
+          "prompt": "What is the sum of the solutions to \\((2x-4)(x-8)(x-9)=0\\)?",
+          "choices": ["\\(-21\\)","\\(-19\\)","\\(19\\)","\\(21\\)"],
+          "answer": 2,
+          "rationale": "근은 \\(x=2,8,9\\). 합은 \\(2+8+9=19\\).",
+          "skills": ["ALG_POLYNOMIAL","EQUATION_LINEAR"]
+        },
+        {
+          "id": "m1q11",
+          "layout": "single",
+          "type": "gridin",
+          "prompt": "The function \\( g \\) is defined by \\( g(x)=7x^{-1} \\). What is \\( g(13) \\)?",
+          "answerNumeric": "7/13",
+          "altNumeric": ["0.538","0.5385"],
+          "rationale": "\\( g(13)=\\tfrac{7}{13} \\).",
+          "skills": ["RATIONALS","FUNC_LINEAR"]
+        },
+        {
+          "id": "m1q12",
+          "layout": "single",
+          "type": "mcq",
+          "prompt": "[[IMAGE: q12.png|Graph of dashed line passing through (0,8) and (1,11), shaded below and to the right]]<br><br>The boundary of the inequality is a dashed line.<br>• The line slants sharply up from left to right.<br>• The line passes through the following points:<br>◦ (0, 8)<br>◦ (1, 11)<br>• The area below and to the right of the boundary is shaded.<br>The shaded region shown represents the solutions to which inequality?",
+          "choices": [
+            "\\( y < \\tfrac{1}{3}x + 8 \\)",
+            "\\( y < 3x + 8 \\)",
+            "\\( y > \\tfrac{1}{3}x + 8 \\)",
+            "\\( y > 3x + 8 \\)"
+              ],
+          "answer": 1,
+          "rationale": "The line passes through (0,8) and (1,11). Slope = \\( (11-8)/(1-0) = 3 \\). Equation: \\( y = 3x + 8 \\). Because the line is dashed and shading is below the line, the inequality is \\( y < 3x + 8 \\).",
+          "skills": ["INEQUALITY_LINEAR","DATA_TABLE_GRAPH"]
+        },
+        {
+          "id": "m1q13",
+          "layout": "single",
+          "type": "mcq",
+          "prompt": "The graphs of the equations in the given system of equations intersect at the point \\( (a,b) \\) in the \\( xy \\)-plane. What is a possible value of \\( a \\)?<br><br>\\( y = -8x + 26 \\)<br>\\( y = 2x^2 + 16 \\)",
+          "choices": [
+            "\\( -5 \\)",
+            "\\( -1 \\)",
+            "\\( 2 \\)",
+            "\\( 5 \\)"
+             ],
+          "answer": 2,
+          "rationale": "Set \\( -8x + 26 = 2x^2 + 16 \\). Rearr.: \\( 2x^2 + 8x - 10 = 0 \\). Divide by 2: \\( x^2 + 4x - 5 = 0 \\). Factor: \\( (x+5)(x-1) = 0 \\). Solutions: \\( x = -5 \\) or \\( x = 1 \\). Among choices, \\( a= -5 \\) is valid.",
+          "skills": ["FUNC_QUADRATIC","SYSTEM_LINEAR","EQUATION_LINEAR"]
+        },
+        {
+          "id": "m1q14",
+          "layout": "single",
+          "type": "mcq",
+          "prompt": "[[IMAGE: m1q14.png|Scatterplot of 11 data points trending upward linearly from left to right]]<br><br>The scatterplot shows the relationship between two variables, \\( x \\) and \\( y \\).<br><br>• The scatterplot has 11 data points.<br>• The data points are in a linear pattern trending up from left to right.<br>• The data points have the following coordinates:<br>\\((0,0)\\), \\((0.3,0.7)\\), \\((1.2,0.5)\\), \\((1.9,1.9)\\), \\((3.7,3.8)\\), \\((4.2,4.3)\\), \\((4.8,4.5)\\), \\((6.1,6.5)\\), \\((7.4,7.1)\\), \\((9.2,9.6)\\)<br><br>Which of the following equations is the most appropriate linear model for the data shown?",
+          "choices": [
+            "\\( y = 0.07 - 1.02x \\)",
+            "\\( y = 1.02 - 0.07x \\)",
+            "\\( y = -0.07 + 1.02x \\)",
+            "\\( y = -1.02 + 0.07x \\)"
+          ],
+          "answer": 2,
+          "rationale": "The data trend shows a strong positive linear relationship with slope near 1. Equation with slope \\( 1.02 \\) and small negative intercept fits: \\( y = -0.07 + 1.02x \\).",
+          "skills": ["FUNC_LINEAR","DATA_TABLE_GRAPH"]
+        },
+        {
+          "id": "m1q15",
+          "layout": "single",
+          "type": "gridin",
+          "prompt": "If \\( x \\) is the solution to the given equation, what is the value of \\( x - 3 \\)?<br><br>\\( 4(x-3) = 11 + 2(x-3) \\)",
+          "answerNumeric": 5.5,
+          "altNumeric": ["5.5","11/2"],
+          "rationale": "Let \\( y = x-3 \\). Equation: \\( 4y = 11 + 2y \\). Subtract: \\( 2y = 11 \\). So \\( y = 11/2 = 5.5 \\).",
+          "skills": ["EQUATION_LINEAR"]
+        },
+        {
+          "id": "m1q16",
+          "layout": "single",
+  "type": "mcq",
+  "prompt": "In 1980, the population density of Carroll County was 125 people per square mile. In 1990, the population density of Carroll County was 141 people per square mile. The population density of Carroll County in 1990 was \\( p\\% \\) of the population density of Carroll County in 1980. What is the value of \\( p \\)?",
+  "choices": ["116.0","112.8","16.0","12.8"],
+  "answer": 1,
+  "rationale": "\\( p = \\tfrac{141}{125}\\times 100 = 112.8 \\).",
+  "skills": ["PROPORTION_PERCENT","RATIO_RATE"]
+},
+{
+  "id": "m1q17",
+  "layout": "single",
+  "type": "mcq",
+  "prompt": "Which expression is equivalent to \\( (2x+9)^2 - (x-7) \\)?",
+  "choices": [
+    "\\( 4x^2 + 35x + 74 \\)",
+    "\\( 4x^2 + 35x + 88 \\)",
+    "\\( 4x^2 - x + 74 \\)",
+    "\\( 4x^2 - x + 88 \\)"
+  ],
+  "answer": 0,
+  "rationale": "Expand: \\( (2x+9)^2 = 4x^2 +36x +81 \\). Subtract \\( (x-7) \\): \\( 4x^2 +36x +81 -x +7 = 4x^2 +35x +88 \\). Correct is choice (B).",
+  "skills": ["ALG_POLYNOMIAL","FUNC_QUADRATIC"]
+},
+{
+  "id": "m1q18",
+  "layout": "single",
+  "type": "gridin",
+  "prompt": "A circle has center \\( O \\), and points \\( R \\) and \\( S \\) lie on the circle. In triangle \\( ORS \\), the measure of \\( \\angle ROS \\) is \\( 116^{\\circ} \\). What is the measure of \\( \\angle RSO \\), in degrees? (Disregard the degree symbol when entering your answer.)",
+  "answerNumeric": 32,
+  "altNumeric": ["32.0"],
+  "rationale": "Triangle \\( ORS \\) is isosceles (\\( OR=OS \\)). Angles at R and S are equal. \\( 116+2\\theta =180 \\). So \\( \\theta=32 \\).",
+  "skills": ["GEOM_TRIANGLE","GEOM_CIRCLE"]
+},
+{
+  "id": "m1q19",
+  "layout": "single",
+  "type": "mcq",
+  "prompt": "32 teams are competing in a baseball tournament. The tournament has 5 rounds. After each round, half the teams competing are eliminated from the tournament. If \\( r \\) teams remain in the tournament after \\( x \\) rounds of play, which of the following gives \\( r \\) in terms of \\( x \\)?",
+  "choices": [
+    "\\( r = \\tfrac{1}{2}(32^x) \\)",
+    "\\( r = \\tfrac{1}{2}x^{32} \\)",
+    "\\( r = 32(\\tfrac{1}{2})^x \\)",
+    "\\( r = 32x^{1/2} \\)"
+  ],
+  "answer": 2,
+  "rationale": "Each round halves the teams. Formula: \\( r=32(\\tfrac{1}{2})^x \\).",
+  "skills": ["EXPONENTIAL","RATIO_RATE"]
+},
+{
+  "id": "m1q20",
+  "layout": "single",
+  "type": "mcq",
+  "prompt": "A boat traveled a certain distance upriver and then traveled downriver 10 miles farther than it traveled upriver. The boat took \\( x \\) hours to travel upriver at a speed of 12 miles per hour. The boat then took \\( y \\) hours to travel downriver at a speed of 18 miles per hour faster than the speed at which the boat traveled upriver. Which of the following equations best represents this situation?",
+  "choices": [
+    "\\( 12x - 30y = -10 \\)",
+    "\\( 12x + 30y = -10 \\)",
+    "\\( 12x + 30y = 10 \\)",
+    "\\( 12x - 30y = 10 \\)"
+  ],
+  "answer": 0,
+  "rationale": "Distance upriver = \\( 12x \\). Downriver distance = \\( 30y \\). Relation: \\( 30y = 12x + 10 \\). Rearr.: \\( 12x - 30y = -10 \\).",
+  "skills": ["SYSTEM_LINEAR","RATIO_RATE"]
+},
+{
+  "id": "m1q21",
+  "layout": "single",
+  "type": "gridin",
+  "prompt": "The function \\( f \\) is defined by \\( f(x) = 4(x-3)(x^2-k) \\), where \\( k \\) is a constant. In the \\( xy \\)-plane, the graph of \\( y=f(x) \\) passes through the point \\( (-8,0) \\). What is the value of \\( f(0) \\)?",
+  "answerNumeric": -384,
+  "altNumeric": ["-384.0"],
+  "rationale": "Plug \\( x=-8 \\): \\( 0=4(-11)((64)-k)=-44(64-k) \\). So \\( k=64 \\). Then \\( f(0)=4(-3)(-64)=-384 \\).",
+  "skills": ["FUNC_QUADRATIC","ALG_POLYNOMIAL"]
+},
+{
+  "id": "m1q22",
+  "layout": "single",
+  "type": "mcq",
+  "prompt": "For the linear function \\( g \\), the table shows three values of \\( x \\) and their corresponding values of \\( g(x) \\). Function \\( g \\) is defined by \\( g(x) = ax+b \\), where \\( a \\) and \\( b \\) are constants. What is the value of \\( a+b \\)?<br><br><table border='1'><tr><th>\\(x\\)</th><th>\\(g(x)\\)</th></tr><tr><td>-17</td><td>-7</td></tr><tr><td>-9</td><td>0</td></tr><tr><td>-1</td><td>7</td></tr></table>",
+  "choices": ["\\( \\tfrac{28}{5} \\)","\\( \\tfrac{63}{10} \\)","\\( \\tfrac{63}{8} \\)","\\( \\tfrac{35}{4} \\)"],
+  "answer": 0,
+  "rationale": "Slope: \\( a=(0-(-7))/(-9-(-17))=7/8 \\). Using (-9,0): \\( 0=7/8(-9)+b \\). So \\( b=63/8 \\). Then \\( a+b=7/8+63/8=70/8=35/4 \\). Correct choice: D.",
+  "skills": ["FUNC_LINEAR","DATA_TABLE_GRAPH"]
+}
+
+      ]
+    },
+    {
+      "module": 2,
+      "questions": [     
+  {
+    "id": "m2Q1",
+    "layout": "single",
+    "type": "mcq",
+    "prompt": "A business owner purchased an energy-efficient air conditioning system for a cost of  $ \\( 4,200 \\), including installation. The business owner saves $ \\( 940 \\) per year to operate the new system compared to the operating cost of the old system. Including the cost of the new system, which \\( f \\) gives the total amount, in dollars, the business owner has saved \\( x \\) years after purchasing the new system?",
+    "choices": [
+      "\\( f(x) = -4,200x + 940 \\)",
+      "\\( f(x) = 940x - 4,200 \\)",
+      "\\( f(x) = -940x - 4,200 \\)",
+      "\\( f(x) = 4,200x - 940 \\)"
+    ],
+    "answer": 1,
+    "rationale": "초기 비용이 \\( 4,200 \\)달러이고, 매년 \\( 940 \\)달러를 절약하므로, \\( x \\)년 후 총 절약액은 \\( 940x \\)에서 초기 비용 \\( 4,200 \\)을 뺀 값이다. 따라서 \\( f(x) = 940x - 4,200 \\)이며, 이는 선택지 (B)이다.",
+    "skills": ["EQUATION_LINEAR", "FUNC_LINEAR"]
+  },
+  {
+    "id": "m2Q2",
+    "layout": "single",
+    "type": "mcq",
+    "prompt": "For the linear function \\( g \\), the graph of \\( y = g(x) \\) in the \\( xy \\)-plane has a slope of \\( 5 \\) and passes through the point \\( (2, 37) \\). Which equation defines \\( g \\)?",
+    "choices": [
+      "\\( g(x) = 27x \\)",
+      "\\( g(x) = 5x \\)",
+      "\\( g(x) = 27x + 5 \\)",
+      "\\( g(x) = 5x + 27 \\)"
+    ],
+    "answer": 3,
+    "rationale": "기울기 \\( m = 5 \\), 점 \\( (2, 37) \\)을 이용해 점-기울기 방정식 \\( y - 37 = 5(x - 2) \\)를 세우면 \\( y = 5x + 27 \\)이 된다. 따라서 정답은 (D)이다.",
+    "skills": ["FUNC_LINEAR", "EQUATION_LINEAR"]
+  },
+  {
+    "id": "m2Q3",
+    "layout": "single",
+    "type": "mcq",
+    "prompt": "Parallelogram PQRS is similar to parallelogram TUVW, such that P, Q, R, and S correspond to T, U, V, and W, respectively. If \\( PQ = 28TU \\), then which of the following must be true?",
+    "choices": [
+      "PR = 3QR",
+      "PR = 3WV",
+      "QR = 28TU",
+      "QR = 28UV"
+    ],
+    "answer": 3,
+    "rationale": "유사한 평행사변형에서 대응하는 변의 길이는 비례한다. \\( PQ \\)는 \\( TU \\)에 대응하므로, \\( QR \\)은 \\( UV \\)에 대응한다. \\( PQ = 28TU \\)이면 비율이 28:1이므로, \\( QR = 28UV \\)가 성립한다.",
+    "skills": ["GEOM_TRIANGLE", "RATIO_RATE"]
+  },
+  {
+    "id": "m2Q4",
+    "layout": "single",
+    "type": "gridin",
+    "prompt": "At a convention center, there are a total of \\( 250 \\) visitors. Each visitor is located in either room A, room B, or room C. If one of these visitors is selected at random, the probability of selecting a visitor who is located in room A is \\( 0.72 \\) and the probability of selecting a visitor who is located in room B is \\( 0.24 \\). How many visitors are located in room C?",
+    "answerNumeric": 10,
+    "altNumeric": [],
+    "rationale": "방 A의 확률은 \\( 0.72 \\), 방 B의 확률은 \\( 0.24 \\)이므로, 방 C의 확률은 \\( 1 - 0.72 - 0.24 = 0.04 \\)이다. 전체 인원 \\( 250 \\)명 중 \\( 0.04 \\times 250 = 10 \\)명이 방 C에 있다.",
+    "skills": ["PROBABILITY", "RATIO_RATE"]
+  },
+        {
+    "id": "m2Q5",
+    "layout": "single",
+    "type": "mcq",
+    "prompt": "Line \\( k \\) is defined by \\( y = 4x + \\frac{1}{2} \\). Line \\( j \\) is perpendicular to line \\( k \\) in the \\( xy \\)-plane. What is the slope of line \\( j \\)?",
+    "choices": [
+      "\\( -2 \\)",
+      "\\( -\\frac{1}{4} \\)",
+      "\\( 1 \\)",
+      "\\( 4 \\)"
+    ],
+    "answer": 1,
+    "rationale": "기울기 \\( m_k = 4 \\)이므로, 수직인 직선의 기울기는 \\( m_j = -\\frac{1}{m_k} = -\\frac{1}{4} \\)이다.",
+    "skills": ["FUNC_LINEAR", "EQUATION_LINEAR"]
+  },
+  {
+    "id": "m2Q6",
+    "layout": "single",
+    "type": "mcq",
+    "prompt": "The kinetic energy \\( K \\), in joules, of an object is given by the formula \\( K = \\frac{1}{2}mv^2 \\), where \\( m \\) is the mass of the object, in kilograms, and \\( v \\) is the velocity of the object, in meters per second. If the kinetic energy of a certain object can be found by using the formula \\( K = 82v^2 \\), what is the mass of the object, in kilograms?",
+    "choices": [
+      "6,724",
+      "164",
+      "82",
+      "41"
+    ],
+    "answer": 1,
+    "rationale": "\\( \\frac{1}{2} m v^2 = 82 v^2 \\)이므로, \\( \\frac{1}{2} m = 82 \\)에서 \\( m = 164 \\)이다.",
+    "skills": ["EQUATION_LINEAR", "RATIO_RATE"]
+  },
+  {
+    "id": "m2Q7",
+    "layout": "single",
+    "type": "mcq",
+    "prompt": "What is the y-intercept of the graph of \\( y = 16^x \\) in the \\( xy \\)-plane?",
+    "choices": [
+      "(0, 1)",
+      "(0, 16)",
+      "(0, 0)",
+      "(0, 15)"
+    ],
+    "answer": 0,
+    "rationale": "y절편은 \\( x = 0 \\)일 때의 값이다. \\( y = 16^0 = 1 \\)이므로 y절편은 (0, 1)이다.",
+    "skills": ["EXPONENTIAL"]
+  },
+  {
+    "id": "m2q8",
+    "layout": "single",
+    "type": "mcq",
+    "prompt": "Which expression is equivalent to \\( ((\\sqrt[7]{3})t)^{\\frac{7}{8}} \\), where \\( t > 0 \\)?",
+    "choices": [
+      "\\( \\sqrt[7]{3t^8} \\)",
+      "\\( \\sqrt[7]{3^8 t} \\)",
+      "\\( \\sqrt[8]{3t^7} \\)",
+      "\\( \\sqrt[8]{3^7 t} \\)"
+    ],
+    "answer": 3,
+    "rationale": "거듭제곱 법칙에 따라 \\( ((\\sqrt{3})t)^{\\frac{7}{8}} = (\\sqrt{3})^{\\frac{7}{8}} \\cdot t^{\\frac{7}{8}} \\)이다. \\( \\sqrt{3} = 3^{1/2} \\)이므로, 이는 \\( 3^{\\frac{1}{2} \\cdot \\frac{7}{8}} t^{\\frac{7}{8}} = 3^{\\frac{7}{16}} t^{\\frac{7}{8}} \\)이다. 이를 4제곱근 형태로 쓰면 \\( \\sqrt[4]{3^7 t} \\)이 된다.",
+    "skills": ["EXPONENTIAL", "RADICALS_RATIONALS"]
+  },
+  {
+    "id": "m2Q9",
+    "layout": "single",
+    "type": "mcq",
+    "prompt": "The function \\( m \\) gives the predicted body mass \\( m(t) \\), in kilograms (kg), of a male giraffe \\( t \\) days after it was born in a wildlife reserve, where \\( t \\leq 390 \\). Which of the following is the best interpretation of the statement \\( m(370) \\) is approximately equal to 389 in this context?\n\n\\( m(t) = -0.0274(t - 389)^2 + 7.8375(t - 389) + 75.032 \\)",
+    "choices": [
+      "The predicted body mass of a male giraffe was approximately 389 kg 370 days before it was born.",
+      "The predicted body mass of a male giraffe was approximately 389 kg 370 days after it was born.",
+      "The predicted body mass of a male giraffe was approximately 389 kg 389 days after it was born.",
+      "The predicted body mass of a male giraffe was approximately 370 kg 389 days after it was born."
+    ],
+    "answer": 1,
+    "rationale": "\\( t = 370 \\)은 출생 후 370일을 의미하므로, \\( m(370) \\approx 389 \\)는 출생 후 370일에 몸무게가 약 389kg임을 뜻한다.",
+    "skills": ["FUNC_QUADRATIC", "EVIDENCE_COMMAND"]
+  },
+  {
+    "id": "m2Q10",
+    "layout": "single",
+    "type": "mcq",
+    "prompt": "In the given equation, \\( k \\) is a constant. The equation has no solution. What is the value of \\( k \\)?\n\n\\( \\frac{2}{3}(x - k) = k(x - \\frac{2}{3}) \\)",
+    "choices": [
+      "\\( k = -\\frac{2}{3} \\)",
+      "\\( k = 1 \\)",
+      "\\( k = 0 \\)",
+      "\\( k = \\frac{2}{3} \\)"
+    ],
+    "answer": 1,
+    "rationale": "양변 전개: \\( \\frac{2}{3}x - \\frac{2}{3}k = kx - \\frac{2}{3}k \\). \\( -\\frac{2}{3}k \\)가 양변에 같으므로 소거되고, \\( \\frac{2}{3}x = kx \\)가 된다. 해가 없으려면 \\( \\frac{2}{3} = k \\)이면서 상수항 불일치여야 하나, 상수항이 동일하므로 해가 무한대가 된다. 따라서 해가 없으려면 계수는 같고 상수항이 달라야 하므로, 전개 시 상수항이 달라지는 경우를 찾아야 한다. 계산 결과 \\( k = 1 \\)일 때 모순이 발생한다.",
+    "skills": ["EQUATION_LINEAR"]
+  },
+  {
+    "id": "m2Q11",
+    "layout": "single",
+    "type": "mcq",
+    "prompt": "The function \\( f \\) is defined by the given equation. Which of the following equivalent forms of the equation displays the maximum value of the function as a constant or coefficient?\n\n\\( f(x) = -3x^2 + 30x - 48 \\)",
+    "choices": [
+      "\\( f(x) = -3x^2 + 24x + 6x - 48 \\)",
+      "\\( f(x) = -3x^2 + 6x + 8(6x - 48) \\)",
+      "\\( f(x) = -3(x^2 - 10x + 27) \\)",
+      "\\( f(x) = -3(x - 5)^2 + 27 \\)"
+    ],
+    "answer": 3,
+    "rationale": "꼭짓점형 \\( f(x) = -3(x - 5)^2 + 27 \\)에서 최대값은 27임을 알 수 있다.",
+    "skills": ["FUNC_QUADRATIC"]
+  },
+  {
+    "id": "m2Q12",
+    "layout": "single",
+    "type": "mcq",
+    "prompt": "An object's speed, in meters per hour, is increasing at a rate of 1,530 meters per hour per second. Which of the following is closest to this rate in feet per second squared? (Use 1 meter = 3.28 feet.)",
+    "choices": [
+      "0.13",
+      "1.39",
+      "7.77",
+      "83.6"
+    ],
+    "answer": 1,
+    "rationale": "1,530 m/h/s = \\( 1,530 \\times 3.28 \\) ft/h/s = 5,018.4 ft/h/s. 1시간 = 3,600초이므로, \\( 5,018.4 / 3,600 \\approx 1.39 \\) ft/s².",
+    "skills": ["RATIO_RATE", "UNIT_CONVERSION"]
+  },
+        {
+    "id": "m2q13",
+    "layout": "single",
+    "type": "gridin",
+    "prompt": "The table shows four values of \\( x \\) and their corresponding values of \\( y \\). The linear relationship between \\( x \\) and \\( y \\) can be represented by the equation \\( 2x + By = C \\), where \\( B \\) and \\( C \\) are constants. What is the value of \\( C \\)?\n\n<table>\n<tr><th>x</th><th>y</th></tr>\n<tr><td>-6</td><td>-14</td></tr>\n<tr><td>-3</td><td>-16</td></tr>\n<tr><td>3</td><td>-20</td></tr>\n<tr><td>6</td><td>-22</td></tr>\n</table>",
+    "answerNumeric": -54,
+    "altNumeric": [],
+    "rationale": "점 \\( (3, -20) \\)을 대입하면 \\( 2(3) + B(-20) = C \\)이다. 다른 점 \\( (6, -22) \\)을 대입하면 \\( 12 + B(-22) = C \\)이다. 두 식의 차를 이용하면 \\( (12 - 6) + (-22B + 20B) = 0 \\)에서 \\( 6 - 2B = 0 \\)이므로 \\( B = 3 \\)이다. 이를 \\( 2(3) + 3(-20) = 6 - 60 = -54 \\)로 계산했으나, 모든 점에서 동일한 C가 나와야 하므로 다른 점 \\( (-3, -16) \\)을 대입하면 \\( -6 + 3(-16) = -6 - 48 = -54 \\)로 일치한다. 따라서 \\( C = -54 \\)이다.",
+    "skills": ["EQUATION_LINEAR", "DATA_TABLE_GRAPH"]
+  },
+  {
+    "id": "m2Q14",
+    "layout": "single",
+    "type": "mcq",
+    "prompt": "Given equations:\n\\[ 2x + 5y = 9 \\]\n\\[ 12x + 30y = 54 \\]\nFor each real number \\( r \\), which of the following points lies on the graph of each equation in the \\( xy \\)-plane for the given system?",
+    "choices": [
+      "\\( \\left( r, -\\frac{2r}{5} + \\frac{9}{5} \\right) \\)",
+      "\\( \\left( -\\frac{2r}{5} + \\frac{9}{5}, r \\right) \\)",
+      "\\( \\left( -\\frac{2r}{5} + \\frac{9}{5}, \\frac{2r}{5} + 54 \\right) \\)",
+      "\\( \\left( \\frac{r}{6} + 9, -\\frac{r}{6} + 54 \\right) \\)"
+    ],
+    "answer": 0,
+    "rationale": "첫 번째 식에서 \\( y = -\\frac{2}{5}x + \\frac{9}{5} \\)이므로, 임의의 \\( r \\)에 대해 \\( (r, -\\frac{2r}{5} + \\frac{9}{5}) \\)는 항상 해가 된다. 두 번째 식은 첫 번째 식의 6배이므로 동일한 해를 가진다.",
+    "skills": ["SYSTEM_LINEAR"]
+  },
+  {
+    "id": "m2Q15",
+    "layout": "single",
+    "type": "mcq",
+    "prompt": "Given equation:\n\\[ 9x^2 + 30x + q = 43 \\]\nIn the given equation, \\( q \\) is a constant. One solution to the given equation is \\( x = \\frac{-5 + \\sqrt{14}}{3} \\). What is the value of \\( q \\)?",
+    "choices": [
+      "54",
+      "43",
+      "11",
+      "5"
+    ],
+    "answer": 2,
+    "rationale": "주어진 해를 대입하여 \\( 9x^2 + 30x + q = 43 \\)에 넣고 계산하면 \\( q = 11 \\)이 된다.",
+    "skills": ["EQUATION_QUADRATIC", "ALG_POLYNOMIAL"]
+  },
+  {
+    "id": "m2q16",
+    "layout": "single",
+    "type": "mcq",
+    "prompt": "At a hotel, guests used the pool for a total of \\( t \\) hours in March. At the same hotel, guests used the pool for \\( 3.61t \\) hours in April. What is the percent increase in the number of hours guests used the pool from March to April?",
+    "choices": [
+      "\\( 2.61\\% \\)",
+      "\\( 3.61\\% \\)",
+      "\\( 261\\% \\)",
+      "\\( 361\\% \\)"
+    ],
+    "answer": 2,
+    "rationale": "증가율은 \\( \\frac{3.61t - t}{t} \\times 100\\% = 2.61 \\times 100\\% = 261\\% \\)이다.",
+    "skills": ["PROPORTION_PERCENT", "RATIO_RATE"]
+  },
+  {
+    "id": "m2Q17",
+    "layout": "single",
+    "type": "mcq",
+    "prompt": "In the \\( xy \\)-plane, the point (6, 7) is a solution to which of the following systems of inequalities?",
+    "choices": [
+      "\\( x < 3 \\)<br>\\( y > 5 \\)",
+      "\\( x < 3 \\)<br>\\( y < 5 \\)",
+      "\\( x > 3 \\)<br>\\( y < 5 \\)",
+      "\\( x > 3 \\)<br>\\( y > 5 \\)"
+    ],
+    "answer": 3,
+    "rationale": "(6, 7)은 \\( x > 3 \\)이고 \\( y > 5 \\)를 만족하므로 선택지 (D)가 옳다.",
+    "skills": ["INEQUALITY_LINEAR"]
+  },
+  {
+    "id": "m2q18",
+    "layout": "single",
+    "type": "mcq",
+    "prompt": "At different times on a certain day, a manager at a theme park recorded the number of visitors. An exponential model gives the estimated number of visitors, \\( V \\), at the theme park \\( t \\) hours after the theme park opened, where \\( t \\leq 3 \\). Based on the model, \\( 80 \\) visitors were estimated to be at the theme park when it opened, and every \\( 30 \\) minutes the estimated number of visitors increased by \\( 150\\% \\) of the estimated number of visitors \\( 30 \\) minutes earlier. Which of the following equations best represents this model?",
+    "choices": [
+      "\\( V = 80(2.50)^{2t} \\)",
+      "\\( V = 80(2.50)^{t/30} \\)",
+      "\\( V = 80(1.50)^t \\)",
+      "\\( V = 80(1.50)^{t/30} \\)"
+    ],
+    "answer": 0,
+    "rationale": "30분마다 기존 수의 \\( 150\\% \\)를 더한다는 것은 1.5배 증가가 아니라 \\( 1 + 1.5 = 2.5 \\)배가 되는 것이다. 1시간에는 30분이 2번 있으므로, \\( t \\)시간 후에는 \\( 2t \\)번 2.5배를 곱하게 된다. 따라서 식은 \\( V = 80(2.50)^{2t} \\)이다.",
+    "skills": ["EXPONENTIAL", "RATIO_RATE"]
+  },
+  {
+    "id": "m2Q19",
+    "layout": "single",
+    "type": "mcq",
+    "prompt": "The table summarizes the distribution of the number of pieces of mail received by a business each day during a period of \\( 11 \\) days.\n\n<table style=\"width:50%; text-align:center; border-collapse:collapse;\">\n<tr><th>Pieces of mail</th><th>Days</th></tr>\n<tr><td>0</td><td>2</td></tr>\n<tr><td>4</td><td>2</td></tr>\n<tr><td>5</td><td>2</td></tr>\n<tr><td>6</td><td>2</td></tr>\n<tr><td>7</td><td>1</td></tr>\n<tr><td>8</td><td>1</td></tr>\n<tr><td>17</td><td>1</td></tr>\n</table>\n\nThe data value \\( 17 \\) is removed from data set A to create data set B, which consists of the remaining \\( 10 \\) data values. Which statement best compares the median of data set A and the median of data set B?\n\n(1) The median of data set B is less than the median of data set A. (2) The median of data set B is greater than the median of data set A. (3) The median of data set B is equal to the median of data set A. (4) There is not enough information to compare the medians of the two data sets.",
+    "choices": [
+      "The median of data set B is less than the median of data set A.",
+      "The median of data set B is greater than the median of data set A.",
+      "The median of data set B is equal to the median of data set A.",
+      "There is not enough information to compare the medians of the two data sets."
+    ],
+    "answer": 2,
+    "rationale": "데이터를 오름차순으로 나열하면 \\( 0, 0, 4, 4, 5, 5, 6, 6, 7, 8, 17 \\)이다. 중앙값은 6번째 값 \\( 5 \\)이다. \\( 17 \\)을 제거하면 \\( 0, 0, 4, 4, 5, 5, 6, 6, 7, 8 \\)이 되고, 중앙 두 값(5번째와 6번째)은 모두 \\( 5 \\)이므로 중앙값은 여전히 \\( 5 \\)이다.",
+    "skills": ["STAT_MEAN_MEDIAN", "DATA_TABLE_GRAPH"]
+  },
+  {
+    "id": "m2q20",
+    "layout": "single",
+    "type": "mcq",
+    "prompt": "Triangle \\( ABC \\) is similar to triangle \\( DEF \\), where \\( A \\) corresponds to \\( D \\) and \\( C \\) corresponds to \\( F \\). Angles \\( C \\) and \\( F \\) are right angles. If \\( \\tan(A) = \\sqrt{3} \\) and \\( DF = 53 \\), what is the length of \\( DE \\)?",
+    "choices": [
+      "\\( \\frac{53\\sqrt{3}}{3} \\)",
+      "\\( \\frac{53\\sqrt{3}}{2} \\)",
+      "\\( 53\\sqrt{3} \\)",
+      "\\( 106 \\)"
+    ],
+    "answer": 2,
+    "rationale": "삼각형 \\( DEF \\)에서 각 \\( F \\)가 직각이고, \\( \\tan(A) = \\sqrt{3} \\)이므로 \\( \\tan(D) = \\frac{DE}{DF} = \\sqrt{3} \\)이다. 따라서 \\( DE = DF \\times \\sqrt{3} = 53\\sqrt{3} \\)이다.",
+    "skills": ["GEOM_TRIANGLE", "RATIO_RATE"]
+  },
+        {
+    "id": "m2q21",
+    "layout": "single",
+    "type": "gridin",
+    "prompt": "A right triangular pyramid has exactly six edges. Each of these edges is \\( 96 \\) centimeters long. If the surface area of the pyramid is \\( k\\sqrt{3} \\) square centimeters, what is the value of \\( k \\)?",
+    "answerNumeric": 9216,
+    "altNumeric": [],
+    "rationale": "밑면은 한 변의 길이가 \\( 96 \\)cm인 정삼각형이므로 넓이는 \\( \\frac{\\sqrt{3}}{4} \\times 96^2 = 2304\\sqrt{3} \\) cm²이다. 옆면은 모두 정삼각형이며, 각 옆면의 밑변은 96cm, 높이는 피타고라스 정리에 의해 \\( \\sqrt{96^2 - 48^2} = 48\\sqrt{3} \\) cm이다. 각 옆면의 넓이는 \\( \\frac{1}{2} \\times 96 \\times 48\\sqrt{3} = 2304\\sqrt{3} \\) cm²이고, 3개의 옆면 넓이 합은 \\( 6912\\sqrt{3} \\) cm²이다. 전체 표면적은 \\( 2304\\sqrt{3} + 6912\\sqrt{3} = 9216\\sqrt{3} \\) cm²이므로, \\( k = 9216 \\)이다.",
+    "skills": ["AREA_VOLUME", "GEOM_TRIANGLE"]
+  },
+  {
+    "id": "m2q22",
+    "layout": "single",
+    "type": "gridin",
+    "prompt": "In the given equation, \\( x(kx - 96) = -8 \\), \\( k \\) is an integer constant. If the equation has two distinct real solutions, what is the greatest possible value of \\( k \\)?",
+    "answerNumeric": 287,
+    "altNumeric": [],
+    "rationale": "식을 전개하면 \\( kx^2 - 96x + 8 = 0 \\)이다. 두 실근이 존재하려면 판별식 \\( (-96)^2 - 4k(8) > 0 \\)이어야 한다. 즉, \\( 9216 - 32k > 0 \\)이므로 \\( k < 288 \\)이다. \\( k \\)는 정수이므로 최대값은 \\( 287 \\)이다.",
+    "skills": ["EQUATION_QUADRATIC"]
+  }
+      ]
+    }
+  ]
+}

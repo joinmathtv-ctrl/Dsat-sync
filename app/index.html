@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<meta name="robots" content="noindex,nofollow">
+<title>TestForge — SAT-style Practice</title>
+
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/assets/common.css">
+
+<style>
+  .cta{display:flex;gap:12px;flex-wrap:wrap}
+  .btn{padding:8px 12px;border:1px solid #ddd;border-radius:10px;background:#fff;cursor:pointer}
+  .btn.primary{background:#2563eb;border-color:#2563eb;color:#fff}
+  .muted{color:#6b7280}
+  header.container{display:flex;flex-direction:column;gap:8px}
+  header .nav{display:flex;align-items:center;gap:10px}
+</style>
+
+<!-- Firebase / Session / Login UI -->
+<script type="module" src="/assets/firebase.client.js"></script>
+<script type="module" src="/assets/session.js"></script>
+<script type="module" src="/assets/ui.login.js"></script>
+</head>
+<body>
+
+<header class="container">
+  <div class="nav" style="justify-content:space-between;width:100%">
+    <div style="display:flex;align-items:center;gap:10px">
+      <strong>TestForge</strong>
+      <span class="badge paid hidden" data-badge="paid">PAID</span>
+      <span class="badge internal hidden" data-badge="internal">INTERNAL</span>
+    </div>
+    <nav class="nav">
+      <span data-when="loggedin" class="hidden">Hi, <span data-user-email></span></span>
+      <a href="/dashboard.html" data-when="loggedin" class="hidden btn">Dashboard</a>
+      <button data-action="login" data-when="loggedout" class="btn">Login</button>
+      <button data-action="logout" data-when="loggedin" class="hidden btn">Logout</button>
+    </nav>
+  </div>
+
+  <h1>Train Like It’s Test Day</h1>
+  <p>Original SAT-style practice. Trial access requires sign-in.</p>
+
+  <!-- 로그인 전 -->
+  <div id="guestCta" class="cta" data-when="loggedout">
+    <a class="btn" href="/signup.html">Sign up (invite)</a>
+    <button class="btn primary" data-action="login">Log in</button>
+  </div>
+
+  <!-- 로그인 후 -->
+  <div id="userCta" class="cta hidden" data-when="loggedin">
+    <a class="btn primary" href="/dashboard.html">Continue to dashboard →</a>
+    <button class="btn" data-action="logout">Log out</button>
+  </div>
+</header>
+
+<section class="container">
+  <h2>Plans</h2>
+  <ul>
+    <li><strong>Trial</strong>: Free preview (sign-in required)</li>
+    <li><strong>Paid</strong>: Premium sets (Coming soon, require purchase)</li>
+    <li><strong>Internal</strong>: Instructor-only internal materials</li>
+  </ul>
+  <p class="muted">Already signed in? <a href="/dashboard.html">Go to dashboard →</a></p>
+</section>
+
+<footer class="container">
+  <small>This site is not affiliated with or endorsed by College Board. “SAT” is a registered trademark of College Board. All practice problems are original. Official materials are used only for internal instructional purposes and are not publicly distributed.</small>
+</footer>
+
+<!-- 로그인 모달 (Firebase Email/Password) -->
+<div id="loginModal" class="modal">
+  <div class="card">
+    <div class="row" style="margin-bottom:10px">
+      <strong>Login</strong>
+      <button id="loginClose">✕</button>
+    </div>
+    <form id="loginForm">
+      <label>Email<br><input id="loginEmail" type="email" required></label><br>
+      <label>Password<br><input id="loginPw" type="password" required></label><br><br>
+      <button type="submit" class="primary">Sign in</button>
+    </form>
+    <p style="font-size:.8rem;color:#666;margin-top:10px">
+      Trial sets are free. Paid/Internal require entitlement.
+    </p>
+  </div>
+</div>
+
+<!-- 로컬 JWT 폴백 헬퍼(있으면 사용) -->
+<script src="/_auth.js"></script>
+
+<script type="module">
+  import { mountLoginUI } from "/assets/ui.login.js";
+  import { Session } from "/assets/session.js";
+
+  // 기본 로그인 UI(모달/배지/CTA 토글) 장착
+  mountLoginUI();
+
+  // 폴백: Firebase가 아예 없고(_auth.js) 로컬 JWT만 있는 환경도 케어
+  // - Session가 로그인 이벤트를 못 받는 경우를 대비해 1회 초기 토글
+  (async function fallbackInit(){
+    // Session.ready 이후 상태에 맞춰 data-when 토글은 이미 동작
+    await Session.ready;
+
+    // 추가로, 예전 guestCta/userCta도 data-when과 동기화됨
+    // 별도 처리 불필요하지만, 로컬 JWT만 있을 때를 대비해 2차 체크:
+    const hasLocalJwt = !!localStorage.getItem('jwt');
+    if (!Session.user && hasLocalJwt) {
+      // 최소한의 표시: 로그인 UI를 "로그인됨" 상태로 보이게
+      document.querySelectorAll('[data-when="loggedout"]').forEach(el=>el.classList.add('hidden'));
+      document.querySelectorAll('[data-when="loggedin"]').forEach(el=>el.classList.remove('hidden'));
+    }
+
+    // 로그아웃 버튼(둘 중 어떤 인증이든 정리)
+    document.querySelectorAll('[data-action="logout"]').forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        try { if (window.firebase?.auth) firebase.auth().signOut(); } catch {}
+        if (window.auth && typeof auth.logout === 'function') auth.logout(); // _auth.js
+      });
+    });
+  })();
+</script>
+</body>
+</html>

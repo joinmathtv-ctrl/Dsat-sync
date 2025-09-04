@@ -1,0 +1,23 @@
+<!doctype html><html><head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Sign up</title>
+</head><body class="container">
+<h1>Create account (invite-only)</h1>
+<form id="f">
+  <input name="email" placeholder="Email" required>
+  <input name="password" type="password" placeholder="Password" required>
+  <input name="invite" placeholder="Invite code" required>
+  <button>Sign up</button>
+</form>
+<p>Have an account? <a href="/login.html">Log in</a></p>
+<script src="/_auth.js"></script>
+<script>
+document.getElementById('f').onsubmit = async (e)=>{
+  e.preventDefault();
+  const data = Object.fromEntries(new FormData(e.target).entries());
+  const r = await fetch('/api/signup',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});
+  if(r.ok){ alert('Signed up! Please log in.'); location.href='/login.html'; }
+  else { alert('Failed: '+await r.text()); }
+};
+</script>
+</body></html>
