@@ -36,7 +36,7 @@ const app = express();
 app.set('trust proxy', 1);
 
 // 간단 로그
-app.use((req, _res, next) => {
+app.use((req, res, next) => {
   try { console.log(new Date().toISOString(), req.method, req.url); } catch {}
   next();
 });
@@ -238,12 +238,12 @@ function collectSets(dir, tier){
 // ===== Routes =====
 
 // 공개 헬스
-app.get('/healthz', (_req, res) => {
+app.get('/healthz', (req, res) => {
   res.json({ ok: true, firestore: USE_FIRESTORE });
 });
 
 // 보호 헬스
-app.get('/api/health', requireAuth, (_req, res) => {
+app.get('/api/health', requireAuth, (req, res) => {
   res.json({ ok: true, firestore: USE_FIRESTORE, user: req.user || null });
 });
 
@@ -491,7 +491,7 @@ app.get('/api/internal-asset/*', requireAuth, needEntitlement('INTERNAL_SETS'), 
 // === Static ===
 
 // 루트는 연습 홈으로 고정
-app.get('/', (_req, res) => {
+app.get('/', (req, res) => {
   const staticDir = process.env.STATIC_DIR || 'app';
   return res.sendFile(path.join(__dirname, staticDir, 'index.html'));
 });
@@ -514,7 +514,7 @@ if (process.env.STATIC_DIR) {
 }
 
 // robots.txt (기본 차단; ALLOW_INDEX=1 이면 제한적 허용)
-app.get('/robots.txt', (_req, res) => {
+app.get('/robots.txt', (req, res) => {
   res.type('text/plain');
   if (process.env.ALLOW_INDEX === '1') {
     return res.send(
@@ -527,8 +527,8 @@ app.get('/robots.txt', (_req, res) => {
 });
 
 // 하위호환 안내
-app.get('/health', (_req, res) => res.status(404).send('Use /healthz instead.'));
-app.get('/attempts', (_req, res) =>
+app.get('/health', (req, res) => res.status(404).send('Use /healthz instead.'));
+app.get('/attempts', (req, res) =>
   res.status(404).send('Use /api/attempts (GET) or /api/attempts/bulk (POST).')
 );
 
